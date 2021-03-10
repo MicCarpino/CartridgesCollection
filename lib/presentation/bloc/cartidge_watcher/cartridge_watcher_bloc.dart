@@ -32,7 +32,8 @@ class CartridgeWatcherBloc
   Stream<CartridgeWatcherState> mapEventToState(
     CartridgeWatcherEvent event,
   ) async* {
-    event.map(
+    print('WATCHER EVENT: ${event.toString()}');
+    yield* event.map(
       watchAllStarted: (e) async* {
         yield const CartridgeWatcherState.loadInProgress();
         await _cartridgeStreamSubscription?.cancel();
