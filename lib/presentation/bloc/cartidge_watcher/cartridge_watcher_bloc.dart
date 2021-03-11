@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
+import 'package:firebase_app/core/enums.dart';
 import 'package:firebase_app/data/models/cartridge.dart';
 import 'package:firebase_app/domain/failures/cartridge_failure.dart';
 import 'package:firebase_app/domain/repositories/i_cartridge_repository.dart';
@@ -19,9 +20,7 @@ part 'cartridge_watcher_bloc.freezed.dart';
 class CartridgeWatcherBloc
     extends Bloc<CartridgeWatcherEvent, CartridgeWatcherState> {
   CartridgeWatcherBloc(this._cartridgeRepository)
-      : super(const CartridgeWatcherState.initial()) {
-    add(const CartridgeWatcherEvent.watchAllStarted());
-  }
+      : super(const CartridgeWatcherState.initial());
 
   final ICartridgeRepository _cartridgeRepository;
 
@@ -37,7 +36,9 @@ class CartridgeWatcherBloc
       watchAllStarted: (e) async* {
         yield const CartridgeWatcherState.loadInProgress();
         await _cartridgeStreamSubscription?.cancel();
-        _cartridgeStreamSubscription = _cartridgeRepository.watchAll().listen(
+        _cartridgeStreamSubscription = _cartridgeRepository
+            .watchAll(e.category)
+            .listen(
               (failureOrCartridges) => add(
                 CartridgeWatcherEvent.cartridgesReceived(failureOrCartridges),
               ),

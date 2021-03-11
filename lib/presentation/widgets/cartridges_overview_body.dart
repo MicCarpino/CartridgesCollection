@@ -1,3 +1,4 @@
+import 'package:firebase_app/core/enums.dart';
 import 'package:firebase_app/presentation/bloc/cartidge_watcher/cartridge_watcher_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -5,11 +6,19 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'cartridge_card.dart';
 
 class CartridgesOverviewBody extends StatelessWidget {
+  const CartridgesOverviewBody({
+    Key? key,
+    required this.category,
+  }) : super(key: key);
+
+  final CartridgeCategory category;
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CartridgeWatcherBloc, CartridgeWatcherState>(
+      bloc: context.read<CartridgeWatcherBloc>()
+        ..add(CartridgeWatcherEvent.watchAllStarted(category)),
       builder: (context, state) {
-        print('WATCHER STATE: ${state.toString()}');
         return state.map(
           initial: (_) => Container(),
           loadInProgress: (_) =>

@@ -16,14 +16,16 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$CartridgeWatcherEventTearOff {
   const _$CartridgeWatcherEventTearOff();
 
-  _WatchAllStarted watchAllStarted() {
-    return const _WatchAllStarted();
+  _WatchAllStarted watchAllStarted(CartridgeCategory category) {
+    return _WatchAllStarted(
+      category,
+    );
   }
 
   _CartridgesReceived cartridgesReceived(
-      Either<CartridgeFailure, List<Cartridge>> failureOrcartridges) {
+      Either<CartridgeFailure, List<Cartridge>> failureOrCartridges) {
     return _CartridgesReceived(
-      failureOrcartridges,
+      failureOrCartridges,
     );
   }
 }
@@ -35,17 +37,17 @@ const $CartridgeWatcherEvent = _$CartridgeWatcherEventTearOff();
 mixin _$CartridgeWatcherEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() watchAllStarted,
+    required TResult Function(CartridgeCategory category) watchAllStarted,
     required TResult Function(
-            Either<CartridgeFailure, List<Cartridge>> failureOrcartridges)
+            Either<CartridgeFailure, List<Cartridge>> failureOrCartridges)
         cartridgesReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? watchAllStarted,
+    TResult Function(CartridgeCategory category)? watchAllStarted,
     TResult Function(
-            Either<CartridgeFailure, List<Cartridge>> failureOrcartridges)?
+            Either<CartridgeFailure, List<Cartridge>> failureOrCartridges)?
         cartridgesReceived,
     required TResult orElse(),
   }) =>
@@ -87,6 +89,7 @@ abstract class _$WatchAllStartedCopyWith<$Res> {
   factory _$WatchAllStartedCopyWith(
           _WatchAllStarted value, $Res Function(_WatchAllStarted) then) =
       __$WatchAllStartedCopyWithImpl<$Res>;
+  $Res call({CartridgeCategory category});
 }
 
 /// @nodoc
@@ -99,47 +102,72 @@ class __$WatchAllStartedCopyWithImpl<$Res>
 
   @override
   _WatchAllStarted get _value => super._value as _WatchAllStarted;
+
+  @override
+  $Res call({
+    Object? category = freezed,
+  }) {
+    return _then(_WatchAllStarted(
+      category == freezed
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as CartridgeCategory,
+    ));
+  }
 }
 
 /// @nodoc
 class _$_WatchAllStarted implements _WatchAllStarted {
-  const _$_WatchAllStarted();
+  const _$_WatchAllStarted(this.category);
+
+  @override
+  final CartridgeCategory category;
 
   @override
   String toString() {
-    return 'CartridgeWatcherEvent.watchAllStarted()';
+    return 'CartridgeWatcherEvent.watchAllStarted(category: $category)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _WatchAllStarted);
+    return identical(this, other) ||
+        (other is _WatchAllStarted &&
+            (identical(other.category, category) ||
+                const DeepCollectionEquality()
+                    .equals(other.category, category)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(category);
+
+  @JsonKey(ignore: true)
+  @override
+  _$WatchAllStartedCopyWith<_WatchAllStarted> get copyWith =>
+      __$WatchAllStartedCopyWithImpl<_WatchAllStarted>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() watchAllStarted,
+    required TResult Function(CartridgeCategory category) watchAllStarted,
     required TResult Function(
-            Either<CartridgeFailure, List<Cartridge>> failureOrcartridges)
+            Either<CartridgeFailure, List<Cartridge>> failureOrCartridges)
         cartridgesReceived,
   }) {
-    return watchAllStarted();
+    return watchAllStarted(category);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? watchAllStarted,
+    TResult Function(CartridgeCategory category)? watchAllStarted,
     TResult Function(
-            Either<CartridgeFailure, List<Cartridge>> failureOrcartridges)?
+            Either<CartridgeFailure, List<Cartridge>> failureOrCartridges)?
         cartridgesReceived,
     required TResult orElse(),
   }) {
     if (watchAllStarted != null) {
-      return watchAllStarted();
+      return watchAllStarted(category);
     }
     return orElse();
   }
@@ -168,7 +196,13 @@ class _$_WatchAllStarted implements _WatchAllStarted {
 }
 
 abstract class _WatchAllStarted implements CartridgeWatcherEvent {
-  const factory _WatchAllStarted() = _$_WatchAllStarted;
+  const factory _WatchAllStarted(CartridgeCategory category) =
+      _$_WatchAllStarted;
+
+  CartridgeCategory get category => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$WatchAllStartedCopyWith<_WatchAllStarted> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -176,7 +210,7 @@ abstract class _$CartridgesReceivedCopyWith<$Res> {
   factory _$CartridgesReceivedCopyWith(
           _CartridgesReceived value, $Res Function(_CartridgesReceived) then) =
       __$CartridgesReceivedCopyWithImpl<$Res>;
-  $Res call({Either<CartridgeFailure, List<Cartridge>> failureOrcartridges});
+  $Res call({Either<CartridgeFailure, List<Cartridge>> failureOrCartridges});
 }
 
 /// @nodoc
@@ -192,12 +226,12 @@ class __$CartridgesReceivedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? failureOrcartridges = freezed,
+    Object? failureOrCartridges = freezed,
   }) {
     return _then(_CartridgesReceived(
-      failureOrcartridges == freezed
-          ? _value.failureOrcartridges
-          : failureOrcartridges // ignore: cast_nullable_to_non_nullable
+      failureOrCartridges == freezed
+          ? _value.failureOrCartridges
+          : failureOrCartridges // ignore: cast_nullable_to_non_nullable
               as Either<CartridgeFailure, List<Cartridge>>,
     ));
   }
@@ -205,29 +239,29 @@ class __$CartridgesReceivedCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_CartridgesReceived implements _CartridgesReceived {
-  const _$_CartridgesReceived(this.failureOrcartridges);
+  const _$_CartridgesReceived(this.failureOrCartridges);
 
   @override
-  final Either<CartridgeFailure, List<Cartridge>> failureOrcartridges;
+  final Either<CartridgeFailure, List<Cartridge>> failureOrCartridges;
 
   @override
   String toString() {
-    return 'CartridgeWatcherEvent.cartridgesReceived(failureOrcartridges: $failureOrcartridges)';
+    return 'CartridgeWatcherEvent.cartridgesReceived(failureOrCartridges: $failureOrCartridges)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _CartridgesReceived &&
-            (identical(other.failureOrcartridges, failureOrcartridges) ||
+            (identical(other.failureOrCartridges, failureOrCartridges) ||
                 const DeepCollectionEquality()
-                    .equals(other.failureOrcartridges, failureOrcartridges)));
+                    .equals(other.failureOrCartridges, failureOrCartridges)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(failureOrcartridges);
+      const DeepCollectionEquality().hash(failureOrCartridges);
 
   @JsonKey(ignore: true)
   @override
@@ -237,25 +271,25 @@ class _$_CartridgesReceived implements _CartridgesReceived {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() watchAllStarted,
+    required TResult Function(CartridgeCategory category) watchAllStarted,
     required TResult Function(
-            Either<CartridgeFailure, List<Cartridge>> failureOrcartridges)
+            Either<CartridgeFailure, List<Cartridge>> failureOrCartridges)
         cartridgesReceived,
   }) {
-    return cartridgesReceived(failureOrcartridges);
+    return cartridgesReceived(failureOrCartridges);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? watchAllStarted,
+    TResult Function(CartridgeCategory category)? watchAllStarted,
     TResult Function(
-            Either<CartridgeFailure, List<Cartridge>> failureOrcartridges)?
+            Either<CartridgeFailure, List<Cartridge>> failureOrCartridges)?
         cartridgesReceived,
     required TResult orElse(),
   }) {
     if (cartridgesReceived != null) {
-      return cartridgesReceived(failureOrcartridges);
+      return cartridgesReceived(failureOrCartridges);
     }
     return orElse();
   }
@@ -285,10 +319,10 @@ class _$_CartridgesReceived implements _CartridgesReceived {
 
 abstract class _CartridgesReceived implements CartridgeWatcherEvent {
   const factory _CartridgesReceived(
-          Either<CartridgeFailure, List<Cartridge>> failureOrcartridges) =
+          Either<CartridgeFailure, List<Cartridge>> failureOrCartridges) =
       _$_CartridgesReceived;
 
-  Either<CartridgeFailure, List<Cartridge>> get failureOrcartridges =>
+  Either<CartridgeFailure, List<Cartridge>> get failureOrCartridges =>
       throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$CartridgesReceivedCopyWith<_CartridgesReceived> get copyWith =>

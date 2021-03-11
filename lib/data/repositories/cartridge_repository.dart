@@ -1,7 +1,7 @@
 import 'dart:collection';
-
 import 'package:dartz/dartz.dart';
-import 'package:dartz/dartz_unsafe.dart';
+import 'dart:convert';
+import 'package:firebase_app/core/enums.dart';
 import 'package:firebase_app/data/models/cartridge.dart';
 import 'package:firebase_app/domain/failures/cartridge_failure.dart';
 import 'package:firebase_app/domain/repositories/i_cartridge_repository.dart';
@@ -18,21 +18,23 @@ class CartridgeRepository implements ICartridgeRepository {
   final FirebaseDatabase _firebaseDatabase;
 
   @override
-  Stream<Either<CartridgeFailure, List<Cartridge>>> watchAll() async* {
+  Stream<Either<CartridgeFailure, List<Cartridge>>> watchAll(
+      CartridgeCategory category) async* {
     yield* _firebaseDatabase
         .reference()
         .cartridges
+        .child(category.firebaseChildName)
         .onValue
         .map((event) {
       return right<CartridgeFailure, List<Cartridge>>(
-          (event.snapshot.value as LinkedHashMap)
-              .values
-              .map((cartridge) =>
-              CartridgeDto.fromJson(Map.from(cartridge as LinkedHashMap))
-                  .toDomain())
-              .toList()
-      );
+          (event.snapshot.value as LinkedHashMap).values.map((cartridge) {
+        final json = Map<String, dynamic>.from(cartridge as LinkedHashMap);
+        json.addAll({'cartridgeName': 'abc'});
+        return CartridgeDto.fromJson(json)
+            .toDomain().copyWith(category: category);
+      }).toList());
     }).onErrorReturnWith((e) {
+      print('WATCH ERROR ${e.toString()}');
       return left(const CartridgeFailure.unexpected());
     });
   }

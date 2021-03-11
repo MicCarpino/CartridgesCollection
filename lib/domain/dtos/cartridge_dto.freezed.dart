@@ -21,14 +21,14 @@ class _$CartridgeDtoTearOff {
   const _$CartridgeDtoTearOff();
 
   _CartridgeDto call(
-      {required String? id,
-      required String cartridgeName,
+      {required String cartridgeName,
+      required CartridgeCategory? category,
       required double caliber,
       required double bulletDiameter,
       required double caseLength}) {
     return _CartridgeDto(
-      id: id,
       cartridgeName: cartridgeName,
+      category: category,
       caliber: caliber,
       bulletDiameter: bulletDiameter,
       caseLength: caseLength,
@@ -45,8 +45,8 @@ const $CartridgeDto = _$CartridgeDtoTearOff();
 
 /// @nodoc
 mixin _$CartridgeDto {
-  String? get id => throw _privateConstructorUsedError;
   String get cartridgeName => throw _privateConstructorUsedError;
+  CartridgeCategory? get category => throw _privateConstructorUsedError;
   double get caliber => throw _privateConstructorUsedError;
   double get bulletDiameter => throw _privateConstructorUsedError;
   double get caseLength => throw _privateConstructorUsedError;
@@ -63,8 +63,8 @@ abstract class $CartridgeDtoCopyWith<$Res> {
           CartridgeDto value, $Res Function(CartridgeDto) then) =
       _$CartridgeDtoCopyWithImpl<$Res>;
   $Res call(
-      {String? id,
-      String cartridgeName,
+      {String cartridgeName,
+      CartridgeCategory? category,
       double caliber,
       double bulletDiameter,
       double caseLength});
@@ -80,21 +80,21 @@ class _$CartridgeDtoCopyWithImpl<$Res> implements $CartridgeDtoCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? id = freezed,
     Object? cartridgeName = freezed,
+    Object? category = freezed,
     Object? caliber = freezed,
     Object? bulletDiameter = freezed,
     Object? caseLength = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
       cartridgeName: cartridgeName == freezed
           ? _value.cartridgeName
           : cartridgeName // ignore: cast_nullable_to_non_nullable
               as String,
+      category: category == freezed
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as CartridgeCategory?,
       caliber: caliber == freezed
           ? _value.caliber
           : caliber // ignore: cast_nullable_to_non_nullable
@@ -119,8 +119,8 @@ abstract class _$CartridgeDtoCopyWith<$Res>
       __$CartridgeDtoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String? id,
-      String cartridgeName,
+      {String cartridgeName,
+      CartridgeCategory? category,
       double caliber,
       double bulletDiameter,
       double caseLength});
@@ -138,21 +138,21 @@ class __$CartridgeDtoCopyWithImpl<$Res> extends _$CartridgeDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? id = freezed,
     Object? cartridgeName = freezed,
+    Object? category = freezed,
     Object? caliber = freezed,
     Object? bulletDiameter = freezed,
     Object? caseLength = freezed,
   }) {
     return _then(_CartridgeDto(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
       cartridgeName: cartridgeName == freezed
           ? _value.cartridgeName
           : cartridgeName // ignore: cast_nullable_to_non_nullable
               as String,
+      category: category == freezed
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as CartridgeCategory?,
       caliber: caliber == freezed
           ? _value.caliber
           : caliber // ignore: cast_nullable_to_non_nullable
@@ -174,8 +174,8 @@ class __$CartridgeDtoCopyWithImpl<$Res> extends _$CartridgeDtoCopyWithImpl<$Res>
 /// @nodoc
 class _$_CartridgeDto extends _CartridgeDto {
   const _$_CartridgeDto(
-      {required this.id,
-      required this.cartridgeName,
+      {required this.cartridgeName,
+      required this.category,
       required this.caliber,
       required this.bulletDiameter,
       required this.caseLength})
@@ -185,9 +185,9 @@ class _$_CartridgeDto extends _CartridgeDto {
       _$_$_CartridgeDtoFromJson(json);
 
   @override
-  final String? id;
-  @override
   final String cartridgeName;
+  @override
+  final CartridgeCategory? category;
   @override
   final double caliber;
   @override
@@ -197,18 +197,19 @@ class _$_CartridgeDto extends _CartridgeDto {
 
   @override
   String toString() {
-    return 'CartridgeDto(id: $id, cartridgeName: $cartridgeName, caliber: $caliber, bulletDiameter: $bulletDiameter, caseLength: $caseLength)';
+    return 'CartridgeDto(cartridgeName: $cartridgeName, category: $category, caliber: $caliber, bulletDiameter: $bulletDiameter, caseLength: $caseLength)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _CartridgeDto &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.cartridgeName, cartridgeName) ||
                 const DeepCollectionEquality()
                     .equals(other.cartridgeName, cartridgeName)) &&
+            (identical(other.category, category) ||
+                const DeepCollectionEquality()
+                    .equals(other.category, category)) &&
             (identical(other.caliber, caliber) ||
                 const DeepCollectionEquality()
                     .equals(other.caliber, caliber)) &&
@@ -223,8 +224,8 @@ class _$_CartridgeDto extends _CartridgeDto {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(cartridgeName) ^
+      const DeepCollectionEquality().hash(category) ^
       const DeepCollectionEquality().hash(caliber) ^
       const DeepCollectionEquality().hash(bulletDiameter) ^
       const DeepCollectionEquality().hash(caseLength);
@@ -242,8 +243,8 @@ class _$_CartridgeDto extends _CartridgeDto {
 
 abstract class _CartridgeDto extends CartridgeDto {
   const factory _CartridgeDto(
-      {required String? id,
-      required String cartridgeName,
+      {required String cartridgeName,
+      required CartridgeCategory? category,
       required double caliber,
       required double bulletDiameter,
       required double caseLength}) = _$_CartridgeDto;
@@ -253,9 +254,9 @@ abstract class _CartridgeDto extends CartridgeDto {
       _$_CartridgeDto.fromJson;
 
   @override
-  String? get id => throw _privateConstructorUsedError;
-  @override
   String get cartridgeName => throw _privateConstructorUsedError;
+  @override
+  CartridgeCategory? get category => throw _privateConstructorUsedError;
   @override
   double get caliber => throw _privateConstructorUsedError;
   @override

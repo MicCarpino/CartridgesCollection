@@ -1,3 +1,4 @@
+import 'package:firebase_app/core/enums.dart';
 import 'package:firebase_app/data/models/cartridge.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -11,8 +12,8 @@ class CartridgeDto with _$CartridgeDto {
   const CartridgeDto._();
 
   const factory CartridgeDto({
-    required String? id,
     required String cartridgeName,
+    required CartridgeCategory? category,
     required double caliber,
     required double bulletDiameter,
     required double caseLength,
@@ -20,8 +21,8 @@ class CartridgeDto with _$CartridgeDto {
 
   factory CartridgeDto.fromDomain(Cartridge cartridge) {
     return CartridgeDto(
-      id: cartridge.id,
       cartridgeName: cartridge.cartridgeName,
+      category: cartridge.category,
       caliber: cartridge.caliber,
       bulletDiameter: cartridge.bulletDiameter,
       caseLength: cartridge.caseLength,
@@ -30,8 +31,8 @@ class CartridgeDto with _$CartridgeDto {
 
   Cartridge toDomain() {
     return Cartridge(
-      id: id,
       cartridgeName: cartridgeName,
+      category: category,
       caliber: caliber,
       bulletDiameter: bulletDiameter,
       caseLength: caseLength,
