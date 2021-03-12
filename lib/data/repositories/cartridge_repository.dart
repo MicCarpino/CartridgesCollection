@@ -1,6 +1,5 @@
 import 'dart:collection';
 import 'package:dartz/dartz.dart';
-import 'dart:convert';
 import 'package:firebase_app/core/enums.dart';
 import 'package:firebase_app/data/models/cartridge.dart';
 import 'package:firebase_app/domain/failures/cartridge_failure.dart';
@@ -28,11 +27,12 @@ class CartridgeRepository implements ICartridgeRepository {
         .map((event) {
       return right<CartridgeFailure, List<Cartridge>>(
           (event.snapshot.value as LinkedHashMap).values.map((cartridge) {
-        final json = Map<String, dynamic>.from(cartridge as LinkedHashMap);
-        json.addAll({'cartridgeName': 'abc'});
-        return CartridgeDto.fromJson(json)
-            .toDomain().copyWith(category: category);
-      }).toList());
+            final json = Map<String, dynamic>.from(cartridge as LinkedHashMap);
+            json.addAll({'cartridgeName': 'abc'});
+            return CartridgeDto.fromJson(json)
+                .toDomain(cartridge.ca)
+                .copyWith(category: category);
+          }).toList());
     }).onErrorReturnWith((e) {
       print('WATCH ERROR ${e.toString()}');
       return left(const CartridgeFailure.unexpected());
@@ -40,20 +40,35 @@ class CartridgeRepository implements ICartridgeRepository {
   }
 
   @override
-  Future<Either<CartridgeFailure, Unit>> create(Cartridge cartridge) {
-    // TODO: implement create
-    throw UnimplementedError();
+  Future<Either<CartridgeFailure, Unit>> create(Cartridge cartridge) async {
+    final cartridgeDto = CartridgeDto.fromDomain(cartridge);
+    return _firebaseDatabase
+        .reference()
+        .cartridges
+        .child(cartridge.category!.firebaseChildName)
+        .child(cartridge.cartridgeName)
+        .set(cartridgeDto.toJson())
+        .then((value) => right(unit),
+        onError: (error) => left(const CartridgeFailure.unableToUpdate()));
+  }
+
+  @override
+  Future<Either<CartridgeFailure, Unit>> update(Cartridge cartridge) async {
+    final cartridgeDto = CartridgeDto.fromDomain(cartridge);
+    return _firebaseDatabase
+        .reference()
+        .cartridges
+        .child(cartridge.category!.firebaseChildName)
+        .child(cartridge.cartridgeName)
+        .update(cartridgeDto.toJson())
+        .then((value) => right(unit),
+        onError: (error) => left(const CartridgeFailure.unableToUpdate())
+    );
   }
 
   @override
   Future<Either<CartridgeFailure, Unit>> delete(Cartridge cartridge) {
     // TODO: implement delete
-    throw UnimplementedError();
-  }
-
-  @override
-  Future<Either<CartridgeFailure, Unit>> update(Cartridge cartridge) {
-    // TODO: implement update
     throw UnimplementedError();
   }
 }

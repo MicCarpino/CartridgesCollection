@@ -20,8 +20,16 @@ class _$CartridgeFailureTearOff {
     return const _Unexpected();
   }
 
+  _ValidationFailed validationFailed() {
+    return const _ValidationFailed();
+  }
+
   _UnableToUpdate unableToUpdate() {
     return const _UnableToUpdate();
+  }
+
+  _UnableToInsert unableToInsert() {
+    return const _UnableToInsert();
   }
 }
 
@@ -33,26 +41,34 @@ mixin _$CartridgeFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
+    required TResult Function() validationFailed,
     required TResult Function() unableToUpdate,
+    required TResult Function() unableToInsert,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
+    TResult Function()? validationFailed,
     TResult Function()? unableToUpdate,
+    TResult Function()? unableToInsert,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_ValidationFailed value) validationFailed,
     required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_UnableToInsert value) unableToInsert,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_ValidationFailed value)? validationFailed,
     TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_UnableToInsert value)? unableToInsert,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -115,7 +131,9 @@ class _$_Unexpected implements _Unexpected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
+    required TResult Function() validationFailed,
     required TResult Function() unableToUpdate,
+    required TResult Function() unableToInsert,
   }) {
     return unexpected();
   }
@@ -124,7 +142,9 @@ class _$_Unexpected implements _Unexpected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
+    TResult Function()? validationFailed,
     TResult Function()? unableToUpdate,
+    TResult Function()? unableToInsert,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -137,7 +157,9 @@ class _$_Unexpected implements _Unexpected {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_ValidationFailed value) validationFailed,
     required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_UnableToInsert value) unableToInsert,
   }) {
     return unexpected(this);
   }
@@ -146,7 +168,9 @@ class _$_Unexpected implements _Unexpected {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_ValidationFailed value)? validationFailed,
     TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_UnableToInsert value)? unableToInsert,
     required TResult orElse(),
   }) {
     if (unexpected != null) {
@@ -158,6 +182,99 @@ class _$_Unexpected implements _Unexpected {
 
 abstract class _Unexpected implements CartridgeFailure {
   const factory _Unexpected() = _$_Unexpected;
+}
+
+/// @nodoc
+abstract class _$ValidationFailedCopyWith<$Res> {
+  factory _$ValidationFailedCopyWith(
+          _ValidationFailed value, $Res Function(_ValidationFailed) then) =
+      __$ValidationFailedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$ValidationFailedCopyWithImpl<$Res>
+    extends _$CartridgeFailureCopyWithImpl<$Res>
+    implements _$ValidationFailedCopyWith<$Res> {
+  __$ValidationFailedCopyWithImpl(
+      _ValidationFailed _value, $Res Function(_ValidationFailed) _then)
+      : super(_value, (v) => _then(v as _ValidationFailed));
+
+  @override
+  _ValidationFailed get _value => super._value as _ValidationFailed;
+}
+
+/// @nodoc
+class _$_ValidationFailed implements _ValidationFailed {
+  const _$_ValidationFailed();
+
+  @override
+  String toString() {
+    return 'CartridgeFailure.validationFailed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _ValidationFailed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() validationFailed,
+    required TResult Function() unableToUpdate,
+    required TResult Function() unableToInsert,
+  }) {
+    return validationFailed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? validationFailed,
+    TResult Function()? unableToUpdate,
+    TResult Function()? unableToInsert,
+    required TResult orElse(),
+  }) {
+    if (validationFailed != null) {
+      return validationFailed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_ValidationFailed value) validationFailed,
+    required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_UnableToInsert value) unableToInsert,
+  }) {
+    return validationFailed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_ValidationFailed value)? validationFailed,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_UnableToInsert value)? unableToInsert,
+    required TResult orElse(),
+  }) {
+    if (validationFailed != null) {
+      return validationFailed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ValidationFailed implements CartridgeFailure {
+  const factory _ValidationFailed() = _$_ValidationFailed;
 }
 
 /// @nodoc
@@ -200,7 +317,9 @@ class _$_UnableToUpdate implements _UnableToUpdate {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() unexpected,
+    required TResult Function() validationFailed,
     required TResult Function() unableToUpdate,
+    required TResult Function() unableToInsert,
   }) {
     return unableToUpdate();
   }
@@ -209,7 +328,9 @@ class _$_UnableToUpdate implements _UnableToUpdate {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? unexpected,
+    TResult Function()? validationFailed,
     TResult Function()? unableToUpdate,
+    TResult Function()? unableToInsert,
     required TResult orElse(),
   }) {
     if (unableToUpdate != null) {
@@ -222,7 +343,9 @@ class _$_UnableToUpdate implements _UnableToUpdate {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_ValidationFailed value) validationFailed,
     required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_UnableToInsert value) unableToInsert,
   }) {
     return unableToUpdate(this);
   }
@@ -231,7 +354,9 @@ class _$_UnableToUpdate implements _UnableToUpdate {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_ValidationFailed value)? validationFailed,
     TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_UnableToInsert value)? unableToInsert,
     required TResult orElse(),
   }) {
     if (unableToUpdate != null) {
@@ -243,4 +368,97 @@ class _$_UnableToUpdate implements _UnableToUpdate {
 
 abstract class _UnableToUpdate implements CartridgeFailure {
   const factory _UnableToUpdate() = _$_UnableToUpdate;
+}
+
+/// @nodoc
+abstract class _$UnableToInsertCopyWith<$Res> {
+  factory _$UnableToInsertCopyWith(
+          _UnableToInsert value, $Res Function(_UnableToInsert) then) =
+      __$UnableToInsertCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$UnableToInsertCopyWithImpl<$Res>
+    extends _$CartridgeFailureCopyWithImpl<$Res>
+    implements _$UnableToInsertCopyWith<$Res> {
+  __$UnableToInsertCopyWithImpl(
+      _UnableToInsert _value, $Res Function(_UnableToInsert) _then)
+      : super(_value, (v) => _then(v as _UnableToInsert));
+
+  @override
+  _UnableToInsert get _value => super._value as _UnableToInsert;
+}
+
+/// @nodoc
+class _$_UnableToInsert implements _UnableToInsert {
+  const _$_UnableToInsert();
+
+  @override
+  String toString() {
+    return 'CartridgeFailure.unableToInsert()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _UnableToInsert);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() unexpected,
+    required TResult Function() validationFailed,
+    required TResult Function() unableToUpdate,
+    required TResult Function() unableToInsert,
+  }) {
+    return unableToInsert();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? unexpected,
+    TResult Function()? validationFailed,
+    TResult Function()? unableToUpdate,
+    TResult Function()? unableToInsert,
+    required TResult orElse(),
+  }) {
+    if (unableToInsert != null) {
+      return unableToInsert();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Unexpected value) unexpected,
+    required TResult Function(_ValidationFailed value) validationFailed,
+    required TResult Function(_UnableToUpdate value) unableToUpdate,
+    required TResult Function(_UnableToInsert value) unableToInsert,
+  }) {
+    return unableToInsert(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Unexpected value)? unexpected,
+    TResult Function(_ValidationFailed value)? validationFailed,
+    TResult Function(_UnableToUpdate value)? unableToUpdate,
+    TResult Function(_UnableToInsert value)? unableToInsert,
+    required TResult orElse(),
+  }) {
+    if (unableToInsert != null) {
+      return unableToInsert(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UnableToInsert implements CartridgeFailure {
+  const factory _UnableToInsert() = _$_UnableToInsert;
 }

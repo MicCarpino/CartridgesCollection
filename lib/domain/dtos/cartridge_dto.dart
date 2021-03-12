@@ -12,8 +12,6 @@ class CartridgeDto with _$CartridgeDto {
   const CartridgeDto._();
 
   const factory CartridgeDto({
-    required String cartridgeName,
-    required CartridgeCategory? category,
     required double caliber,
     required double bulletDiameter,
     required double caseLength,
@@ -21,15 +19,13 @@ class CartridgeDto with _$CartridgeDto {
 
   factory CartridgeDto.fromDomain(Cartridge cartridge) {
     return CartridgeDto(
-      cartridgeName: cartridge.cartridgeName,
-      category: cartridge.category,
       caliber: cartridge.caliber,
       bulletDiameter: cartridge.bulletDiameter,
       caseLength: cartridge.caseLength,
     );
   }
 
-  Cartridge toDomain() {
+  Cartridge toDomain(String cartridgeName,CartridgeCategory category) {
     return Cartridge(
       cartridgeName: cartridgeName,
       category: category,
@@ -46,3 +42,4 @@ class CartridgeDto with _$CartridgeDto {
     return CartridgeDto.fromJson(doc.value as Map<String, String>);
   }
 }
+
