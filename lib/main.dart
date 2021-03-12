@@ -1,6 +1,5 @@
 // @dart=2.9
 
-import 'package:auto_route/auto_route.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
@@ -16,6 +15,7 @@ Future<void> main() async {
 
 class MyApp extends StatelessWidget {
   final _appRouter = AppRouter();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(

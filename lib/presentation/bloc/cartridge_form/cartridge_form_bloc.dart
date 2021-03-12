@@ -24,9 +24,7 @@ class CartridgeFormBloc extends Bloc<CartridgeFormEvent, CartridgeFormState> {
   final ICartridgeRepository cartridgeRepository;
 
   @override
-  Stream<CartridgeFormState> mapEventToState(
-    CartridgeFormEvent event,
-  ) async* {
+  Stream<CartridgeFormState> mapEventToState(CartridgeFormEvent event) async* {
     yield* event.map(
       initialized: (e) async* {
         yield e.initialCartridgeOption.fold(
@@ -44,33 +42,36 @@ class CartridgeFormBloc extends Bloc<CartridgeFormEvent, CartridgeFormState> {
           saveFailureOrSuccessOption: none(),
         );
       },
-      caseLengthChanged: (e) async* {
-        yield state.copyWith(
-          cartridge: state.cartridge.copyWith(caseLength: e.newCaseLength),
-          saveFailureOrSuccessOption: none(),
-        );
-      },
-      caliberChanged: (e) async* {
-        yield state.copyWith(
-          cartridge: state.cartridge.copyWith(caliber: e.newCaliber),
-          saveFailureOrSuccessOption: none(),
-        );
-      },
       categoryChanged: (e) async* {
         yield state.copyWith(
           cartridge: state.cartridge.copyWith(category: e.newCategory),
           saveFailureOrSuccessOption: none(),
         );
       },
+      caseLengthChanged: (e) async* {
+        yield state.copyWith(
+          cartridge: state.cartridge
+              .copyWith(caseLength: double.tryParse(e.newCaseLength) ?? 0.0),
+          saveFailureOrSuccessOption: none(),
+        );
+      },
+      caliberChanged: (e) async* {
+        state.copyWith(
+          cartridge: state.cartridge
+              .copyWith(caliber: double.tryParse(e.newCaliber) ?? 0.0),
+          saveFailureOrSuccessOption: none(),
+        );
+      },
       bulletDiameterChanged: (e) async* {
         yield state.copyWith(
-          cartridge:
-              state.cartridge.copyWith(bulletDiameter: e.newBulletDiameter),
+          cartridge: state.cartridge.copyWith(
+              bulletDiameter: double.tryParse(e.newBulletDiameter) ?? 0.0),
           saveFailureOrSuccessOption: none(),
         );
       },
       saved: (e) async* {
-        Either<CartridgeFailure, Unit> failureOrSuccess = left(const CartridgeFailure.unexpected());
+        Either<CartridgeFailure, Unit> failureOrSuccess =
+            left(const CartridgeFailure.unexpected());
         yield state.copyWith(
           isSaving: true,
           saveFailureOrSuccessOption: none(),

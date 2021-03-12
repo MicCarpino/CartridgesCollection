@@ -1,4 +1,5 @@
 import 'dart:collection';
+import 'dart:convert';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_app/core/enums.dart';
 import 'package:firebase_app/data/models/cartridge.dart';
@@ -27,12 +28,9 @@ class CartridgeRepository implements ICartridgeRepository {
         .map((event) {
       return right<CartridgeFailure, List<Cartridge>>(
           (event.snapshot.value as LinkedHashMap).values.map((cartridge) {
-            final json = Map<String, dynamic>.from(cartridge as LinkedHashMap);
-            json.addAll({'cartridgeName': 'abc'});
-            return CartridgeDto.fromJson(json)
-                .toDomain(cartridge.ca)
-                .copyWith(category: category);
-          }).toList());
+        final json = Map<String, dynamic>.from(cartridge as LinkedHashMap);
+        return CartridgeDto.fromJson(json).toDomain('abc', category);
+      }).toList());
     }).onErrorReturnWith((e) {
       print('WATCH ERROR ${e.toString()}');
       return left(const CartridgeFailure.unexpected());
@@ -41,15 +39,22 @@ class CartridgeRepository implements ICartridgeRepository {
 
   @override
   Future<Either<CartridgeFailure, Unit>> create(Cartridge cartridge) async {
-    final cartridgeDto = CartridgeDto.fromDomain(cartridge);
+    //final cartridgeDto = CartridgeDto.fromDomain(cartridge);
+    final Map<String, dynamic> newcartridge = {
+      cartridge.cartridgeName: {
+        "bulletDiameter": cartridge.bulletDiameter.toString(),
+        "caliber": cartridge.caliber.toString(),
+        "caseLength": cartridge.caseLength.toString(),
+      },
+    };
     return _firebaseDatabase
         .reference()
         .cartridges
         .child(cartridge.category!.firebaseChildName)
         .child(cartridge.cartridgeName)
-        .set(cartridgeDto.toJson())
+        .set(jsonEncode(newcartridge))
         .then((value) => right(unit),
-        onError: (error) => left(const CartridgeFailure.unableToUpdate()));
+            onError: (error) => left(const CartridgeFailure.unableToInsert()));
   }
 
   @override
@@ -62,8 +67,7 @@ class CartridgeRepository implements ICartridgeRepository {
         .child(cartridge.cartridgeName)
         .update(cartridgeDto.toJson())
         .then((value) => right(unit),
-        onError: (error) => left(const CartridgeFailure.unableToUpdate())
-    );
+            onError: (error) => left(const CartridgeFailure.unableToUpdate()));
   }
 
   @override
