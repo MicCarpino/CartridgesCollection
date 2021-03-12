@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:firebase_app/core/enums.dart';
 import 'package:firebase_app/presentation/bloc/cartidge_watcher/cartridge_watcher_bloc.dart';
+import 'package:firebase_app/presentation/routes/router.gr.dart';
 import 'package:firebase_app/presentation/widgets/cartridges_overview_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -31,7 +33,7 @@ class _CartridgesOverviewPageState extends State<CartridgesOverviewPage> {
               category: CartridgeCategory.values[tabIndex],
             ),
             floatingActionButton: FloatingActionButton(
-              onPressed: () {},
+              onPressed: () => context.router.push(CartridgeFormRoute()),
               child: const Icon(Icons.add),
             ),
             bottomNavigationBar: BottomNavigationBar(

@@ -45,7 +45,7 @@ class CartridgeWatcherBloc
             );
       },
       cartridgesReceived: (e) async* {
-        yield e.failureOrcartridges.fold(
+        yield e.failureOrCartridges.fold(
           (failure) => CartridgeWatcherState.loadFailure(failure),
           (cartridges) => CartridgeWatcherState.loadSuccess(cartridges),
         );
