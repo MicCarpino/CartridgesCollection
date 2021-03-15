@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:firebase_app/core/enums.dart';
 import 'package:firebase_app/presentation/bloc/cartidge_watcher/cartridge_watcher_bloc.dart';
+import 'package:firebase_app/presentation/bloc/cartidge_actor/cartridge_actor_bloc.dart';
 import 'package:firebase_app/presentation/routes/router.gr.dart';
 import 'package:firebase_app/presentation/widgets/cartridges_overview_body.dart';
 import 'package:flutter/material.dart';
@@ -21,30 +22,42 @@ class _CartridgesOverviewPageState extends State<CartridgesOverviewPage> {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => getIt<CartridgeWatcherBloc>()),
+        BlocProvider(create: (context) => getIt<CartridgeActorBloc>()),
       ],
       child: SafeArea(
         child: DefaultTabController(
           length: CartridgeCategory.values.length,
-          child: Scaffold(
-            appBar: AppBar(
-              title: Text(CartridgeCategory.values[tabIndex].label),
+          child: BlocListener<CartridgeActorBloc, CartridgeActorState>(
+            listener: (context, state) {
+              state.maybeMap(
+                  deleteFailure: (value) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text(value.toString())),
+                    );
+                  },
+                  orElse: () {});
+            },
+            child: Scaffold(
+              appBar: AppBar(
+                title: Text(CartridgeCategory.values[tabIndex].label),
+              ),
+              body: CartridgesOverviewBody(
+                category: CartridgeCategory.values[tabIndex],
+              ),
+              floatingActionButton: FloatingActionButton(
+                onPressed: () => context.router.push(CartridgeFormRoute()),
+                child: const Icon(Icons.add),
+              ),
+              bottomNavigationBar: BottomNavigationBar(
+                  currentIndex: tabIndex,
+                  showSelectedLabels: false,
+                  showUnselectedLabels: false,
+                  onTap: (int index) => setState(() => tabIndex = index),
+                  items: CartridgeCategory.values
+                      .map<BottomNavigationBarItem>((e) =>
+                          BottomNavigationBarItem(icon: e.icon, label: e.label))
+                      .toList()),
             ),
-            body: CartridgesOverviewBody(
-              category: CartridgeCategory.values[tabIndex],
-            ),
-            floatingActionButton: FloatingActionButton(
-              onPressed: () => context.router.push(CartridgeFormRoute()),
-              child: const Icon(Icons.add),
-            ),
-            bottomNavigationBar: BottomNavigationBar(
-                currentIndex: tabIndex,
-                showSelectedLabels: false,
-                showUnselectedLabels: false,
-                onTap: (int index) => setState(() => tabIndex = index),
-                items: CartridgeCategory.values
-                    .map<BottomNavigationBarItem>((e) =>
-                        BottomNavigationBarItem(icon: e.icon, label: e.label))
-                    .toList()),
           ),
         ),
       ),

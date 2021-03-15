@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:firebase_app/data/models/cartridge.dart';
 import 'package:firebase_app/presentation/routes/router.gr.dart';
+import 'package:firebase_app/presentation/bloc/cartidge_actor/cartridge_actor_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CartridgeCard extends StatelessWidget {
   const CartridgeCard({required this.cartridge});
@@ -34,11 +36,10 @@ class CartridgeCard extends StatelessWidget {
     );
   }
 
-
   void _showDeletionDialog(BuildContext context) {
     showDialog(
       context: context,
-      builder: (context) {
+      builder: (_) {
         return AlertDialog(
           title: const Text('Cancellare?'),
           content: Text(cartridge.cartridgeName),
@@ -48,7 +49,9 @@ class CartridgeCard extends StatelessWidget {
                 child: const Text('ANNULLA')),
             TextButton(
                 onPressed: () {
-                  //TODO: add actor bloc
+                  context
+                      .read<CartridgeActorBloc>()
+                      .add(CartridgeActorEvent.deleted(cartridge));
                   Navigator.pop(context);
                 },
                 child: const Text('CANCELLA')),

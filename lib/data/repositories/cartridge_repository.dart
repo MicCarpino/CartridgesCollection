@@ -1,5 +1,4 @@
 import 'dart:collection';
-import 'dart:convert';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_app/core/enums.dart';
 import 'package:firebase_app/data/models/cartridge.dart';
@@ -26,6 +25,7 @@ class CartridgeRepository implements ICartridgeRepository {
         .child(category.firebaseChildName)
         .onValue
         .map((event) {
+          var d = event;
       return right<CartridgeFailure, List<Cartridge>>(
           (event.snapshot.value as LinkedHashMap).values.map((cartridge) {
         final json = Map<String, dynamic>.from(cartridge as LinkedHashMap);
@@ -33,6 +33,7 @@ class CartridgeRepository implements ICartridgeRepository {
       }).toList());
     }).onErrorReturnWith((e) {
       print('WATCH ERROR ${e.toString()}');
+      var s = e;
       return left(const CartridgeFailure.unexpected());
     });
   }
@@ -40,10 +41,10 @@ class CartridgeRepository implements ICartridgeRepository {
   @override
   Future<Either<CartridgeFailure, Unit>> create(Cartridge cartridge) async {
     //final cartridgeDto = CartridgeDto.fromDomain(cartridge);
-    final Map<String, dynamic> newcartridge =  {
-        "bulletDiameter": cartridge.bulletDiameter,
-        "caliber": cartridge.caliber,
-        "caseLength": cartridge.caseLength,
+    final Map<String, dynamic> newcartridge = {
+      "bulletDiameter": cartridge.bulletDiameter,
+      "caliber": cartridge.caliber,
+      "caseLength": cartridge.caseLength,
     };
     return _firebaseDatabase
         .reference()
@@ -74,7 +75,15 @@ class CartridgeRepository implements ICartridgeRepository {
 
   @override
   Future<Either<CartridgeFailure, Unit>> delete(Cartridge cartridge) {
-    // TODO: implement delete
-    throw UnimplementedError();
+    return _firebaseDatabase
+        .reference()
+        .cartridges
+        .child(cartridge.category!.firebaseChildName)
+        .child(cartridge.cartridgeName)
+        .remove()
+        .then((value) => right(unit), onError: (error) {
+      print(error.toString());
+      return left(const CartridgeFailure.unexpected());
+    });
   }
 }
