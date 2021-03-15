@@ -25,7 +25,7 @@ class CartridgeDto with _$CartridgeDto {
     );
   }
 
-  Cartridge toDomain(String cartridgeName,CartridgeCategory category) {
+  Cartridge toDomain(String cartridgeName, CartridgeCategory category) {
     return Cartridge(
       cartridgeName: cartridgeName,
       category: category,
@@ -42,4 +42,3 @@ class CartridgeDto with _$CartridgeDto {
     return CartridgeDto.fromJson(doc.value as Map<String, String>);
   }
 }
-
