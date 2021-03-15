@@ -1,7 +1,7 @@
 import 'package:firebase_app/core/enums.dart';
-import 'package:firebase_app/presentation/bloc/cartidge_watcher/cartridge_watcher_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:firebase_app/presentation/bloc/cartridge_watcher/cartridge_watcher_bloc.dart';
 
 import 'cartridge_card.dart';
 

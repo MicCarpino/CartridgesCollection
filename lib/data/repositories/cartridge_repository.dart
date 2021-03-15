@@ -25,7 +25,6 @@ class CartridgeRepository implements ICartridgeRepository {
         .child(category.firebaseChildName)
         .onValue
         .map((event) {
-          var d = event;
       return right<CartridgeFailure, List<Cartridge>>(
           (event.snapshot.value as LinkedHashMap).values.map((cartridge) {
         final json = Map<String, dynamic>.from(cartridge as LinkedHashMap);
@@ -33,7 +32,6 @@ class CartridgeRepository implements ICartridgeRepository {
       }).toList());
     }).onErrorReturnWith((e) {
       print('WATCH ERROR ${e.toString()}');
-      var s = e;
       return left(const CartridgeFailure.unexpected());
     });
   }

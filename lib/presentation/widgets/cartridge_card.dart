@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:firebase_app/data/models/cartridge.dart';
 import 'package:firebase_app/presentation/routes/router.gr.dart';
-import 'package:firebase_app/presentation/bloc/cartidge_actor/cartridge_actor_bloc.dart';
+import 'package:firebase_app/presentation/bloc/cartridge_actor/cartridge_actor_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CartridgeCard extends StatelessWidget {

@@ -11,10 +11,10 @@ import 'package:injectable/injectable.dart' as _i2;
 import 'core/firebase_injectable_module.dart' as _i9;
 import 'data/repositories/cartridge_repository.dart' as _i5;
 import 'domain/repositories/i_cartridge_repository.dart' as _i4;
-import 'presentation/bloc/cartidge_actor/cartridge_actor_bloc.dart' as _i6;
-import 'presentation/bloc/cartidge_watcher/cartridge_watcher_bloc.dart' as _i8;
-import 'presentation/bloc/cartridge_form/cartridge_form_bloc.dart'
-    as _i7; // ignore_for_file: unnecessary_lambdas
+import 'presentation/bloc/cartridge_actor/cartridge_actor_bloc.dart' as _i6;
+import 'presentation/bloc/cartridge_form/cartridge_form_bloc.dart' as _i7;
+import 'presentation/bloc/cartridge_watcher/cartridge_watcher_bloc.dart'
+    as _i8; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]

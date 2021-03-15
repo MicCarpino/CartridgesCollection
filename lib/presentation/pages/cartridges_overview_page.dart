@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:firebase_app/core/enums.dart';
-import 'package:firebase_app/presentation/bloc/cartidge_watcher/cartridge_watcher_bloc.dart';
-import 'package:firebase_app/presentation/bloc/cartidge_actor/cartridge_actor_bloc.dart';
+import 'package:firebase_app/presentation/bloc/cartridge_watcher/cartridge_watcher_bloc.dart';
+import 'package:firebase_app/presentation/bloc/cartridge_actor/cartridge_actor_bloc.dart';
 import 'package:firebase_app/presentation/routes/router.gr.dart';
 import 'package:firebase_app/presentation/widgets/cartridges_overview_body.dart';
 import 'package:flutter/material.dart';
