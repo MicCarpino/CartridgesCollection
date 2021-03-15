@@ -12,24 +12,24 @@ class CartridgeDto with _$CartridgeDto {
   const CartridgeDto._();
 
   const factory CartridgeDto({
-    required double caliber,
+    required double cartridgeLength,
     required double bulletDiameter,
     required double caseLength,
   }) = _CartridgeDto;
 
   factory CartridgeDto.fromDomain(Cartridge cartridge) {
     return CartridgeDto(
-      caliber: cartridge.caliber,
+      cartridgeLength: cartridge.cartridgeLength,
       bulletDiameter: cartridge.bulletDiameter,
       caseLength: cartridge.caseLength,
     );
   }
 
-  Cartridge toDomain(String cartridgeName, CartridgeCategory category) {
+  Cartridge toDomain(String caliber, CartridgeCategory category) {
     return Cartridge(
-      cartridgeName: cartridgeName,
-      category: category,
       caliber: caliber,
+      category: category,
+      cartridgeLength: cartridgeLength,
       bulletDiameter: bulletDiameter,
       caseLength: caseLength,
     );

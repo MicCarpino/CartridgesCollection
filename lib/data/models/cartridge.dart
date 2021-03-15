@@ -11,28 +11,28 @@ class Cartridge with _$Cartridge {
   const Cartridge._();
 
   const factory Cartridge({
-    required String cartridgeName,
+    required String caliber,
     required CartridgeCategory? category,
-    required double caliber,
+    required double cartridgeLength,
     required double bulletDiameter,
     required double caseLength,
   }) = _Cartridge;
 
   factory Cartridge.empty() => const Cartridge(
-        cartridgeName: '',
+        caliber: '',
         category: null,
-        caliber: 0.0,
+        cartridgeLength: 0.0,
         bulletDiameter: 0.0,
         caseLength: 0.0,
       );
 
   //TODO: implement better validation
   Option<CartridgeFailure> get failureOption {
-    if (cartridgeName.isEmpty) {
+    if (caliber.isEmpty) {
       return some(const CartridgeFailure.validationFailed());
     } else if (category == null) {
       return some(const CartridgeFailure.validationFailed());
-    } else if (caliber <= 0.0) {
+    } else if (cartridgeLength <= 0.0) {
       return some(const CartridgeFailure.validationFailed());
     } else if (bulletDiameter <= 0.0) {
       return some(const CartridgeFailure.validationFailed());

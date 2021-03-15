@@ -37,9 +37,11 @@ class CategoryRadioButton extends StatelessWidget {
                 : Colors.white,
             child: InkWell(
               borderRadius: BorderRadius.circular(16.0),
-              onTap: () => context
-                  .read<CartridgeFormBloc>()
-                  .add(CartridgeFormEvent.categoryChanged(category)),
+              onTap: () => state.isEditing
+                  ? null
+                  : context
+                      .read<CartridgeFormBloc>()
+                      .add(CartridgeFormEvent.categoryChanged(category)),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(

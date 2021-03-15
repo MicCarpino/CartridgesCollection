@@ -8,7 +8,7 @@ part of 'cartridge_dto.dart';
 
 _$_CartridgeDto _$_$_CartridgeDtoFromJson(Map<String, dynamic> json) {
   return _$_CartridgeDto(
-    caliber: (json['caliber'] as num).toDouble(),
+    cartridgeLength: (json['cartridgeLength'] as num).toDouble(),
     bulletDiameter: (json['bulletDiameter'] as num).toDouble(),
     caseLength: (json['caseLength'] as num).toDouble(),
   );
@@ -16,7 +16,7 @@ _$_CartridgeDto _$_$_CartridgeDtoFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$_$_CartridgeDtoToJson(_$_CartridgeDto instance) =>
     <String, dynamic>{
-      'caliber': instance.caliber,
+      'cartridgeLength': instance.cartridgeLength,
       'bulletDiameter': instance.bulletDiameter,
       'caseLength': instance.caseLength,
     };

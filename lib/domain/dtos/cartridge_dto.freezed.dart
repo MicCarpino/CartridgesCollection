@@ -21,11 +21,11 @@ class _$CartridgeDtoTearOff {
   const _$CartridgeDtoTearOff();
 
   _CartridgeDto call(
-      {required double caliber,
+      {required double cartridgeLength,
       required double bulletDiameter,
       required double caseLength}) {
     return _CartridgeDto(
-      caliber: caliber,
+      cartridgeLength: cartridgeLength,
       bulletDiameter: bulletDiameter,
       caseLength: caseLength,
     );
@@ -41,7 +41,7 @@ const $CartridgeDto = _$CartridgeDtoTearOff();
 
 /// @nodoc
 mixin _$CartridgeDto {
-  double get caliber => throw _privateConstructorUsedError;
+  double get cartridgeLength => throw _privateConstructorUsedError;
   double get bulletDiameter => throw _privateConstructorUsedError;
   double get caseLength => throw _privateConstructorUsedError;
 
@@ -56,7 +56,7 @@ abstract class $CartridgeDtoCopyWith<$Res> {
   factory $CartridgeDtoCopyWith(
           CartridgeDto value, $Res Function(CartridgeDto) then) =
       _$CartridgeDtoCopyWithImpl<$Res>;
-  $Res call({double caliber, double bulletDiameter, double caseLength});
+  $Res call({double cartridgeLength, double bulletDiameter, double caseLength});
 }
 
 /// @nodoc
@@ -69,14 +69,14 @@ class _$CartridgeDtoCopyWithImpl<$Res> implements $CartridgeDtoCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? caliber = freezed,
+    Object? cartridgeLength = freezed,
     Object? bulletDiameter = freezed,
     Object? caseLength = freezed,
   }) {
     return _then(_value.copyWith(
-      caliber: caliber == freezed
-          ? _value.caliber
-          : caliber // ignore: cast_nullable_to_non_nullable
+      cartridgeLength: cartridgeLength == freezed
+          ? _value.cartridgeLength
+          : cartridgeLength // ignore: cast_nullable_to_non_nullable
               as double,
       bulletDiameter: bulletDiameter == freezed
           ? _value.bulletDiameter
@@ -97,7 +97,7 @@ abstract class _$CartridgeDtoCopyWith<$Res>
           _CartridgeDto value, $Res Function(_CartridgeDto) then) =
       __$CartridgeDtoCopyWithImpl<$Res>;
   @override
-  $Res call({double caliber, double bulletDiameter, double caseLength});
+  $Res call({double cartridgeLength, double bulletDiameter, double caseLength});
 }
 
 /// @nodoc
@@ -112,14 +112,14 @@ class __$CartridgeDtoCopyWithImpl<$Res> extends _$CartridgeDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? caliber = freezed,
+    Object? cartridgeLength = freezed,
     Object? bulletDiameter = freezed,
     Object? caseLength = freezed,
   }) {
     return _then(_CartridgeDto(
-      caliber: caliber == freezed
-          ? _value.caliber
-          : caliber // ignore: cast_nullable_to_non_nullable
+      cartridgeLength: cartridgeLength == freezed
+          ? _value.cartridgeLength
+          : cartridgeLength // ignore: cast_nullable_to_non_nullable
               as double,
       bulletDiameter: bulletDiameter == freezed
           ? _value.bulletDiameter
@@ -138,7 +138,7 @@ class __$CartridgeDtoCopyWithImpl<$Res> extends _$CartridgeDtoCopyWithImpl<$Res>
 /// @nodoc
 class _$_CartridgeDto extends _CartridgeDto {
   const _$_CartridgeDto(
-      {required this.caliber,
+      {required this.cartridgeLength,
       required this.bulletDiameter,
       required this.caseLength})
       : super._();
@@ -147,7 +147,7 @@ class _$_CartridgeDto extends _CartridgeDto {
       _$_$_CartridgeDtoFromJson(json);
 
   @override
-  final double caliber;
+  final double cartridgeLength;
   @override
   final double bulletDiameter;
   @override
@@ -155,16 +155,16 @@ class _$_CartridgeDto extends _CartridgeDto {
 
   @override
   String toString() {
-    return 'CartridgeDto(caliber: $caliber, bulletDiameter: $bulletDiameter, caseLength: $caseLength)';
+    return 'CartridgeDto(cartridgeLength: $cartridgeLength, bulletDiameter: $bulletDiameter, caseLength: $caseLength)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _CartridgeDto &&
-            (identical(other.caliber, caliber) ||
+            (identical(other.cartridgeLength, cartridgeLength) ||
                 const DeepCollectionEquality()
-                    .equals(other.caliber, caliber)) &&
+                    .equals(other.cartridgeLength, cartridgeLength)) &&
             (identical(other.bulletDiameter, bulletDiameter) ||
                 const DeepCollectionEquality()
                     .equals(other.bulletDiameter, bulletDiameter)) &&
@@ -176,7 +176,7 @@ class _$_CartridgeDto extends _CartridgeDto {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(caliber) ^
+      const DeepCollectionEquality().hash(cartridgeLength) ^
       const DeepCollectionEquality().hash(bulletDiameter) ^
       const DeepCollectionEquality().hash(caseLength);
 
@@ -193,7 +193,7 @@ class _$_CartridgeDto extends _CartridgeDto {
 
 abstract class _CartridgeDto extends CartridgeDto {
   const factory _CartridgeDto(
-      {required double caliber,
+      {required double cartridgeLength,
       required double bulletDiameter,
       required double caseLength}) = _$_CartridgeDto;
   const _CartridgeDto._() : super._();
@@ -202,7 +202,7 @@ abstract class _CartridgeDto extends CartridgeDto {
       _$_CartridgeDto.fromJson;
 
   @override
-  double get caliber => throw _privateConstructorUsedError;
+  double get cartridgeLength => throw _privateConstructorUsedError;
   @override
   double get bulletDiameter => throw _privateConstructorUsedError;
   @override

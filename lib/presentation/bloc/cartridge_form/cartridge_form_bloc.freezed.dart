@@ -22,9 +22,9 @@ class _$CartridgeFormEventTearOff {
     );
   }
 
-  _NameChanged nameChanged(String newCartridgeName) {
+  _NameChanged caliberChanged(String newCaliber) {
     return _NameChanged(
-      newCartridgeName,
+      newCaliber,
     );
   }
 
@@ -34,9 +34,9 @@ class _$CartridgeFormEventTearOff {
     );
   }
 
-  _CaliberChanged caliberChanged(String newCaliber) {
+  _CaliberChanged cartridgeLengthChanged(String newCartridgeLength) {
     return _CaliberChanged(
-      newCaliber,
+      newCartridgeLength,
     );
   }
 
@@ -66,9 +66,9 @@ mixin _$CartridgeFormEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(Option<Cartridge> initialCartridgeOption)
         initialized,
-    required TResult Function(String newCartridgeName) nameChanged,
-    required TResult Function(String newCaseLength) caseLengthChanged,
     required TResult Function(String newCaliber) caliberChanged,
+    required TResult Function(String newCaseLength) caseLengthChanged,
+    required TResult Function(String newCartridgeLength) cartridgeLengthChanged,
     required TResult Function(CartridgeCategory newCategory) categoryChanged,
     required TResult Function(String newBulletDiameter) bulletDiameterChanged,
     required TResult Function() saved,
@@ -77,9 +77,9 @@ mixin _$CartridgeFormEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Cartridge> initialCartridgeOption)? initialized,
-    TResult Function(String newCartridgeName)? nameChanged,
-    TResult Function(String newCaseLength)? caseLengthChanged,
     TResult Function(String newCaliber)? caliberChanged,
+    TResult Function(String newCaseLength)? caseLengthChanged,
+    TResult Function(String newCartridgeLength)? cartridgeLengthChanged,
     TResult Function(CartridgeCategory newCategory)? categoryChanged,
     TResult Function(String newBulletDiameter)? bulletDiameterChanged,
     TResult Function()? saved,
@@ -89,9 +89,9 @@ mixin _$CartridgeFormEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_NameChanged value) caliberChanged,
     required TResult Function(_CaseLengthChanged value) caseLengthChanged,
-    required TResult Function(_CaliberChanged value) caliberChanged,
+    required TResult Function(_CaliberChanged value) cartridgeLengthChanged,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_BulletDiameterChanged value)
         bulletDiameterChanged,
@@ -101,9 +101,9 @@ mixin _$CartridgeFormEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_NameChanged value)? caliberChanged,
     TResult Function(_CaseLengthChanged value)? caseLengthChanged,
-    TResult Function(_CaliberChanged value)? caliberChanged,
+    TResult Function(_CaliberChanged value)? cartridgeLengthChanged,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_BulletDiameterChanged value)? bulletDiameterChanged,
     TResult Function(_Saved value)? saved,
@@ -197,9 +197,9 @@ class _$_Initialized implements _Initialized {
   TResult when<TResult extends Object?>({
     required TResult Function(Option<Cartridge> initialCartridgeOption)
         initialized,
-    required TResult Function(String newCartridgeName) nameChanged,
-    required TResult Function(String newCaseLength) caseLengthChanged,
     required TResult Function(String newCaliber) caliberChanged,
+    required TResult Function(String newCaseLength) caseLengthChanged,
+    required TResult Function(String newCartridgeLength) cartridgeLengthChanged,
     required TResult Function(CartridgeCategory newCategory) categoryChanged,
     required TResult Function(String newBulletDiameter) bulletDiameterChanged,
     required TResult Function() saved,
@@ -211,9 +211,9 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Cartridge> initialCartridgeOption)? initialized,
-    TResult Function(String newCartridgeName)? nameChanged,
-    TResult Function(String newCaseLength)? caseLengthChanged,
     TResult Function(String newCaliber)? caliberChanged,
+    TResult Function(String newCaseLength)? caseLengthChanged,
+    TResult Function(String newCartridgeLength)? cartridgeLengthChanged,
     TResult Function(CartridgeCategory newCategory)? categoryChanged,
     TResult Function(String newBulletDiameter)? bulletDiameterChanged,
     TResult Function()? saved,
@@ -229,9 +229,9 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_NameChanged value) caliberChanged,
     required TResult Function(_CaseLengthChanged value) caseLengthChanged,
-    required TResult Function(_CaliberChanged value) caliberChanged,
+    required TResult Function(_CaliberChanged value) cartridgeLengthChanged,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_BulletDiameterChanged value)
         bulletDiameterChanged,
@@ -244,9 +244,9 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_NameChanged value)? caliberChanged,
     TResult Function(_CaseLengthChanged value)? caseLengthChanged,
-    TResult Function(_CaliberChanged value)? caliberChanged,
+    TResult Function(_CaliberChanged value)? cartridgeLengthChanged,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_BulletDiameterChanged value)? bulletDiameterChanged,
     TResult Function(_Saved value)? saved,
@@ -275,7 +275,7 @@ abstract class _$NameChangedCopyWith<$Res> {
   factory _$NameChangedCopyWith(
           _NameChanged value, $Res Function(_NameChanged) then) =
       __$NameChangedCopyWithImpl<$Res>;
-  $Res call({String newCartridgeName});
+  $Res call({String newCaliber});
 }
 
 /// @nodoc
@@ -291,12 +291,12 @@ class __$NameChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? newCartridgeName = freezed,
+    Object? newCaliber = freezed,
   }) {
     return _then(_NameChanged(
-      newCartridgeName == freezed
-          ? _value.newCartridgeName
-          : newCartridgeName // ignore: cast_nullable_to_non_nullable
+      newCaliber == freezed
+          ? _value.newCaliber
+          : newCaliber // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -304,29 +304,28 @@ class __$NameChangedCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_NameChanged implements _NameChanged {
-  const _$_NameChanged(this.newCartridgeName);
+  const _$_NameChanged(this.newCaliber);
 
   @override
-  final String newCartridgeName;
+  final String newCaliber;
 
   @override
   String toString() {
-    return 'CartridgeFormEvent.nameChanged(newCartridgeName: $newCartridgeName)';
+    return 'CartridgeFormEvent.caliberChanged(newCaliber: $newCaliber)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _NameChanged &&
-            (identical(other.newCartridgeName, newCartridgeName) ||
+            (identical(other.newCaliber, newCaliber) ||
                 const DeepCollectionEquality()
-                    .equals(other.newCartridgeName, newCartridgeName)));
+                    .equals(other.newCaliber, newCaliber)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(newCartridgeName);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(newCaliber);
 
   @JsonKey(ignore: true)
   @override
@@ -338,30 +337,30 @@ class _$_NameChanged implements _NameChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(Option<Cartridge> initialCartridgeOption)
         initialized,
-    required TResult Function(String newCartridgeName) nameChanged,
-    required TResult Function(String newCaseLength) caseLengthChanged,
     required TResult Function(String newCaliber) caliberChanged,
+    required TResult Function(String newCaseLength) caseLengthChanged,
+    required TResult Function(String newCartridgeLength) cartridgeLengthChanged,
     required TResult Function(CartridgeCategory newCategory) categoryChanged,
     required TResult Function(String newBulletDiameter) bulletDiameterChanged,
     required TResult Function() saved,
   }) {
-    return nameChanged(newCartridgeName);
+    return caliberChanged(newCaliber);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Cartridge> initialCartridgeOption)? initialized,
-    TResult Function(String newCartridgeName)? nameChanged,
-    TResult Function(String newCaseLength)? caseLengthChanged,
     TResult Function(String newCaliber)? caliberChanged,
+    TResult Function(String newCaseLength)? caseLengthChanged,
+    TResult Function(String newCartridgeLength)? cartridgeLengthChanged,
     TResult Function(CartridgeCategory newCategory)? categoryChanged,
     TResult Function(String newBulletDiameter)? bulletDiameterChanged,
     TResult Function()? saved,
     required TResult orElse(),
   }) {
-    if (nameChanged != null) {
-      return nameChanged(newCartridgeName);
+    if (caliberChanged != null) {
+      return caliberChanged(newCaliber);
     }
     return orElse();
   }
@@ -370,40 +369,40 @@ class _$_NameChanged implements _NameChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_NameChanged value) caliberChanged,
     required TResult Function(_CaseLengthChanged value) caseLengthChanged,
-    required TResult Function(_CaliberChanged value) caliberChanged,
+    required TResult Function(_CaliberChanged value) cartridgeLengthChanged,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_BulletDiameterChanged value)
         bulletDiameterChanged,
     required TResult Function(_Saved value) saved,
   }) {
-    return nameChanged(this);
+    return caliberChanged(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_NameChanged value)? caliberChanged,
     TResult Function(_CaseLengthChanged value)? caseLengthChanged,
-    TResult Function(_CaliberChanged value)? caliberChanged,
+    TResult Function(_CaliberChanged value)? cartridgeLengthChanged,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_BulletDiameterChanged value)? bulletDiameterChanged,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) {
-    if (nameChanged != null) {
-      return nameChanged(this);
+    if (caliberChanged != null) {
+      return caliberChanged(this);
     }
     return orElse();
   }
 }
 
 abstract class _NameChanged implements CartridgeFormEvent {
-  const factory _NameChanged(String newCartridgeName) = _$_NameChanged;
+  const factory _NameChanged(String newCaliber) = _$_NameChanged;
 
-  String get newCartridgeName => throw _privateConstructorUsedError;
+  String get newCaliber => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$NameChangedCopyWith<_NameChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -476,9 +475,9 @@ class _$_CaseLengthChanged implements _CaseLengthChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(Option<Cartridge> initialCartridgeOption)
         initialized,
-    required TResult Function(String newCartridgeName) nameChanged,
-    required TResult Function(String newCaseLength) caseLengthChanged,
     required TResult Function(String newCaliber) caliberChanged,
+    required TResult Function(String newCaseLength) caseLengthChanged,
+    required TResult Function(String newCartridgeLength) cartridgeLengthChanged,
     required TResult Function(CartridgeCategory newCategory) categoryChanged,
     required TResult Function(String newBulletDiameter) bulletDiameterChanged,
     required TResult Function() saved,
@@ -490,9 +489,9 @@ class _$_CaseLengthChanged implements _CaseLengthChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Cartridge> initialCartridgeOption)? initialized,
-    TResult Function(String newCartridgeName)? nameChanged,
-    TResult Function(String newCaseLength)? caseLengthChanged,
     TResult Function(String newCaliber)? caliberChanged,
+    TResult Function(String newCaseLength)? caseLengthChanged,
+    TResult Function(String newCartridgeLength)? cartridgeLengthChanged,
     TResult Function(CartridgeCategory newCategory)? categoryChanged,
     TResult Function(String newBulletDiameter)? bulletDiameterChanged,
     TResult Function()? saved,
@@ -508,9 +507,9 @@ class _$_CaseLengthChanged implements _CaseLengthChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_NameChanged value) caliberChanged,
     required TResult Function(_CaseLengthChanged value) caseLengthChanged,
-    required TResult Function(_CaliberChanged value) caliberChanged,
+    required TResult Function(_CaliberChanged value) cartridgeLengthChanged,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_BulletDiameterChanged value)
         bulletDiameterChanged,
@@ -523,9 +522,9 @@ class _$_CaseLengthChanged implements _CaseLengthChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_NameChanged value)? caliberChanged,
     TResult Function(_CaseLengthChanged value)? caseLengthChanged,
-    TResult Function(_CaliberChanged value)? caliberChanged,
+    TResult Function(_CaliberChanged value)? cartridgeLengthChanged,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_BulletDiameterChanged value)? bulletDiameterChanged,
     TResult Function(_Saved value)? saved,
@@ -552,7 +551,7 @@ abstract class _$CaliberChangedCopyWith<$Res> {
   factory _$CaliberChangedCopyWith(
           _CaliberChanged value, $Res Function(_CaliberChanged) then) =
       __$CaliberChangedCopyWithImpl<$Res>;
-  $Res call({String newCaliber});
+  $Res call({String newCartridgeLength});
 }
 
 /// @nodoc
@@ -568,12 +567,12 @@ class __$CaliberChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? newCaliber = freezed,
+    Object? newCartridgeLength = freezed,
   }) {
     return _then(_CaliberChanged(
-      newCaliber == freezed
-          ? _value.newCaliber
-          : newCaliber // ignore: cast_nullable_to_non_nullable
+      newCartridgeLength == freezed
+          ? _value.newCartridgeLength
+          : newCartridgeLength // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -581,28 +580,29 @@ class __$CaliberChangedCopyWithImpl<$Res>
 
 /// @nodoc
 class _$_CaliberChanged implements _CaliberChanged {
-  const _$_CaliberChanged(this.newCaliber);
+  const _$_CaliberChanged(this.newCartridgeLength);
 
   @override
-  final String newCaliber;
+  final String newCartridgeLength;
 
   @override
   String toString() {
-    return 'CartridgeFormEvent.caliberChanged(newCaliber: $newCaliber)';
+    return 'CartridgeFormEvent.cartridgeLengthChanged(newCartridgeLength: $newCartridgeLength)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _CaliberChanged &&
-            (identical(other.newCaliber, newCaliber) ||
+            (identical(other.newCartridgeLength, newCartridgeLength) ||
                 const DeepCollectionEquality()
-                    .equals(other.newCaliber, newCaliber)));
+                    .equals(other.newCartridgeLength, newCartridgeLength)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(newCaliber);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(newCartridgeLength);
 
   @JsonKey(ignore: true)
   @override
@@ -614,30 +614,30 @@ class _$_CaliberChanged implements _CaliberChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(Option<Cartridge> initialCartridgeOption)
         initialized,
-    required TResult Function(String newCartridgeName) nameChanged,
-    required TResult Function(String newCaseLength) caseLengthChanged,
     required TResult Function(String newCaliber) caliberChanged,
+    required TResult Function(String newCaseLength) caseLengthChanged,
+    required TResult Function(String newCartridgeLength) cartridgeLengthChanged,
     required TResult Function(CartridgeCategory newCategory) categoryChanged,
     required TResult Function(String newBulletDiameter) bulletDiameterChanged,
     required TResult Function() saved,
   }) {
-    return caliberChanged(newCaliber);
+    return cartridgeLengthChanged(newCartridgeLength);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Cartridge> initialCartridgeOption)? initialized,
-    TResult Function(String newCartridgeName)? nameChanged,
-    TResult Function(String newCaseLength)? caseLengthChanged,
     TResult Function(String newCaliber)? caliberChanged,
+    TResult Function(String newCaseLength)? caseLengthChanged,
+    TResult Function(String newCartridgeLength)? cartridgeLengthChanged,
     TResult Function(CartridgeCategory newCategory)? categoryChanged,
     TResult Function(String newBulletDiameter)? bulletDiameterChanged,
     TResult Function()? saved,
     required TResult orElse(),
   }) {
-    if (caliberChanged != null) {
-      return caliberChanged(newCaliber);
+    if (cartridgeLengthChanged != null) {
+      return cartridgeLengthChanged(newCartridgeLength);
     }
     return orElse();
   }
@@ -646,40 +646,40 @@ class _$_CaliberChanged implements _CaliberChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_NameChanged value) caliberChanged,
     required TResult Function(_CaseLengthChanged value) caseLengthChanged,
-    required TResult Function(_CaliberChanged value) caliberChanged,
+    required TResult Function(_CaliberChanged value) cartridgeLengthChanged,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_BulletDiameterChanged value)
         bulletDiameterChanged,
     required TResult Function(_Saved value) saved,
   }) {
-    return caliberChanged(this);
+    return cartridgeLengthChanged(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_NameChanged value)? caliberChanged,
     TResult Function(_CaseLengthChanged value)? caseLengthChanged,
-    TResult Function(_CaliberChanged value)? caliberChanged,
+    TResult Function(_CaliberChanged value)? cartridgeLengthChanged,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_BulletDiameterChanged value)? bulletDiameterChanged,
     TResult Function(_Saved value)? saved,
     required TResult orElse(),
   }) {
-    if (caliberChanged != null) {
-      return caliberChanged(this);
+    if (cartridgeLengthChanged != null) {
+      return cartridgeLengthChanged(this);
     }
     return orElse();
   }
 }
 
 abstract class _CaliberChanged implements CartridgeFormEvent {
-  const factory _CaliberChanged(String newCaliber) = _$_CaliberChanged;
+  const factory _CaliberChanged(String newCartridgeLength) = _$_CaliberChanged;
 
-  String get newCaliber => throw _privateConstructorUsedError;
+  String get newCartridgeLength => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$CaliberChangedCopyWith<_CaliberChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -752,9 +752,9 @@ class _$_CategoryChanged implements _CategoryChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(Option<Cartridge> initialCartridgeOption)
         initialized,
-    required TResult Function(String newCartridgeName) nameChanged,
-    required TResult Function(String newCaseLength) caseLengthChanged,
     required TResult Function(String newCaliber) caliberChanged,
+    required TResult Function(String newCaseLength) caseLengthChanged,
+    required TResult Function(String newCartridgeLength) cartridgeLengthChanged,
     required TResult Function(CartridgeCategory newCategory) categoryChanged,
     required TResult Function(String newBulletDiameter) bulletDiameterChanged,
     required TResult Function() saved,
@@ -766,9 +766,9 @@ class _$_CategoryChanged implements _CategoryChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Cartridge> initialCartridgeOption)? initialized,
-    TResult Function(String newCartridgeName)? nameChanged,
-    TResult Function(String newCaseLength)? caseLengthChanged,
     TResult Function(String newCaliber)? caliberChanged,
+    TResult Function(String newCaseLength)? caseLengthChanged,
+    TResult Function(String newCartridgeLength)? cartridgeLengthChanged,
     TResult Function(CartridgeCategory newCategory)? categoryChanged,
     TResult Function(String newBulletDiameter)? bulletDiameterChanged,
     TResult Function()? saved,
@@ -784,9 +784,9 @@ class _$_CategoryChanged implements _CategoryChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_NameChanged value) caliberChanged,
     required TResult Function(_CaseLengthChanged value) caseLengthChanged,
-    required TResult Function(_CaliberChanged value) caliberChanged,
+    required TResult Function(_CaliberChanged value) cartridgeLengthChanged,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_BulletDiameterChanged value)
         bulletDiameterChanged,
@@ -799,9 +799,9 @@ class _$_CategoryChanged implements _CategoryChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_NameChanged value)? caliberChanged,
     TResult Function(_CaseLengthChanged value)? caseLengthChanged,
-    TResult Function(_CaliberChanged value)? caliberChanged,
+    TResult Function(_CaliberChanged value)? cartridgeLengthChanged,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_BulletDiameterChanged value)? bulletDiameterChanged,
     TResult Function(_Saved value)? saved,
@@ -893,9 +893,9 @@ class _$_BulletDiameterChanged implements _BulletDiameterChanged {
   TResult when<TResult extends Object?>({
     required TResult Function(Option<Cartridge> initialCartridgeOption)
         initialized,
-    required TResult Function(String newCartridgeName) nameChanged,
-    required TResult Function(String newCaseLength) caseLengthChanged,
     required TResult Function(String newCaliber) caliberChanged,
+    required TResult Function(String newCaseLength) caseLengthChanged,
+    required TResult Function(String newCartridgeLength) cartridgeLengthChanged,
     required TResult Function(CartridgeCategory newCategory) categoryChanged,
     required TResult Function(String newBulletDiameter) bulletDiameterChanged,
     required TResult Function() saved,
@@ -907,9 +907,9 @@ class _$_BulletDiameterChanged implements _BulletDiameterChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Cartridge> initialCartridgeOption)? initialized,
-    TResult Function(String newCartridgeName)? nameChanged,
-    TResult Function(String newCaseLength)? caseLengthChanged,
     TResult Function(String newCaliber)? caliberChanged,
+    TResult Function(String newCaseLength)? caseLengthChanged,
+    TResult Function(String newCartridgeLength)? cartridgeLengthChanged,
     TResult Function(CartridgeCategory newCategory)? categoryChanged,
     TResult Function(String newBulletDiameter)? bulletDiameterChanged,
     TResult Function()? saved,
@@ -925,9 +925,9 @@ class _$_BulletDiameterChanged implements _BulletDiameterChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_NameChanged value) caliberChanged,
     required TResult Function(_CaseLengthChanged value) caseLengthChanged,
-    required TResult Function(_CaliberChanged value) caliberChanged,
+    required TResult Function(_CaliberChanged value) cartridgeLengthChanged,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_BulletDiameterChanged value)
         bulletDiameterChanged,
@@ -940,9 +940,9 @@ class _$_BulletDiameterChanged implements _BulletDiameterChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_NameChanged value)? caliberChanged,
     TResult Function(_CaseLengthChanged value)? caseLengthChanged,
-    TResult Function(_CaliberChanged value)? caliberChanged,
+    TResult Function(_CaliberChanged value)? cartridgeLengthChanged,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_BulletDiameterChanged value)? bulletDiameterChanged,
     TResult Function(_Saved value)? saved,
@@ -1003,9 +1003,9 @@ class _$_Saved implements _Saved {
   TResult when<TResult extends Object?>({
     required TResult Function(Option<Cartridge> initialCartridgeOption)
         initialized,
-    required TResult Function(String newCartridgeName) nameChanged,
-    required TResult Function(String newCaseLength) caseLengthChanged,
     required TResult Function(String newCaliber) caliberChanged,
+    required TResult Function(String newCaseLength) caseLengthChanged,
+    required TResult Function(String newCartridgeLength) cartridgeLengthChanged,
     required TResult Function(CartridgeCategory newCategory) categoryChanged,
     required TResult Function(String newBulletDiameter) bulletDiameterChanged,
     required TResult Function() saved,
@@ -1017,9 +1017,9 @@ class _$_Saved implements _Saved {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Option<Cartridge> initialCartridgeOption)? initialized,
-    TResult Function(String newCartridgeName)? nameChanged,
-    TResult Function(String newCaseLength)? caseLengthChanged,
     TResult Function(String newCaliber)? caliberChanged,
+    TResult Function(String newCaseLength)? caseLengthChanged,
+    TResult Function(String newCartridgeLength)? cartridgeLengthChanged,
     TResult Function(CartridgeCategory newCategory)? categoryChanged,
     TResult Function(String newBulletDiameter)? bulletDiameterChanged,
     TResult Function()? saved,
@@ -1035,9 +1035,9 @@ class _$_Saved implements _Saved {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_NameChanged value) caliberChanged,
     required TResult Function(_CaseLengthChanged value) caseLengthChanged,
-    required TResult Function(_CaliberChanged value) caliberChanged,
+    required TResult Function(_CaliberChanged value) cartridgeLengthChanged,
     required TResult Function(_CategoryChanged value) categoryChanged,
     required TResult Function(_BulletDiameterChanged value)
         bulletDiameterChanged,
@@ -1050,9 +1050,9 @@ class _$_Saved implements _Saved {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_NameChanged value)? caliberChanged,
     TResult Function(_CaseLengthChanged value)? caseLengthChanged,
-    TResult Function(_CaliberChanged value)? caliberChanged,
+    TResult Function(_CaliberChanged value)? cartridgeLengthChanged,
     TResult Function(_CategoryChanged value)? categoryChanged,
     TResult Function(_BulletDiameterChanged value)? bulletDiameterChanged,
     TResult Function(_Saved value)? saved,

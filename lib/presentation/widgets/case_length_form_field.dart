@@ -15,9 +15,8 @@ class CaseLengthFormField extends StatelessWidget {
       },
       child: TextFormField(
         keyboardType: const TextInputType.numberWithOptions(decimal: true),
-        inputFormatters: [FilteringTextInputFormatter.digitsOnly],
         controller: textEditingController,
-        decoration: const InputDecoration(labelText: 'Lunghezza'),
+        decoration: const InputDecoration(labelText: 'Lunghezza bossolo'),
         onChanged: (value) => context
             .read<CartridgeFormBloc>()
             .add(CartridgeFormEvent.caseLengthChanged(value)),

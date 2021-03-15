@@ -1,4 +1,5 @@
 
+import 'package:firebase_app/presentation/icons/app_icons.dart';
 import 'package:flutter/material.dart';
 
 enum CartridgeCategory { pistol, riffle, other }
@@ -30,11 +31,11 @@ extension CartridgeCategoryLabel on CartridgeCategory {
   Icon get icon {
     switch(this){
       case CartridgeCategory.pistol:
-        return  const Icon(Icons.create);
+        return  const Icon(MyFlutterApp.pistol);
       case CartridgeCategory.riffle:
-        return const Icon(Icons.close);
+        return const Icon(MyFlutterApp.sniper);
       case CartridgeCategory.other:
-        return const Icon(Icons.tag);
+        return const Icon(MyFlutterApp.missile);
     }
   }
 }

@@ -14,7 +14,6 @@ class BulletDiameterFormField extends StatelessWidget {
       },
       child: TextFormField(
         keyboardType: const TextInputType.numberWithOptions(decimal: true),
-        inputFormatters: [FilteringTextInputFormatter.digitsOnly],
         controller: textEditingController,
         decoration: const InputDecoration(labelText: 'Diametro palla'),
         onChanged: (value) => context

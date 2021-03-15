@@ -1,6 +1,5 @@
 import 'package:firebase_app/presentation/bloc/cartridge_form/cartridge_form_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CaliberFormField extends StatelessWidget {
@@ -14,8 +13,6 @@ class CaliberFormField extends StatelessWidget {
         textEditingController.text = state.cartridge.caliber.toString();
       },
       child: TextFormField(
-        keyboardType: const TextInputType.numberWithOptions(decimal: true,signed: false),
-        inputFormatters: [FilteringTextInputFormatter.digitsOnly],
         controller: textEditingController,
         decoration: const InputDecoration(labelText: 'Calibro'),
         onChanged: (value) => context
@@ -25,8 +22,8 @@ class CaliberFormField extends StatelessWidget {
             .read<CartridgeFormBloc>()
             .state
             .cartridge
-            .caliber == 0.0
-            ? 'Non valido'
+            .caliber.isEmpty
+            ? 'Campo obbligatorio'
             : null,
       ),
     );

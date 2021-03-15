@@ -52,6 +52,7 @@ class _CartridgesOverviewPageState extends State<CartridgesOverviewPage> {
                   currentIndex: tabIndex,
                   showSelectedLabels: false,
                   showUnselectedLabels: false,
+                  iconSize: 36,
                   onTap: (int index) => setState(() => tabIndex = index),
                   items: CartridgeCategory.values
                       .map<BottomNavigationBarItem>((e) =>

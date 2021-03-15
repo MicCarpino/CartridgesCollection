@@ -7,7 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'bullet_diameter_form_field.dart';
 import 'caliber_form_field.dart';
 import 'cartridge_category_radio_field.dart';
-import 'cartridge_name_form_field.dart';
+import 'cartridge_length_form_field.dart';
 import 'case_length_form_field.dart';
 
 class CartridgeFormScaffold extends StatefulWidget {
@@ -37,8 +37,8 @@ class _CartridgeFormScaffoldState extends State<CartridgeFormScaffold> {
             child: Column(
               children: [
                 CartridgeCategoryRadioField(),
-                CartridgeNameField(),
                 CaliberFormField(),
+                CartridgeLengthFormField(),
                 CaseLengthFormField(),
                 BulletDiameterFormField(),
                 MaterialButton(

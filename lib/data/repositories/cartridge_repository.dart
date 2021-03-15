@@ -25,8 +25,13 @@ class CartridgeRepository implements ICartridgeRepository {
         .child(category.firebaseChildName)
         .onValue
         .map((event) {
-      final firebaseMap = Map<String, dynamic>.from(event.snapshot.value as LinkedHashMap);
-      final firebaseMapList = List<MapEntry<String, dynamic>>.from(firebaseMap.entries);
+      if (event.snapshot.value == null) {
+        return right<CartridgeFailure, List<Cartridge>>(List.empty());
+      }
+      final firebaseMap =
+          Map<String, dynamic>.from(event.snapshot.value as LinkedHashMap);
+      final firebaseMapList =
+          List<MapEntry<String, dynamic>>.from(firebaseMap.entries);
       final cartridges = firebaseMapList.map((cartridgeMap) {
         final cartridgeName = cartridgeMap.key;
         final json = cartridgeMap.value as LinkedHashMap<dynamic, dynamic>;
@@ -35,30 +40,30 @@ class CartridgeRepository implements ICartridgeRepository {
         return cartridgeDto.toDomain(cartridgeName, CartridgeCategory.pistol);
       }).toList();
       return right<CartridgeFailure, List<Cartridge>>(cartridges);
-    }).onErrorReturnWith((e) {
-      print('WATCH ERROR ${e.toString()}');
-      return left(const CartridgeFailure.unexpected());
-    });
+    }).onErrorReturnWith(
+      (e) {
+        print('WATCH ERROR ${e.toString()}');
+        return left(const CartridgeFailure.unexpected());
+      },
+    );
   }
 
   @override
   Future<Either<CartridgeFailure, Unit>> create(Cartridge cartridge) async {
-    //final cartridgeDto = CartridgeDto.fromDomain(cartridge);
-    final Map<String, dynamic> newcartridge = {
-      "bulletDiameter": cartridge.bulletDiameter,
-      "caliber": cartridge.caliber,
-      "caseLength": cartridge.caseLength,
-    };
+    final cartridgeDto = CartridgeDto.fromDomain(cartridge);
     return _firebaseDatabase
         .reference()
         .cartridges
         .child(cartridge.category!.firebaseChildName)
-        .child(cartridge.cartridgeName)
-        .set(newcartridge)
-        .then((value) => right(unit), onError: (error) {
-      print(error.toString());
-      return left(const CartridgeFailure.unableToInsert());
-    });
+        .child(cartridge.caliber)
+        .set(cartridgeDto.toJson())
+        .then(
+      (value) => right(unit),
+      onError: (error) {
+        print(error.toString());
+        return left(const CartridgeFailure.unableToInsert());
+      },
+    );
   }
 
   @override
@@ -68,12 +73,15 @@ class CartridgeRepository implements ICartridgeRepository {
         .reference()
         .cartridges
         .child(cartridge.category!.firebaseChildName)
-        .child(cartridge.cartridgeName)
+        .child(cartridge.caliber)
         .update(cartridgeDto.toJson())
-        .then((value) => right(unit), onError: (error) {
-      print(error.toString());
-      return left(const CartridgeFailure.unableToUpdate());
-    });
+        .then(
+      (value) => right(unit),
+      onError: (error) {
+        print(error.toString());
+        return left(const CartridgeFailure.unableToUpdate());
+      },
+    );
   }
 
   @override
@@ -82,7 +90,7 @@ class CartridgeRepository implements ICartridgeRepository {
         .reference()
         .cartridges
         .child(cartridge.category!.firebaseChildName)
-        .child(cartridge.cartridgeName)
+        .child(cartridge.caliber)
         .remove()
         .then((value) => right(unit), onError: (error) {
       print(error.toString());

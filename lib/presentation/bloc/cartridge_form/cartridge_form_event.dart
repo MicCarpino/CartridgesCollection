@@ -5,12 +5,12 @@ class CartridgeFormEvent with _$CartridgeFormEvent {
   const factory CartridgeFormEvent.initialized(
       Option<Cartridge> initialCartridgeOption) = _Initialized;
 
-  const factory CartridgeFormEvent.nameChanged(String newCartridgeName) = _NameChanged;
+  const factory CartridgeFormEvent.caliberChanged(String newCaliber) = _NameChanged;
 
   const factory CartridgeFormEvent.caseLengthChanged(String newCaseLength) =
       _CaseLengthChanged;
 
-  const factory CartridgeFormEvent.caliberChanged(String newCaliber) =
+  const factory CartridgeFormEvent.cartridgeLengthChanged(String newCartridgeLength) =
       _CaliberChanged;
 
   const factory CartridgeFormEvent.categoryChanged(CartridgeCategory newCategory) =

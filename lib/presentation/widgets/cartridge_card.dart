@@ -25,10 +25,10 @@ class CartridgeCard extends StatelessWidget {
             direction: Axis.vertical,
             spacing: 16,
             children: [
-              Text(cartridge.cartridgeName),
-              Text('Lunghezza ${cartridge.caseLength}'),
-              Text('Calibro ${cartridge.caliber}'),
-              Text('Palla ${cartridge.bulletDiameter}'),
+              Text(cartridge.caliber),
+              Text('Lunghezza totale: ${cartridge.cartridgeLength}'),
+              Text('Lunghezza bossolo: ${cartridge.caseLength}'),
+              Text('Diametro palla: ${cartridge.bulletDiameter}'),
             ],
           ),
         ),
@@ -42,7 +42,7 @@ class CartridgeCard extends StatelessWidget {
       builder: (_) {
         return AlertDialog(
           title: const Text('Cancellare?'),
-          content: Text(cartridge.cartridgeName),
+          content: Text(cartridge.caliber),
           actions: [
             TextButton(
                 onPressed: () => Navigator.pop(context),

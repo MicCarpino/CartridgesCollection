@@ -17,15 +17,15 @@ class _$CartridgeTearOff {
   const _$CartridgeTearOff();
 
   _Cartridge call(
-      {required String cartridgeName,
+      {required String caliber,
       required CartridgeCategory? category,
-      required double caliber,
+      required double cartridgeLength,
       required double bulletDiameter,
       required double caseLength}) {
     return _Cartridge(
-      cartridgeName: cartridgeName,
-      category: category,
       caliber: caliber,
+      category: category,
+      cartridgeLength: cartridgeLength,
       bulletDiameter: bulletDiameter,
       caseLength: caseLength,
     );
@@ -37,9 +37,9 @@ const $Cartridge = _$CartridgeTearOff();
 
 /// @nodoc
 mixin _$Cartridge {
-  String get cartridgeName => throw _privateConstructorUsedError;
+  String get caliber => throw _privateConstructorUsedError;
   CartridgeCategory? get category => throw _privateConstructorUsedError;
-  double get caliber => throw _privateConstructorUsedError;
+  double get cartridgeLength => throw _privateConstructorUsedError;
   double get bulletDiameter => throw _privateConstructorUsedError;
   double get caseLength => throw _privateConstructorUsedError;
 
@@ -53,9 +53,9 @@ abstract class $CartridgeCopyWith<$Res> {
   factory $CartridgeCopyWith(Cartridge value, $Res Function(Cartridge) then) =
       _$CartridgeCopyWithImpl<$Res>;
   $Res call(
-      {String cartridgeName,
+      {String caliber,
       CartridgeCategory? category,
-      double caliber,
+      double cartridgeLength,
       double bulletDiameter,
       double caseLength});
 }
@@ -70,24 +70,24 @@ class _$CartridgeCopyWithImpl<$Res> implements $CartridgeCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? cartridgeName = freezed,
-    Object? category = freezed,
     Object? caliber = freezed,
+    Object? category = freezed,
+    Object? cartridgeLength = freezed,
     Object? bulletDiameter = freezed,
     Object? caseLength = freezed,
   }) {
     return _then(_value.copyWith(
-      cartridgeName: cartridgeName == freezed
-          ? _value.cartridgeName
-          : cartridgeName // ignore: cast_nullable_to_non_nullable
+      caliber: caliber == freezed
+          ? _value.caliber
+          : caliber // ignore: cast_nullable_to_non_nullable
               as String,
       category: category == freezed
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as CartridgeCategory?,
-      caliber: caliber == freezed
-          ? _value.caliber
-          : caliber // ignore: cast_nullable_to_non_nullable
+      cartridgeLength: cartridgeLength == freezed
+          ? _value.cartridgeLength
+          : cartridgeLength // ignore: cast_nullable_to_non_nullable
               as double,
       bulletDiameter: bulletDiameter == freezed
           ? _value.bulletDiameter
@@ -108,9 +108,9 @@ abstract class _$CartridgeCopyWith<$Res> implements $CartridgeCopyWith<$Res> {
       __$CartridgeCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String cartridgeName,
+      {String caliber,
       CartridgeCategory? category,
-      double caliber,
+      double cartridgeLength,
       double bulletDiameter,
       double caseLength});
 }
@@ -126,24 +126,24 @@ class __$CartridgeCopyWithImpl<$Res> extends _$CartridgeCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? cartridgeName = freezed,
-    Object? category = freezed,
     Object? caliber = freezed,
+    Object? category = freezed,
+    Object? cartridgeLength = freezed,
     Object? bulletDiameter = freezed,
     Object? caseLength = freezed,
   }) {
     return _then(_Cartridge(
-      cartridgeName: cartridgeName == freezed
-          ? _value.cartridgeName
-          : cartridgeName // ignore: cast_nullable_to_non_nullable
+      caliber: caliber == freezed
+          ? _value.caliber
+          : caliber // ignore: cast_nullable_to_non_nullable
               as String,
       category: category == freezed
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as CartridgeCategory?,
-      caliber: caliber == freezed
-          ? _value.caliber
-          : caliber // ignore: cast_nullable_to_non_nullable
+      cartridgeLength: cartridgeLength == freezed
+          ? _value.cartridgeLength
+          : cartridgeLength // ignore: cast_nullable_to_non_nullable
               as double,
       bulletDiameter: bulletDiameter == freezed
           ? _value.bulletDiameter
@@ -160,19 +160,19 @@ class __$CartridgeCopyWithImpl<$Res> extends _$CartridgeCopyWithImpl<$Res>
 /// @nodoc
 class _$_Cartridge extends _Cartridge with DiagnosticableTreeMixin {
   const _$_Cartridge(
-      {required this.cartridgeName,
+      {required this.caliber,
       required this.category,
-      required this.caliber,
+      required this.cartridgeLength,
       required this.bulletDiameter,
       required this.caseLength})
       : super._();
 
   @override
-  final String cartridgeName;
+  final String caliber;
   @override
   final CartridgeCategory? category;
   @override
-  final double caliber;
+  final double cartridgeLength;
   @override
   final double bulletDiameter;
   @override
@@ -180,7 +180,7 @@ class _$_Cartridge extends _Cartridge with DiagnosticableTreeMixin {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Cartridge(cartridgeName: $cartridgeName, category: $category, caliber: $caliber, bulletDiameter: $bulletDiameter, caseLength: $caseLength)';
+    return 'Cartridge(caliber: $caliber, category: $category, cartridgeLength: $cartridgeLength, bulletDiameter: $bulletDiameter, caseLength: $caseLength)';
   }
 
   @override
@@ -188,9 +188,9 @@ class _$_Cartridge extends _Cartridge with DiagnosticableTreeMixin {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'Cartridge'))
-      ..add(DiagnosticsProperty('cartridgeName', cartridgeName))
-      ..add(DiagnosticsProperty('category', category))
       ..add(DiagnosticsProperty('caliber', caliber))
+      ..add(DiagnosticsProperty('category', category))
+      ..add(DiagnosticsProperty('cartridgeLength', cartridgeLength))
       ..add(DiagnosticsProperty('bulletDiameter', bulletDiameter))
       ..add(DiagnosticsProperty('caseLength', caseLength));
   }
@@ -199,15 +199,15 @@ class _$_Cartridge extends _Cartridge with DiagnosticableTreeMixin {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Cartridge &&
-            (identical(other.cartridgeName, cartridgeName) ||
-                const DeepCollectionEquality()
-                    .equals(other.cartridgeName, cartridgeName)) &&
-            (identical(other.category, category) ||
-                const DeepCollectionEquality()
-                    .equals(other.category, category)) &&
             (identical(other.caliber, caliber) ||
                 const DeepCollectionEquality()
                     .equals(other.caliber, caliber)) &&
+            (identical(other.category, category) ||
+                const DeepCollectionEquality()
+                    .equals(other.category, category)) &&
+            (identical(other.cartridgeLength, cartridgeLength) ||
+                const DeepCollectionEquality()
+                    .equals(other.cartridgeLength, cartridgeLength)) &&
             (identical(other.bulletDiameter, bulletDiameter) ||
                 const DeepCollectionEquality()
                     .equals(other.bulletDiameter, bulletDiameter)) &&
@@ -219,9 +219,9 @@ class _$_Cartridge extends _Cartridge with DiagnosticableTreeMixin {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(cartridgeName) ^
-      const DeepCollectionEquality().hash(category) ^
       const DeepCollectionEquality().hash(caliber) ^
+      const DeepCollectionEquality().hash(category) ^
+      const DeepCollectionEquality().hash(cartridgeLength) ^
       const DeepCollectionEquality().hash(bulletDiameter) ^
       const DeepCollectionEquality().hash(caseLength);
 
@@ -233,19 +233,19 @@ class _$_Cartridge extends _Cartridge with DiagnosticableTreeMixin {
 
 abstract class _Cartridge extends Cartridge {
   const factory _Cartridge(
-      {required String cartridgeName,
+      {required String caliber,
       required CartridgeCategory? category,
-      required double caliber,
+      required double cartridgeLength,
       required double bulletDiameter,
       required double caseLength}) = _$_Cartridge;
   const _Cartridge._() : super._();
 
   @override
-  String get cartridgeName => throw _privateConstructorUsedError;
+  String get caliber => throw _privateConstructorUsedError;
   @override
   CartridgeCategory? get category => throw _privateConstructorUsedError;
   @override
-  double get caliber => throw _privateConstructorUsedError;
+  double get cartridgeLength => throw _privateConstructorUsedError;
   @override
   double get bulletDiameter => throw _privateConstructorUsedError;
   @override

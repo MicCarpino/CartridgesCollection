@@ -23,13 +23,16 @@ class CartridgesOverviewBody extends StatelessWidget {
           initial: (_) => Container(),
           loadInProgress: (_) =>
               const Center(child: CircularProgressIndicator()),
-          loadSuccess: (state) => ListView.separated(
-            separatorBuilder: (context, index) => const SizedBox(height: 8.0),
-            itemCount: state.cartridges.length,
-            padding: const EdgeInsets.all(8.0),
-            itemBuilder: (context, index) =>
-                CartridgeCard(cartridge: state.cartridges[index]),
-          ),
+          loadSuccess: (state) => state.cartridges.isNotEmpty
+              ? ListView.separated(
+                  separatorBuilder: (context, index) =>
+                      const SizedBox(height: 8.0),
+                  itemCount: state.cartridges.length,
+                  padding: const EdgeInsets.all(8.0),
+                  itemBuilder: (context, index) =>
+                      CartridgeCard(cartridge: state.cartridges[index]),
+                )
+              : const Center(child: Text('No records')),
           loadFailure: (value) => Text(value.cartridgeFailure.toString()),
         );
       },

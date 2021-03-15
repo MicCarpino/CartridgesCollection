@@ -35,10 +35,10 @@ class CartridgeFormBloc extends Bloc<CartridgeFormEvent, CartridgeFormState> {
           ),
         );
       },
-      nameChanged: (e) async* {
+      caliberChanged: (e) async* {
         yield state.copyWith(
           cartridge:
-              state.cartridge.copyWith(cartridgeName: e.newCartridgeName),
+              state.cartridge.copyWith(caliber: e.newCaliber),
           saveFailureOrSuccessOption: none(),
         );
       },
@@ -55,10 +55,10 @@ class CartridgeFormBloc extends Bloc<CartridgeFormEvent, CartridgeFormState> {
           saveFailureOrSuccessOption: none(),
         );
       },
-      caliberChanged: (e) async* {
+      cartridgeLengthChanged: (e) async* {
         yield state.copyWith(
           cartridge: state.cartridge
-              .copyWith(caliber: double.tryParse(e.newCaliber) ?? 0.0),
+              .copyWith(cartridgeLength: double.tryParse(e.newCartridgeLength) ?? 0.0),
           saveFailureOrSuccessOption: none(),
         );
       },
