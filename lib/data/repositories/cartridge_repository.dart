@@ -40,21 +40,21 @@ class CartridgeRepository implements ICartridgeRepository {
   @override
   Future<Either<CartridgeFailure, Unit>> create(Cartridge cartridge) async {
     //final cartridgeDto = CartridgeDto.fromDomain(cartridge);
-    final Map<String, dynamic> newcartridge = {
-      cartridge.cartridgeName: {
-        "bulletDiameter": cartridge.bulletDiameter.toString(),
-        "caliber": cartridge.caliber.toString(),
-        "caseLength": cartridge.caseLength.toString(),
-      },
+    final Map<String, dynamic> newcartridge =  {
+        "bulletDiameter": cartridge.bulletDiameter,
+        "caliber": cartridge.caliber,
+        "caseLength": cartridge.caseLength,
     };
     return _firebaseDatabase
         .reference()
         .cartridges
         .child(cartridge.category!.firebaseChildName)
         .child(cartridge.cartridgeName)
-        .set(jsonEncode(newcartridge))
-        .then((value) => right(unit),
-            onError: (error) => left(const CartridgeFailure.unableToInsert()));
+        .set(newcartridge)
+        .then((value) => right(unit), onError: (error) {
+      print(error.toString());
+      return left(const CartridgeFailure.unableToInsert());
+    });
   }
 
   @override
@@ -66,8 +66,10 @@ class CartridgeRepository implements ICartridgeRepository {
         .child(cartridge.category!.firebaseChildName)
         .child(cartridge.cartridgeName)
         .update(cartridgeDto.toJson())
-        .then((value) => right(unit),
-            onError: (error) => left(const CartridgeFailure.unableToUpdate()));
+        .then((value) => right(unit), onError: (error) {
+      print(error.toString());
+      return left(const CartridgeFailure.unableToUpdate());
+    });
   }
 
   @override

@@ -56,7 +56,7 @@ class CartridgeFormBloc extends Bloc<CartridgeFormEvent, CartridgeFormState> {
         );
       },
       caliberChanged: (e) async* {
-        state.copyWith(
+        yield state.copyWith(
           cartridge: state.cartridge
               .copyWith(caliber: double.tryParse(e.newCaliber) ?? 0.0),
           saveFailureOrSuccessOption: none(),
@@ -71,7 +71,7 @@ class CartridgeFormBloc extends Bloc<CartridgeFormEvent, CartridgeFormState> {
       },
       saved: (e) async* {
         Either<CartridgeFailure, Unit> failureOrSuccess =
-            left(const CartridgeFailure.unexpected());
+            left(const CartridgeFailure.validationFailed());
         yield state.copyWith(
           isSaving: true,
           saveFailureOrSuccessOption: none(),

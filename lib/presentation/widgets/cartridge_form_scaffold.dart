@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'bullet_diameter_form_field.dart';
 import 'caliber_form_field.dart';
 import 'cartridge_category_radio_field.dart';
 import 'cartridge_name_form_field.dart';
@@ -39,6 +40,7 @@ class _CartridgeFormScaffoldState extends State<CartridgeFormScaffold> {
                 CartridgeNameField(),
                 CaliberFormField(),
                 CaseLengthFormField(),
+                BulletDiameterFormField(),
                 MaterialButton(
                   onPressed: () => context
                       .read<CartridgeFormBloc>()
