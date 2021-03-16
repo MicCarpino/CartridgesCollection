@@ -16,7 +16,7 @@ class CartridgeLengthFormField extends StatelessWidget {
       child: TextFormField(
         keyboardType: const TextInputType.numberWithOptions(decimal: true),
         controller: textEditingController,
-        decoration: const InputDecoration(labelText: 'Lunghezza cartuccia'),
+        decoration: const InputDecoration(labelText: 'Lunghezza cartuccia (C.O.L)'),
         onChanged: (value) => context
             .read<CartridgeFormBloc>()
             .add(CartridgeFormEvent.cartridgeLengthChanged(value)),

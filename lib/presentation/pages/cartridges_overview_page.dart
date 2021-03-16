@@ -1,11 +1,12 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_app/core/enums.dart';
+import 'package:firebase_app/core/extensions.dart';
 import 'package:firebase_app/presentation/bloc/cartridge_watcher/cartridge_watcher_bloc.dart';
 import 'package:firebase_app/presentation/bloc/cartridge_actor/cartridge_actor_bloc.dart';
 import 'package:firebase_app/presentation/routes/router.gr.dart';
 import 'package:firebase_app/presentation/widgets/cartridges_overview_body.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../injection.dart';
 
@@ -39,7 +40,7 @@ class _CartridgesOverviewPageState extends State<CartridgesOverviewPage> {
             },
             child: Scaffold(
               appBar: AppBar(
-                title: Text(CartridgeCategory.values[tabIndex].label),
+                title: Text(CartridgeCategory.values[tabIndex].label.capitalize()),
               ),
               body: CartridgesOverviewBody(
                 category: CartridgeCategory.values[tabIndex],

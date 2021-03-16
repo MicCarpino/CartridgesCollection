@@ -41,7 +41,8 @@ class _CartridgeFormScaffoldState extends State<CartridgeFormScaffold> {
                 CartridgeLengthFormField(),
                 CaseLengthFormField(),
                 BulletDiameterFormField(),
-                MaterialButton(
+                const SizedBox(height: 16),
+                ElevatedButton(
                   onPressed: () => context
                       .read<CartridgeFormBloc>()
                       .add(const CartridgeFormEvent.saved()),
