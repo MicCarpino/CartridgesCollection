@@ -1,7 +1,5 @@
-import 'package:firebase_app/core/enums.dart';
 import 'package:firebase_app/presentation/bloc/cartridge_form/cartridge_form_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'bullet_diameter_form_field.dart';
@@ -9,6 +7,7 @@ import 'caliber_form_field.dart';
 import 'cartridge_category_radio_field.dart';
 import 'cartridge_length_form_field.dart';
 import 'case_length_form_field.dart';
+
 
 class CartridgeFormScaffold extends StatefulWidget {
   @override
@@ -46,7 +45,9 @@ class _CartridgeFormScaffoldState extends State<CartridgeFormScaffold> {
                   onPressed: () => context
                       .read<CartridgeFormBloc>()
                       .add(const CartridgeFormEvent.saved()),
-                  child: Text(state.isEditing ? 'Aggiorna' : 'Salva'),
+                  child: Text(context.read<CartridgeFormBloc>().state.isEditing
+                      ? 'Aggiorna'
+                      : 'Salva'),
                 )
               ],
             ),

@@ -37,7 +37,7 @@ class CartridgeRepository implements ICartridgeRepository {
         final json = cartridgeMap.value as LinkedHashMap<dynamic, dynamic>;
         final cartridgeDto =
             CartridgeDto.fromJson(Map<String, dynamic>.from(json));
-        return cartridgeDto.toDomain(cartridgeName, CartridgeCategory.pistol);
+        return cartridgeDto.toDomain(cartridgeName, category);
       }).toList();
       return right<CartridgeFailure, List<Cartridge>>(cartridges);
     }).onErrorReturnWith(

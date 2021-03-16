@@ -24,9 +24,12 @@ class CartridgeForm extends StatelessWidget {
             () {},
             (either) {
               either.fold(
-                  (l) => ScaffoldMessenger.of(context)
-                      .showSnackBar(SnackBar(content: Text(l.toString()))),
-                  (r) => context.router.pop());
+                  (failure) => failure.maybeMap(
+                      validationFailed: (_) {},
+                      orElse: () => ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text(failure.toString())),
+                          )),
+                  (_) => context.router.pop());
             },
           );
         },

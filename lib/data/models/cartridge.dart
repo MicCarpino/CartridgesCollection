@@ -21,7 +21,7 @@ class Cartridge with _$Cartridge {
   factory Cartridge.empty() => const Cartridge(
         caliber: '',
         category: null,
-        cartridgeLength: 0.0,
+        cartridgeLength: 0,
         bulletDiameter: 0.0,
         caseLength: 0.0,
       );

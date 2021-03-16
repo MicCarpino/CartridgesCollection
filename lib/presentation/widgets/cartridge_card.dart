@@ -1,3 +1,4 @@
+import 'package:firebase_app/core/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:firebase_app/data/models/cartridge.dart';
@@ -13,7 +14,11 @@ class CartridgeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: const Color(0xffc24d2c),
+      shape: RoundedRectangleBorder(
+        side: const BorderSide(color: appColorAccent, width: 2.0),
+        borderRadius: BorderRadius.circular(15.0),
+      ),
+      color: appColorAccent,
       elevation: 16,
       child: InkWell(
         onTap: () =>
@@ -41,8 +46,7 @@ class CartridgeCard extends StatelessWidget {
       context: context,
       builder: (_) {
         return AlertDialog(
-          title: const Text('Cancellare?'),
-          content: Text(cartridge.caliber),
+          title: Text('Cancellare ${cartridge.caliber}?'),
           actions: [
             TextButton(
                 onPressed: () => Navigator.pop(context),

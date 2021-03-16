@@ -32,7 +32,7 @@ class CartridgesOverviewBody extends StatelessWidget {
                   itemBuilder: (context, index) =>
                       CartridgeCard(cartridge: state.cartridges[index]),
                 )
-              : const Center(child: Text('No records')),
+              : const Center(child: Text('Lista vuota')),
           loadFailure: (value) => Text(value.cartridgeFailure.toString()),
         );
       },
