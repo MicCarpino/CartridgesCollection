@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_app/core/enums.dart';
 import 'package:firebase_app/data/models/cartridge.dart';
+import 'package:firebase_app/data/models/cartridge_form.dart';
 import 'package:firebase_app/domain/failures/cartridge_failure.dart';
 import 'package:firebase_app/domain/repositories/i_cartridge_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -27,45 +28,50 @@ class CartridgeFormBloc extends Bloc<CartridgeFormEvent, CartridgeFormState> {
   Stream<CartridgeFormState> mapEventToState(CartridgeFormEvent event) async* {
     yield* event.map(
       initialized: (e) async* {
-        yield e.initialCartridgeOption.fold(
-          () => state,
-          (initialCartridge) => state.copyWith(
-            cartridge: initialCartridge,
+        yield e.cartridgeOrCategory.fold(
+          (cartridge) => state.copyWith(
+            cartridge: CartridgeForm(
+              cartridgeCategory: cartridge.category,
+              caliber: cartridge.caliber,
+              caseLength: cartridge.caseLength.toString(),
+              cartridgeLength: cartridge.cartridgeLength.toString(),
+              bulletDiameter: cartridge.bulletDiameter.toString(),
+            ),
             isEditing: true,
           ),
+          (category) =>
+              state.copyWith(cartridge: CartridgeForm.initial(category)),
         );
       },
       caliberChanged: (e) async* {
         yield state.copyWith(
-          cartridge:
-              state.cartridge.copyWith(caliber: e.newCaliber),
+          cartridge: state.cartridge.copyWith(caliber: e.newCaliber),
           saveFailureOrSuccessOption: none(),
         );
       },
       categoryChanged: (e) async* {
         yield state.copyWith(
-          cartridge: state.cartridge.copyWith(category: e.newCategory),
+          cartridge: state.cartridge.copyWith(cartridgeCategory: e.newCategory),
           saveFailureOrSuccessOption: none(),
         );
       },
       caseLengthChanged: (e) async* {
         yield state.copyWith(
-          cartridge: state.cartridge
-              .copyWith(caseLength: double.tryParse(e.newCaseLength) ?? 0.0),
+          cartridge: state.cartridge.copyWith(caseLength: e.newCaseLength),
           saveFailureOrSuccessOption: none(),
         );
       },
       cartridgeLengthChanged: (e) async* {
         yield state.copyWith(
-          cartridge: state.cartridge
-              .copyWith(cartridgeLength: double.tryParse(e.newCartridgeLength) ?? 0.0),
+          cartridge:
+              state.cartridge.copyWith(cartridgeLength: e.newCartridgeLength),
           saveFailureOrSuccessOption: none(),
         );
       },
       bulletDiameterChanged: (e) async* {
         yield state.copyWith(
-          cartridge: state.cartridge.copyWith(
-              bulletDiameter: double.tryParse(e.newBulletDiameter) ?? 0.0),
+          cartridge:
+              state.cartridge.copyWith(bulletDiameter: e.newBulletDiameter),
           saveFailureOrSuccessOption: none(),
         );
       },
@@ -77,9 +83,16 @@ class CartridgeFormBloc extends Bloc<CartridgeFormEvent, CartridgeFormState> {
           saveFailureOrSuccessOption: none(),
         );
         if (state.cartridge.failureOption.isNone()) {
+          final Cartridge cartridge = Cartridge(
+            caliber: state.cartridge.caliber!,
+            category: state.cartridge.cartridgeCategory,
+            bulletDiameter: double.parse(state.cartridge.bulletDiameter!),
+            caseLength: double.parse(state.cartridge.caseLength!),
+            cartridgeLength: double.parse(state.cartridge.cartridgeLength!),
+          );
           failureOrSuccess = state.isEditing
-              ? await cartridgeRepository.update(state.cartridge)
-              : await cartridgeRepository.create(state.cartridge);
+              ? await cartridgeRepository.update(cartridge)
+              : await cartridgeRepository.create(cartridge);
         }
         yield state.copyWith(
           isSaving: false,

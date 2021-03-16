@@ -3,7 +3,7 @@ part of 'cartridge_form_bloc.dart';
 @freezed
 class CartridgeFormEvent with _$CartridgeFormEvent {
   const factory CartridgeFormEvent.initialized(
-      Option<Cartridge> initialCartridgeOption) = _Initialized;
+      Either<Cartridge,CartridgeCategory> cartridgeOrCategory) = _Initialized;
 
   const factory CartridgeFormEvent.caliberChanged(String newCaliber) = _NameChanged;
 

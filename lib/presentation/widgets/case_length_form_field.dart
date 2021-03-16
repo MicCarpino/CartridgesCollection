@@ -7,21 +7,28 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class CaseLengthFormField extends HookWidget {
   @override
   Widget build(BuildContext context) {
-    final caseLength =
-        context.read<CartridgeFormBloc>().state.cartridge.caseLength;
-    return TextFormField(
-      keyboardType: const TextInputType.numberWithOptions(decimal: true),
-      controller: useTextEditingController(
-        text: caseLength != 0.0 ? caseLength.toString() : null,
+    final controller = useTextEditingController();
+    return BlocListener<CartridgeFormBloc, CartridgeFormState>(
+      listenWhen: (p, c) =>
+          (p.cartridge.caseLength != c.cartridge.caseLength) ||
+          (p.isEditing != c.isEditing),
+      listener: (context, state) {
+        controller.text = state.cartridge.caseLength ?? '';
+        controller.selection = TextSelection.fromPosition(
+            TextPosition(offset: controller.text.length));
+      },
+      child: TextFormField(
+        keyboardType: const TextInputType.numberWithOptions(decimal: true),
+        controller: controller,
+        decoration: const InputDecoration(labelText: 'Lunghezza bossolo'),
+        onChanged: (value) => context
+            .read<CartridgeFormBloc>()
+            .add(CartridgeFormEvent.caseLengthChanged(value)),
+        validator: (_) =>
+            context.read<CartridgeFormBloc>().state.cartridge.caseLength == 0.0
+                ? 'Non valido'
+                : null,
       ),
-      decoration: const InputDecoration(labelText: 'Lunghezza bossolo'),
-      onChanged: (value) => context
-          .read<CartridgeFormBloc>()
-          .add(CartridgeFormEvent.caseLengthChanged(value)),
-      validator: (_) =>
-          context.read<CartridgeFormBloc>().state.cartridge.caseLength == 0.0
-              ? 'Non valido'
-              : null,
     );
   }
 }

@@ -11,3 +11,9 @@ extension StringExtension on String {
     return "${this[0].toUpperCase()}${substring(1)}";
   }
 }
+
+extension NullStringExtension on String? {
+  bool isNullOrEmpty() {
+    return this == null || this!.isEmpty;
+  }
+}

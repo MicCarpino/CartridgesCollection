@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  auto_route: ^1.0.0-beta.10
+  auto_route: ^1.0.0
   dartz: ^0.10.0-nullsafety.1
   firebase_core: ^1.0.1
   firebase_database: ^6.1.0
@@ -25,7 +25,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  auto_route_generator: ^1.0.0-beta.11
+  auto_route_generator: ^1.0.0
   build_runner: ^1.11.5
   flutter_hooks: ^0.16.0
   freezed: ^0.14.0

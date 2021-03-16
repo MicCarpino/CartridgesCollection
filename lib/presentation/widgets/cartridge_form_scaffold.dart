@@ -45,9 +45,11 @@ class _CartridgeFormScaffoldState extends State<CartridgeFormScaffold> {
                   onPressed: () => context
                       .read<CartridgeFormBloc>()
                       .add(const CartridgeFormEvent.saved()),
-                  child: Text(context.read<CartridgeFormBloc>().state.isEditing
-                      ? 'Aggiorna'
-                      : 'Salva'),
+                  child: BlocBuilder<CartridgeFormBloc, CartridgeFormState>(
+                    buildWhen: (p, c) => p.isEditing != c.isEditing,
+                    builder: (context, state) =>
+                        Text(state.isEditing ? 'Aggiorna' : 'Salva'),
+                  ),
                 )
               ],
             ),

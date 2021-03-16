@@ -6,18 +6,27 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class CaliberFormField extends HookWidget {
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      controller: useTextEditingController(
-        text: context.read<CartridgeFormBloc>().state.cartridge.caliber,
+    final controller = useTextEditingController();
+    return BlocListener<CartridgeFormBloc, CartridgeFormState>(
+      listenWhen: (p, c) =>
+          (p.cartridge.caliber != c.cartridge.caliber) ||
+          (p.isEditing != c.isEditing),
+      listener: (context, state) {
+        controller.text = state.cartridge.caliber ?? '';
+        controller.selection = TextSelection.fromPosition(
+            TextPosition(offset: controller.text.length));
+      },
+      child: TextFormField(
+        controller: controller,
+        decoration: const InputDecoration(labelText: 'Calibro'),
+        onChanged: (value) => context
+            .read<CartridgeFormBloc>()
+            .add(CartridgeFormEvent.caliberChanged(value)),
+        validator: (_) =>
+            context.read<CartridgeFormBloc>().state.cartridge.caliber == null
+                ? 'Campo obbligatorio'
+                : null,
       ),
-      decoration: const InputDecoration(labelText: 'Calibro'),
-      onChanged: (value) => context
-          .read<CartridgeFormBloc>()
-          .add(CartridgeFormEvent.caliberChanged(value)),
-      validator: (_) =>
-          context.read<CartridgeFormBloc>().state.cartridge.caliber.isEmpty
-              ? 'Campo obbligatorio'
-              : null,
     );
   }
 }

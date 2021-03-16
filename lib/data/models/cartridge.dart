@@ -26,20 +26,4 @@ class Cartridge with _$Cartridge {
         caseLength: 0.0,
       );
 
-  //TODO: implement better validation
-  Option<CartridgeFailure> get failureOption {
-    if (caliber.isEmpty) {
-      return some(const CartridgeFailure.validationFailed());
-    } else if (category == null) {
-      return some(const CartridgeFailure.validationFailed());
-    } else if (cartridgeLength <= 0.0) {
-      return some(const CartridgeFailure.validationFailed());
-    } else if (bulletDiameter <= 0.0) {
-      return some(const CartridgeFailure.validationFailed());
-    } else if (caseLength <= 0.0) {
-      return some(const CartridgeFailure.validationFailed());
-    } else {
-      return none();
-    }
-  }
 }

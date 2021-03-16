@@ -1,5 +1,6 @@
-import 'package:auto_route/auto_route.dart';
+import 'package:dartz/dartz.dart' as dartz;
 import 'package:flutter/material.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_app/core/enums.dart';
 import 'package:firebase_app/core/extensions.dart';
@@ -40,13 +41,19 @@ class _CartridgesOverviewPageState extends State<CartridgesOverviewPage> {
             },
             child: Scaffold(
               appBar: AppBar(
-                title: Text(CartridgeCategory.values[tabIndex].label.capitalize()),
+                title:
+                    Text(CartridgeCategory.values[tabIndex].label.capitalize()),
               ),
               body: CartridgesOverviewBody(
                 category: CartridgeCategory.values[tabIndex],
               ),
               floatingActionButton: FloatingActionButton(
-                onPressed: () => context.router.push(CartridgeFormRoute()),
+                onPressed: () => context.router.push(
+                  CartridgeFormRoute(
+                    cartridgeOrCategory:
+                        dartz.right(CartridgeCategory.values[tabIndex]),
+                  ),
+                ),
                 child: const Icon(Icons.add),
               ),
               bottomNavigationBar: BottomNavigationBar(

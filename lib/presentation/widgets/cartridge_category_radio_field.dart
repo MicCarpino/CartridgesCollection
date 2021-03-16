@@ -8,7 +8,7 @@ class CartridgeCategoryRadioField extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<CartridgeFormBloc, CartridgeFormState>(
       buildWhen: (p, c) =>
-          (p.cartridge.category != c.cartridge.category) ||
+          (p.cartridge.cartridgeCategory != c.cartridge.cartridgeCategory) ||
           p.showErrorMessages != c.showErrorMessages,
       builder: (context, state) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,7 +21,8 @@ class CartridgeCategoryRadioField extends StatelessWidget {
           ),
           SizedBox(
             height: 16,
-            child: (state.showErrorMessages && state.cartridge.category == null)
+            child: (state.showErrorMessages &&
+                    state.cartridge.cartridgeCategory == null)
                 ? const Text(
                     'Seleziona una categoria',
                     style: TextStyle(color: Colors.red),
@@ -50,7 +51,7 @@ class CategoryRadioButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(16.0),
           ),
           elevation: 5,
-          color: state.cartridge.category == category
+          color: state.cartridge.cartridgeCategory == category
               ? Theme.of(context).accentColor
               : Colors.white,
           child: InkWell(
@@ -67,7 +68,7 @@ class CategoryRadioButton extends StatelessWidget {
                 children: <Widget>[
                   Icon(
                     category.icon.icon,
-                    color: state.cartridge.category == category
+                    color: state.cartridge.cartridgeCategory == category
                         ? Colors.white
                         : Colors.grey,
                     size: 40,
@@ -76,7 +77,7 @@ class CategoryRadioButton extends StatelessWidget {
                   Text(
                     category.label,
                     style: TextStyle(
-                        color: state.cartridge.category == category
+                        color: state.cartridge.cartridgeCategory == category
                             ? Colors.white
                             : Colors.grey),
                   )

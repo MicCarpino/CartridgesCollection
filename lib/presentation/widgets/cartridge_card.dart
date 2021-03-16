@@ -1,3 +1,4 @@
+import 'package:dartz/dartz.dart';
 import 'package:firebase_app/core/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_route/auto_route.dart';
@@ -22,7 +23,7 @@ class CartridgeCard extends StatelessWidget {
       elevation: 16,
       child: InkWell(
         onTap: () =>
-            context.router.push(CartridgeFormRoute(cartridge: cartridge)),
+            context.router.push(CartridgeFormRoute(cartridgeOrCategory: left(cartridge) )),
         onLongPress: () => _showDeletionDialog(context),
         child: Padding(
           padding: const EdgeInsets.all(8.0),

@@ -16,9 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$CartridgeFormEventTearOff {
   const _$CartridgeFormEventTearOff();
 
-  _Initialized initialized(Option<Cartridge> initialCartridgeOption) {
+  _Initialized initialized(
+      Either<Cartridge, CartridgeCategory> cartridgeOrCategory) {
     return _Initialized(
-      initialCartridgeOption,
+      cartridgeOrCategory,
     );
   }
 
@@ -64,7 +65,8 @@ const $CartridgeFormEvent = _$CartridgeFormEventTearOff();
 mixin _$CartridgeFormEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<Cartridge> initialCartridgeOption)
+    required TResult Function(
+            Either<Cartridge, CartridgeCategory> cartridgeOrCategory)
         initialized,
     required TResult Function(String newCaliber) caliberChanged,
     required TResult Function(String newCaseLength) caseLengthChanged,
@@ -76,7 +78,8 @@ mixin _$CartridgeFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<Cartridge> initialCartridgeOption)? initialized,
+    TResult Function(Either<Cartridge, CartridgeCategory> cartridgeOrCategory)?
+        initialized,
     TResult Function(String newCaliber)? caliberChanged,
     TResult Function(String newCaseLength)? caseLengthChanged,
     TResult Function(String newCartridgeLength)? cartridgeLengthChanged,
@@ -134,7 +137,7 @@ abstract class _$InitializedCopyWith<$Res> {
   factory _$InitializedCopyWith(
           _Initialized value, $Res Function(_Initialized) then) =
       __$InitializedCopyWithImpl<$Res>;
-  $Res call({Option<Cartridge> initialCartridgeOption});
+  $Res call({Either<Cartridge, CartridgeCategory> cartridgeOrCategory});
 }
 
 /// @nodoc
@@ -150,42 +153,42 @@ class __$InitializedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? initialCartridgeOption = freezed,
+    Object? cartridgeOrCategory = freezed,
   }) {
     return _then(_Initialized(
-      initialCartridgeOption == freezed
-          ? _value.initialCartridgeOption
-          : initialCartridgeOption // ignore: cast_nullable_to_non_nullable
-              as Option<Cartridge>,
+      cartridgeOrCategory == freezed
+          ? _value.cartridgeOrCategory
+          : cartridgeOrCategory // ignore: cast_nullable_to_non_nullable
+              as Either<Cartridge, CartridgeCategory>,
     ));
   }
 }
 
 /// @nodoc
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.initialCartridgeOption);
+  const _$_Initialized(this.cartridgeOrCategory);
 
   @override
-  final Option<Cartridge> initialCartridgeOption;
+  final Either<Cartridge, CartridgeCategory> cartridgeOrCategory;
 
   @override
   String toString() {
-    return 'CartridgeFormEvent.initialized(initialCartridgeOption: $initialCartridgeOption)';
+    return 'CartridgeFormEvent.initialized(cartridgeOrCategory: $cartridgeOrCategory)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Initialized &&
-            (identical(other.initialCartridgeOption, initialCartridgeOption) ||
-                const DeepCollectionEquality().equals(
-                    other.initialCartridgeOption, initialCartridgeOption)));
+            (identical(other.cartridgeOrCategory, cartridgeOrCategory) ||
+                const DeepCollectionEquality()
+                    .equals(other.cartridgeOrCategory, cartridgeOrCategory)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(initialCartridgeOption);
+      const DeepCollectionEquality().hash(cartridgeOrCategory);
 
   @JsonKey(ignore: true)
   @override
@@ -195,7 +198,8 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<Cartridge> initialCartridgeOption)
+    required TResult Function(
+            Either<Cartridge, CartridgeCategory> cartridgeOrCategory)
         initialized,
     required TResult Function(String newCaliber) caliberChanged,
     required TResult Function(String newCaseLength) caseLengthChanged,
@@ -204,13 +208,14 @@ class _$_Initialized implements _Initialized {
     required TResult Function(String newBulletDiameter) bulletDiameterChanged,
     required TResult Function() saved,
   }) {
-    return initialized(initialCartridgeOption);
+    return initialized(cartridgeOrCategory);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<Cartridge> initialCartridgeOption)? initialized,
+    TResult Function(Either<Cartridge, CartridgeCategory> cartridgeOrCategory)?
+        initialized,
     TResult Function(String newCaliber)? caliberChanged,
     TResult Function(String newCaseLength)? caseLengthChanged,
     TResult Function(String newCartridgeLength)? cartridgeLengthChanged,
@@ -220,7 +225,7 @@ class _$_Initialized implements _Initialized {
     required TResult orElse(),
   }) {
     if (initialized != null) {
-      return initialized(initialCartridgeOption);
+      return initialized(cartridgeOrCategory);
     }
     return orElse();
   }
@@ -260,10 +265,11 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements CartridgeFormEvent {
-  const factory _Initialized(Option<Cartridge> initialCartridgeOption) =
+  const factory _Initialized(
+          Either<Cartridge, CartridgeCategory> cartridgeOrCategory) =
       _$_Initialized;
 
-  Option<Cartridge> get initialCartridgeOption =>
+  Either<Cartridge, CartridgeCategory> get cartridgeOrCategory =>
       throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$InitializedCopyWith<_Initialized> get copyWith =>
@@ -335,7 +341,8 @@ class _$_NameChanged implements _NameChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<Cartridge> initialCartridgeOption)
+    required TResult Function(
+            Either<Cartridge, CartridgeCategory> cartridgeOrCategory)
         initialized,
     required TResult Function(String newCaliber) caliberChanged,
     required TResult Function(String newCaseLength) caseLengthChanged,
@@ -350,7 +357,8 @@ class _$_NameChanged implements _NameChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<Cartridge> initialCartridgeOption)? initialized,
+    TResult Function(Either<Cartridge, CartridgeCategory> cartridgeOrCategory)?
+        initialized,
     TResult Function(String newCaliber)? caliberChanged,
     TResult Function(String newCaseLength)? caseLengthChanged,
     TResult Function(String newCartridgeLength)? cartridgeLengthChanged,
@@ -473,7 +481,8 @@ class _$_CaseLengthChanged implements _CaseLengthChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<Cartridge> initialCartridgeOption)
+    required TResult Function(
+            Either<Cartridge, CartridgeCategory> cartridgeOrCategory)
         initialized,
     required TResult Function(String newCaliber) caliberChanged,
     required TResult Function(String newCaseLength) caseLengthChanged,
@@ -488,7 +497,8 @@ class _$_CaseLengthChanged implements _CaseLengthChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<Cartridge> initialCartridgeOption)? initialized,
+    TResult Function(Either<Cartridge, CartridgeCategory> cartridgeOrCategory)?
+        initialized,
     TResult Function(String newCaliber)? caliberChanged,
     TResult Function(String newCaseLength)? caseLengthChanged,
     TResult Function(String newCartridgeLength)? cartridgeLengthChanged,
@@ -612,7 +622,8 @@ class _$_CaliberChanged implements _CaliberChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<Cartridge> initialCartridgeOption)
+    required TResult Function(
+            Either<Cartridge, CartridgeCategory> cartridgeOrCategory)
         initialized,
     required TResult Function(String newCaliber) caliberChanged,
     required TResult Function(String newCaseLength) caseLengthChanged,
@@ -627,7 +638,8 @@ class _$_CaliberChanged implements _CaliberChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<Cartridge> initialCartridgeOption)? initialized,
+    TResult Function(Either<Cartridge, CartridgeCategory> cartridgeOrCategory)?
+        initialized,
     TResult Function(String newCaliber)? caliberChanged,
     TResult Function(String newCaseLength)? caseLengthChanged,
     TResult Function(String newCartridgeLength)? cartridgeLengthChanged,
@@ -750,7 +762,8 @@ class _$_CategoryChanged implements _CategoryChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<Cartridge> initialCartridgeOption)
+    required TResult Function(
+            Either<Cartridge, CartridgeCategory> cartridgeOrCategory)
         initialized,
     required TResult Function(String newCaliber) caliberChanged,
     required TResult Function(String newCaseLength) caseLengthChanged,
@@ -765,7 +778,8 @@ class _$_CategoryChanged implements _CategoryChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<Cartridge> initialCartridgeOption)? initialized,
+    TResult Function(Either<Cartridge, CartridgeCategory> cartridgeOrCategory)?
+        initialized,
     TResult Function(String newCaliber)? caliberChanged,
     TResult Function(String newCaseLength)? caseLengthChanged,
     TResult Function(String newCartridgeLength)? cartridgeLengthChanged,
@@ -891,7 +905,8 @@ class _$_BulletDiameterChanged implements _BulletDiameterChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<Cartridge> initialCartridgeOption)
+    required TResult Function(
+            Either<Cartridge, CartridgeCategory> cartridgeOrCategory)
         initialized,
     required TResult Function(String newCaliber) caliberChanged,
     required TResult Function(String newCaseLength) caseLengthChanged,
@@ -906,7 +921,8 @@ class _$_BulletDiameterChanged implements _BulletDiameterChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<Cartridge> initialCartridgeOption)? initialized,
+    TResult Function(Either<Cartridge, CartridgeCategory> cartridgeOrCategory)?
+        initialized,
     TResult Function(String newCaliber)? caliberChanged,
     TResult Function(String newCaseLength)? caseLengthChanged,
     TResult Function(String newCartridgeLength)? cartridgeLengthChanged,
@@ -1001,7 +1017,8 @@ class _$_Saved implements _Saved {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(Option<Cartridge> initialCartridgeOption)
+    required TResult Function(
+            Either<Cartridge, CartridgeCategory> cartridgeOrCategory)
         initialized,
     required TResult Function(String newCaliber) caliberChanged,
     required TResult Function(String newCaseLength) caseLengthChanged,
@@ -1016,7 +1033,8 @@ class _$_Saved implements _Saved {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(Option<Cartridge> initialCartridgeOption)? initialized,
+    TResult Function(Either<Cartridge, CartridgeCategory> cartridgeOrCategory)?
+        initialized,
     TResult Function(String newCaliber)? caliberChanged,
     TResult Function(String newCaseLength)? caseLengthChanged,
     TResult Function(String newCartridgeLength)? cartridgeLengthChanged,
@@ -1074,7 +1092,7 @@ class _$CartridgeFormStateTearOff {
   const _$CartridgeFormStateTearOff();
 
   _CartridgeFormState call(
-      {required Cartridge cartridge,
+      {required CartridgeForm cartridge,
       required bool showErrorMessages,
       required bool isEditing,
       required bool isSaving,
@@ -1095,7 +1113,7 @@ const $CartridgeFormState = _$CartridgeFormStateTearOff();
 
 /// @nodoc
 mixin _$CartridgeFormState {
-  Cartridge get cartridge => throw _privateConstructorUsedError;
+  CartridgeForm get cartridge => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
   bool get isEditing => throw _privateConstructorUsedError;
   bool get isSaving => throw _privateConstructorUsedError;
@@ -1113,13 +1131,13 @@ abstract class $CartridgeFormStateCopyWith<$Res> {
           CartridgeFormState value, $Res Function(CartridgeFormState) then) =
       _$CartridgeFormStateCopyWithImpl<$Res>;
   $Res call(
-      {Cartridge cartridge,
+      {CartridgeForm cartridge,
       bool showErrorMessages,
       bool isEditing,
       bool isSaving,
       Option<Either<CartridgeFailure, Unit>> saveFailureOrSuccessOption});
 
-  $CartridgeCopyWith<$Res> get cartridge;
+  $CartridgeFormCopyWith<$Res> get cartridge;
 }
 
 /// @nodoc
@@ -1143,7 +1161,7 @@ class _$CartridgeFormStateCopyWithImpl<$Res>
       cartridge: cartridge == freezed
           ? _value.cartridge
           : cartridge // ignore: cast_nullable_to_non_nullable
-              as Cartridge,
+              as CartridgeForm,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -1164,8 +1182,8 @@ class _$CartridgeFormStateCopyWithImpl<$Res>
   }
 
   @override
-  $CartridgeCopyWith<$Res> get cartridge {
-    return $CartridgeCopyWith<$Res>(_value.cartridge, (value) {
+  $CartridgeFormCopyWith<$Res> get cartridge {
+    return $CartridgeFormCopyWith<$Res>(_value.cartridge, (value) {
       return _then(_value.copyWith(cartridge: value));
     });
   }
@@ -1179,14 +1197,14 @@ abstract class _$CartridgeFormStateCopyWith<$Res>
       __$CartridgeFormStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {Cartridge cartridge,
+      {CartridgeForm cartridge,
       bool showErrorMessages,
       bool isEditing,
       bool isSaving,
       Option<Either<CartridgeFailure, Unit>> saveFailureOrSuccessOption});
 
   @override
-  $CartridgeCopyWith<$Res> get cartridge;
+  $CartridgeFormCopyWith<$Res> get cartridge;
 }
 
 /// @nodoc
@@ -1212,7 +1230,7 @@ class __$CartridgeFormStateCopyWithImpl<$Res>
       cartridge: cartridge == freezed
           ? _value.cartridge
           : cartridge // ignore: cast_nullable_to_non_nullable
-              as Cartridge,
+              as CartridgeForm,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
@@ -1243,7 +1261,7 @@ class _$_CartridgeFormState implements _CartridgeFormState {
       required this.saveFailureOrSuccessOption});
 
   @override
-  final Cartridge cartridge;
+  final CartridgeForm cartridge;
   @override
   final bool showErrorMessages;
   @override
@@ -1298,7 +1316,7 @@ class _$_CartridgeFormState implements _CartridgeFormState {
 
 abstract class _CartridgeFormState implements CartridgeFormState {
   const factory _CartridgeFormState(
-      {required Cartridge cartridge,
+      {required CartridgeForm cartridge,
       required bool showErrorMessages,
       required bool isEditing,
       required bool isSaving,
@@ -1306,7 +1324,7 @@ abstract class _CartridgeFormState implements CartridgeFormState {
           saveFailureOrSuccessOption}) = _$_CartridgeFormState;
 
   @override
-  Cartridge get cartridge => throw _privateConstructorUsedError;
+  CartridgeForm get cartridge => throw _privateConstructorUsedError;
   @override
   bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
