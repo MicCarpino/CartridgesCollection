@@ -17,11 +17,11 @@ class _$CartridgeFormTearOff {
   const _$CartridgeFormTearOff();
 
   _CartridgeForm call(
-      {CartridgeCategory? cartridgeCategory,
-      String? caliber,
-      String? cartridgeLength,
-      String? caseLength,
-      String? bulletDiameter}) {
+      {required CartridgeCategory? cartridgeCategory,
+      required CaliberForm caliber,
+      required CartridgeLengthForm cartridgeLength,
+      required CaseLengthForm caseLength,
+      required BulletDiameterForm bulletDiameter}) {
     return _CartridgeForm(
       cartridgeCategory: cartridgeCategory,
       caliber: caliber,
@@ -39,10 +39,10 @@ const $CartridgeForm = _$CartridgeFormTearOff();
 mixin _$CartridgeForm {
   CartridgeCategory? get cartridgeCategory =>
       throw _privateConstructorUsedError;
-  String? get caliber => throw _privateConstructorUsedError;
-  String? get cartridgeLength => throw _privateConstructorUsedError;
-  String? get caseLength => throw _privateConstructorUsedError;
-  String? get bulletDiameter => throw _privateConstructorUsedError;
+  CaliberForm get caliber => throw _privateConstructorUsedError;
+  CartridgeLengthForm get cartridgeLength => throw _privateConstructorUsedError;
+  CaseLengthForm get caseLength => throw _privateConstructorUsedError;
+  BulletDiameterForm get bulletDiameter => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CartridgeFormCopyWith<CartridgeForm> get copyWith =>
@@ -56,10 +56,10 @@ abstract class $CartridgeFormCopyWith<$Res> {
       _$CartridgeFormCopyWithImpl<$Res>;
   $Res call(
       {CartridgeCategory? cartridgeCategory,
-      String? caliber,
-      String? cartridgeLength,
-      String? caseLength,
-      String? bulletDiameter});
+      CaliberForm caliber,
+      CartridgeLengthForm cartridgeLength,
+      CaseLengthForm caseLength,
+      BulletDiameterForm bulletDiameter});
 }
 
 /// @nodoc
@@ -87,19 +87,19 @@ class _$CartridgeFormCopyWithImpl<$Res>
       caliber: caliber == freezed
           ? _value.caliber
           : caliber // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as CaliberForm,
       cartridgeLength: cartridgeLength == freezed
           ? _value.cartridgeLength
           : cartridgeLength // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as CartridgeLengthForm,
       caseLength: caseLength == freezed
           ? _value.caseLength
           : caseLength // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as CaseLengthForm,
       bulletDiameter: bulletDiameter == freezed
           ? _value.bulletDiameter
           : bulletDiameter // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as BulletDiameterForm,
     ));
   }
 }
@@ -113,10 +113,10 @@ abstract class _$CartridgeFormCopyWith<$Res>
   @override
   $Res call(
       {CartridgeCategory? cartridgeCategory,
-      String? caliber,
-      String? cartridgeLength,
-      String? caseLength,
-      String? bulletDiameter});
+      CaliberForm caliber,
+      CartridgeLengthForm cartridgeLength,
+      CaseLengthForm caseLength,
+      BulletDiameterForm bulletDiameter});
 }
 
 /// @nodoc
@@ -146,19 +146,19 @@ class __$CartridgeFormCopyWithImpl<$Res>
       caliber: caliber == freezed
           ? _value.caliber
           : caliber // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as CaliberForm,
       cartridgeLength: cartridgeLength == freezed
           ? _value.cartridgeLength
           : cartridgeLength // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as CartridgeLengthForm,
       caseLength: caseLength == freezed
           ? _value.caseLength
           : caseLength // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as CaseLengthForm,
       bulletDiameter: bulletDiameter == freezed
           ? _value.bulletDiameter
           : bulletDiameter // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as BulletDiameterForm,
     ));
   }
 }
@@ -166,23 +166,23 @@ class __$CartridgeFormCopyWithImpl<$Res>
 /// @nodoc
 class _$_CartridgeForm extends _CartridgeForm {
   const _$_CartridgeForm(
-      {this.cartridgeCategory,
-      this.caliber,
-      this.cartridgeLength,
-      this.caseLength,
-      this.bulletDiameter})
+      {required this.cartridgeCategory,
+      required this.caliber,
+      required this.cartridgeLength,
+      required this.caseLength,
+      required this.bulletDiameter})
       : super._();
 
   @override
   final CartridgeCategory? cartridgeCategory;
   @override
-  final String? caliber;
+  final CaliberForm caliber;
   @override
-  final String? cartridgeLength;
+  final CartridgeLengthForm cartridgeLength;
   @override
-  final String? caseLength;
+  final CaseLengthForm caseLength;
   @override
-  final String? bulletDiameter;
+  final BulletDiameterForm bulletDiameter;
 
   @override
   String toString() {
@@ -227,24 +227,24 @@ class _$_CartridgeForm extends _CartridgeForm {
 
 abstract class _CartridgeForm extends CartridgeForm {
   const factory _CartridgeForm(
-      {CartridgeCategory? cartridgeCategory,
-      String? caliber,
-      String? cartridgeLength,
-      String? caseLength,
-      String? bulletDiameter}) = _$_CartridgeForm;
+      {required CartridgeCategory? cartridgeCategory,
+      required CaliberForm caliber,
+      required CartridgeLengthForm cartridgeLength,
+      required CaseLengthForm caseLength,
+      required BulletDiameterForm bulletDiameter}) = _$_CartridgeForm;
   const _CartridgeForm._() : super._();
 
   @override
   CartridgeCategory? get cartridgeCategory =>
       throw _privateConstructorUsedError;
   @override
-  String? get caliber => throw _privateConstructorUsedError;
+  CaliberForm get caliber => throw _privateConstructorUsedError;
   @override
-  String? get cartridgeLength => throw _privateConstructorUsedError;
+  CartridgeLengthForm get cartridgeLength => throw _privateConstructorUsedError;
   @override
-  String? get caseLength => throw _privateConstructorUsedError;
+  CaseLengthForm get caseLength => throw _privateConstructorUsedError;
   @override
-  String? get bulletDiameter => throw _privateConstructorUsedError;
+  BulletDiameterForm get bulletDiameter => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$CartridgeFormCopyWith<_CartridgeForm> get copyWith =>

@@ -10,7 +10,7 @@ import 'package:flutter/material.dart' as _i4;
 
 import '../../core/enums.dart' as _i7;
 import '../../data/models/cartridge.dart' as _i6;
-import '../pages/cartridge_form.dart' as _i3;
+import '../pages/cartridge_form_page.dart' as _i3;
 import '../pages/cartridges_overview_page.dart' as _i2;
 
 class AppRouter extends _i1.RootStackRouter {
@@ -29,7 +29,7 @@ class AppRouter extends _i1.RootStackRouter {
       var args = entry.routeData.argsAs<CartridgeFormRouteArgs>();
       return _i1.MaterialPageX(
           entry: entry,
-          child: _i3.CartridgeForm(
+          child: _i3.CartridgeFormPage(
               key: args.key, cartridgeOrCategory: args.cartridgeOrCategory),
           maintainState: true,
           fullscreenDialog: true);

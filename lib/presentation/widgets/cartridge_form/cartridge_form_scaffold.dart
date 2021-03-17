@@ -25,13 +25,7 @@ class _CartridgeFormScaffoldState extends State<CartridgeFormScaffold> {
               Text(state.isEditing ? 'Modifica' : 'Inserisci'),
         ),
       ),
-      body: BlocBuilder<CartridgeFormBloc, CartridgeFormState>(
-        buildWhen: (p, c) => p.showErrorMessages != c.showErrorMessages,
-        builder: (context, state) => Form(
-          autovalidateMode: state.showErrorMessages
-              ? AutovalidateMode.always
-              : AutovalidateMode.disabled,
-          child: SingleChildScrollView(
+      body:  SingleChildScrollView(
             padding: const EdgeInsets.all(16.0),
             child: Column(
               children: [
@@ -54,8 +48,6 @@ class _CartridgeFormScaffoldState extends State<CartridgeFormScaffold> {
               ],
             ),
           ),
-        ),
-      ),
     );
   }
 }

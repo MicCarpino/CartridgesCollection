@@ -1,6 +1,4 @@
-import 'package:dartz/dartz.dart';
 import 'package:firebase_app/core/enums.dart';
-import 'package:firebase_app/domain/failures/cartridge_failure.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
 

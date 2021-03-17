@@ -39,3 +39,6 @@ extension CartridgeCategoryLabel on CartridgeCategory {
     }
   }
 }
+
+
+enum CartridgeValidationError { empty, invalid }

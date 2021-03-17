@@ -10,6 +10,7 @@ import 'package:firebase_app/domain/repositories/i_cartridge_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
+import 'package:formz/formz.dart';
 
 part 'cartridge_form_event.dart';
 
@@ -30,22 +31,17 @@ class CartridgeFormBloc extends Bloc<CartridgeFormEvent, CartridgeFormState> {
       initialized: (e) async* {
         yield e.cartridgeOrCategory.fold(
           (cartridge) => state.copyWith(
-            cartridge: CartridgeForm(
-              cartridgeCategory: cartridge.category,
-              caliber: cartridge.caliber,
-              caseLength: cartridge.caseLength.toString(),
-              cartridgeLength: cartridge.cartridgeLength.toString(),
-              bulletDiameter: cartridge.bulletDiameter.toString(),
-            ),
+            cartridge: CartridgeForm.fromDomain(cartridge),
             isEditing: true,
           ),
-          (category) =>
-              state.copyWith(cartridge: CartridgeForm.initial(category)),
+          (category) => state.copyWith(
+              cartridge: CartridgeForm.initial(category: category)),
         );
       },
       caliberChanged: (e) async* {
+        final caliber = CaliberForm.dirty(e.newCaliber);
         yield state.copyWith(
-          cartridge: state.cartridge.copyWith(caliber: e.newCaliber),
+          cartridge: state.cartridge.copyWith(caliber: caliber),
           saveFailureOrSuccessOption: none(),
         );
       },
@@ -56,49 +52,62 @@ class CartridgeFormBloc extends Bloc<CartridgeFormEvent, CartridgeFormState> {
         );
       },
       caseLengthChanged: (e) async* {
+        final caseLength = CaseLengthForm.dirty(e.newCaseLength);
         yield state.copyWith(
-          cartridge: state.cartridge.copyWith(caseLength: e.newCaseLength),
+          cartridge: state.cartridge.copyWith(caseLength: caseLength),
           saveFailureOrSuccessOption: none(),
         );
       },
       cartridgeLengthChanged: (e) async* {
+        final cartridgeLength = CartridgeLengthForm.dirty(e.newCartridgeLength);
         yield state.copyWith(
-          cartridge:
-              state.cartridge.copyWith(cartridgeLength: e.newCartridgeLength),
+          cartridge: state.cartridge.copyWith(cartridgeLength: cartridgeLength),
           saveFailureOrSuccessOption: none(),
         );
       },
       bulletDiameterChanged: (e) async* {
+        final bulletDiameter = BulletDiameterForm.dirty(e.newBulletDiameter);
         yield state.copyWith(
-          cartridge:
-              state.cartridge.copyWith(bulletDiameter: e.newBulletDiameter),
+          cartridge: state.cartridge.copyWith(bulletDiameter: bulletDiameter),
           saveFailureOrSuccessOption: none(),
         );
       },
       saved: (e) async* {
-        Either<CartridgeFailure, Unit> failureOrSuccess =
-            left(const CartridgeFailure.validationFailed());
+        late Either<CartridgeFailure, Unit> failureOrSuccess;
         yield state.copyWith(
           isSaving: true,
           saveFailureOrSuccessOption: none(),
         );
-        if (state.cartridge.failureOption.isNone()) {
-          final Cartridge cartridge = Cartridge(
-            caliber: state.cartridge.caliber!,
-            category: state.cartridge.cartridgeCategory,
-            bulletDiameter: double.parse(state.cartridge.bulletDiameter!),
-            caseLength: double.parse(state.cartridge.caseLength!),
-            cartridgeLength: double.parse(state.cartridge.cartridgeLength!),
-          );
+        final form = Formz.validate([
+          state.cartridge.caliber,
+          state.cartridge.cartridgeLength,
+          state.cartridge.caseLength,
+          state.cartridge.bulletDiameter,
+        ]);
+        if (form.isValid) {
           failureOrSuccess = state.isEditing
-              ? await cartridgeRepository.update(cartridge)
-              : await cartridgeRepository.create(cartridge);
+              ? await cartridgeRepository.update(state.cartridge.toDomain())
+              : await cartridgeRepository.create(state.cartridge.toDomain());
+          yield state.copyWith(
+            isSaving: false,
+            saveFailureOrSuccessOption: optionOf(failureOrSuccess),
+          );
+        } else {
+          failureOrSuccess = left(const CartridgeFailure.validationFailed());
+          yield state.copyWith(
+            cartridge: state.cartridge.copyWith(
+              caliber: CaliberForm.dirty(state.cartridge.caliber.value),
+              bulletDiameter: BulletDiameterForm.dirty(
+                  state.cartridge.bulletDiameter.value),
+              caseLength:
+                  CaseLengthForm.dirty(state.cartridge.caseLength.value),
+              cartridgeLength: CartridgeLengthForm.dirty(
+                  state.cartridge.cartridgeLength.value),
+            ),
+            isSaving: false,
+            saveFailureOrSuccessOption: optionOf(failureOrSuccess),
+          );
         }
-        yield state.copyWith(
-          isSaving: false,
-          showErrorMessages: true,
-          saveFailureOrSuccessOption: optionOf(failureOrSuccess),
-        );
       },
     );
   }

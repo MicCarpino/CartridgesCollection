@@ -1093,14 +1093,12 @@ class _$CartridgeFormStateTearOff {
 
   _CartridgeFormState call(
       {required CartridgeForm cartridge,
-      required bool showErrorMessages,
       required bool isEditing,
       required bool isSaving,
       required Option<Either<CartridgeFailure, Unit>>
           saveFailureOrSuccessOption}) {
     return _CartridgeFormState(
       cartridge: cartridge,
-      showErrorMessages: showErrorMessages,
       isEditing: isEditing,
       isSaving: isSaving,
       saveFailureOrSuccessOption: saveFailureOrSuccessOption,
@@ -1114,7 +1112,6 @@ const $CartridgeFormState = _$CartridgeFormStateTearOff();
 /// @nodoc
 mixin _$CartridgeFormState {
   CartridgeForm get cartridge => throw _privateConstructorUsedError;
-  bool get showErrorMessages => throw _privateConstructorUsedError;
   bool get isEditing => throw _privateConstructorUsedError;
   bool get isSaving => throw _privateConstructorUsedError;
   Option<Either<CartridgeFailure, Unit>> get saveFailureOrSuccessOption =>
@@ -1132,7 +1129,6 @@ abstract class $CartridgeFormStateCopyWith<$Res> {
       _$CartridgeFormStateCopyWithImpl<$Res>;
   $Res call(
       {CartridgeForm cartridge,
-      bool showErrorMessages,
       bool isEditing,
       bool isSaving,
       Option<Either<CartridgeFailure, Unit>> saveFailureOrSuccessOption});
@@ -1152,7 +1148,6 @@ class _$CartridgeFormStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? cartridge = freezed,
-    Object? showErrorMessages = freezed,
     Object? isEditing = freezed,
     Object? isSaving = freezed,
     Object? saveFailureOrSuccessOption = freezed,
@@ -1162,10 +1157,6 @@ class _$CartridgeFormStateCopyWithImpl<$Res>
           ? _value.cartridge
           : cartridge // ignore: cast_nullable_to_non_nullable
               as CartridgeForm,
-      showErrorMessages: showErrorMessages == freezed
-          ? _value.showErrorMessages
-          : showErrorMessages // ignore: cast_nullable_to_non_nullable
-              as bool,
       isEditing: isEditing == freezed
           ? _value.isEditing
           : isEditing // ignore: cast_nullable_to_non_nullable
@@ -1198,7 +1189,6 @@ abstract class _$CartridgeFormStateCopyWith<$Res>
   @override
   $Res call(
       {CartridgeForm cartridge,
-      bool showErrorMessages,
       bool isEditing,
       bool isSaving,
       Option<Either<CartridgeFailure, Unit>> saveFailureOrSuccessOption});
@@ -1221,7 +1211,6 @@ class __$CartridgeFormStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? cartridge = freezed,
-    Object? showErrorMessages = freezed,
     Object? isEditing = freezed,
     Object? isSaving = freezed,
     Object? saveFailureOrSuccessOption = freezed,
@@ -1231,10 +1220,6 @@ class __$CartridgeFormStateCopyWithImpl<$Res>
           ? _value.cartridge
           : cartridge // ignore: cast_nullable_to_non_nullable
               as CartridgeForm,
-      showErrorMessages: showErrorMessages == freezed
-          ? _value.showErrorMessages
-          : showErrorMessages // ignore: cast_nullable_to_non_nullable
-              as bool,
       isEditing: isEditing == freezed
           ? _value.isEditing
           : isEditing // ignore: cast_nullable_to_non_nullable
@@ -1255,15 +1240,12 @@ class __$CartridgeFormStateCopyWithImpl<$Res>
 class _$_CartridgeFormState implements _CartridgeFormState {
   const _$_CartridgeFormState(
       {required this.cartridge,
-      required this.showErrorMessages,
       required this.isEditing,
       required this.isSaving,
       required this.saveFailureOrSuccessOption});
 
   @override
   final CartridgeForm cartridge;
-  @override
-  final bool showErrorMessages;
   @override
   final bool isEditing;
   @override
@@ -1273,7 +1255,7 @@ class _$_CartridgeFormState implements _CartridgeFormState {
 
   @override
   String toString() {
-    return 'CartridgeFormState(cartridge: $cartridge, showErrorMessages: $showErrorMessages, isEditing: $isEditing, isSaving: $isSaving, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
+    return 'CartridgeFormState(cartridge: $cartridge, isEditing: $isEditing, isSaving: $isSaving, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
   }
 
   @override
@@ -1283,9 +1265,6 @@ class _$_CartridgeFormState implements _CartridgeFormState {
             (identical(other.cartridge, cartridge) ||
                 const DeepCollectionEquality()
                     .equals(other.cartridge, cartridge)) &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.isEditing, isEditing) ||
                 const DeepCollectionEquality()
                     .equals(other.isEditing, isEditing)) &&
@@ -1303,7 +1282,6 @@ class _$_CartridgeFormState implements _CartridgeFormState {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(cartridge) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isEditing) ^
       const DeepCollectionEquality().hash(isSaving) ^
       const DeepCollectionEquality().hash(saveFailureOrSuccessOption);
@@ -1317,7 +1295,6 @@ class _$_CartridgeFormState implements _CartridgeFormState {
 abstract class _CartridgeFormState implements CartridgeFormState {
   const factory _CartridgeFormState(
       {required CartridgeForm cartridge,
-      required bool showErrorMessages,
       required bool isEditing,
       required bool isSaving,
       required Option<Either<CartridgeFailure, Unit>>
@@ -1325,8 +1302,6 @@ abstract class _CartridgeFormState implements CartridgeFormState {
 
   @override
   CartridgeForm get cartridge => throw _privateConstructorUsedError;
-  @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
   bool get isEditing => throw _privateConstructorUsedError;
   @override

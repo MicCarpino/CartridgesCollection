@@ -8,8 +8,7 @@ class CartridgeCategoryRadioField extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<CartridgeFormBloc, CartridgeFormState>(
       buildWhen: (p, c) =>
-          (p.cartridge.cartridgeCategory != c.cartridge.cartridgeCategory) ||
-          p.showErrorMessages != c.showErrorMessages,
+          p.cartridge.cartridgeCategory != c.cartridge.cartridgeCategory,
       builder: (context, state) => Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -19,16 +18,6 @@ class CartridgeCategoryRadioField extends StatelessWidget {
                 .map((e) => CategoryRadioButton(category: e))
                 .toList(),
           ),
-          SizedBox(
-            height: 16,
-            child: (state.showErrorMessages &&
-                    state.cartridge.cartridgeCategory == null)
-                ? const Text(
-                    'Seleziona una categoria',
-                    style: TextStyle(color: Colors.red),
-                  )
-                : null,
-          )
         ],
       ),
     );
