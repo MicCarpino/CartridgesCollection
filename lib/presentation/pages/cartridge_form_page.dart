@@ -20,7 +20,7 @@ class CartridgeFormPage extends StatelessWidget {
     return BlocProvider(
       create: (context) => getIt<CartridgeFormBloc>()
         ..add(CartridgeFormEvent.initialized(cartridgeOrCategory)),
-      child: BlocConsumer<CartridgeFormBloc, CartridgeFormState>(
+      child: BlocListener<CartridgeFormBloc, CartridgeFormState>(
         listenWhen: (p, c) =>
             p.saveFailureOrSuccessOption != c.saveFailureOrSuccessOption,
         listener: (context, state) {
@@ -37,8 +37,7 @@ class CartridgeFormPage extends StatelessWidget {
             },
           );
         },
-        buildWhen: (p, c) => p.isSaving != c.isSaving,
-        builder: (context, state) => CartridgeFormScaffold(),
+        child: CartridgeFormScaffold(),
       ),
     );
   }
