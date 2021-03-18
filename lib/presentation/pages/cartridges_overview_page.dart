@@ -49,9 +49,10 @@ class _CartridgesOverviewPageState extends State<CartridgesOverviewPage> {
               ),
               floatingActionButton: FloatingActionButton(
                 onPressed: () => context.router.push(
-                  CartridgeFormRoute(
-                    cartridgeOrCategory:
-                        dartz.right(CartridgeCategory.values[tabIndex]),
+                  CartridgeFormPageRoute(
+                    cartridgeOrCategory: dartz.right(
+                      CartridgeCategory.values[tabIndex],
+                    ),
                   ),
                 ),
                 child: const Icon(Icons.add),

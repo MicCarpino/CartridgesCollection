@@ -25,8 +25,8 @@ class AppRouter extends _i1.RootStackRouter {
           maintainState: true,
           fullscreenDialog: false);
     },
-    CartridgeFormRoute.name: (entry) {
-      var args = entry.routeData.argsAs<CartridgeFormRouteArgs>();
+    CartridgeFormPageRoute.name: (entry) {
+      var args = entry.routeData.argsAs<CartridgeFormPageRouteArgs>();
       return _i1.MaterialPageX(
           entry: entry,
           child: _i3.CartridgeFormPage(
@@ -40,8 +40,10 @@ class AppRouter extends _i1.RootStackRouter {
   List<_i1.RouteConfig> get routes => [
         _i1.RouteConfig(CartridgesOverviewPageRoute.name,
             path: '/', fullMatch: false, usesTabsRouter: false),
-        _i1.RouteConfig(CartridgeFormRoute.name,
-            path: '/cartridge-form', fullMatch: false, usesTabsRouter: false)
+        _i1.RouteConfig(CartridgeFormPageRoute.name,
+            path: '/cartridge-form-page',
+            fullMatch: false,
+            usesTabsRouter: false)
       ];
 }
 
@@ -51,22 +53,24 @@ class CartridgesOverviewPageRoute extends _i1.PageRouteInfo {
   static const String name = 'CartridgesOverviewPageRoute';
 }
 
-class CartridgeFormRoute extends _i1.PageRouteInfo<CartridgeFormRouteArgs> {
-  CartridgeFormRoute({this.key, required this.cartridgeOrCategory})
+class CartridgeFormPageRoute
+    extends _i1.PageRouteInfo<CartridgeFormPageRouteArgs> {
+  CartridgeFormPageRoute({this.key, required this.cartridgeOrCategory})
       : super(name,
-            path: '/cartridge-form',
-            args: CartridgeFormRouteArgs(
+            path: '/cartridge-form-page',
+            args: CartridgeFormPageRouteArgs(
                 key: key, cartridgeOrCategory: cartridgeOrCategory));
 
   final _i4.Key? key;
 
   final _i5.Either<_i6.Cartridge, _i7.CartridgeCategory> cartridgeOrCategory;
 
-  static const String name = 'CartridgeFormRoute';
+  static const String name = 'CartridgeFormPageRoute';
 }
 
-class CartridgeFormRouteArgs {
-  const CartridgeFormRouteArgs({this.key, required this.cartridgeOrCategory});
+class CartridgeFormPageRouteArgs {
+  const CartridgeFormPageRouteArgs(
+      {this.key, required this.cartridgeOrCategory});
 
   final _i4.Key? key;
 

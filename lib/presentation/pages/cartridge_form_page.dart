@@ -5,6 +5,7 @@ import 'package:firebase_app/data/models/cartridge.dart';
 import 'package:firebase_app/injection.dart';
 import 'package:firebase_app/presentation/bloc/cartridge_form/cartridge_form_bloc.dart';
 import 'package:firebase_app/presentation/widgets/cartridge_form/cartridge_form_scaffold.dart';
+import 'package:firebase_app/presentation/routes/router.gr.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -28,12 +29,14 @@ class CartridgeFormPage extends StatelessWidget {
             () {},
             (either) {
               either.fold(
-                  (failure) => failure.maybeMap(
-                      validationFailed: (_) {},
-                      orElse: () => ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: Text(failure.toString())),
-                          )),
-                  (_) => context.router.pop());
+                (failure) => failure.maybeMap(
+                    validationFailed: (_) {},
+                    orElse: () => ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text(failure.toString())),
+                        )),
+                (_) => context.router
+                    .popUntilRouteWithName(CartridgesOverviewPageRoute.name),
+              );
             },
           );
         },

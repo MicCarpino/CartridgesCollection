@@ -22,8 +22,8 @@ class CartridgeCard extends StatelessWidget {
       color: appColorAccent,
       elevation: 16,
       child: InkWell(
-        onTap: () =>
-            context.router.push(CartridgeFormRoute(cartridgeOrCategory: left(cartridge) )),
+        onTap: () => context.router
+            .push(CartridgeFormPageRoute(cartridgeOrCategory: left(cartridge))),
         onLongPress: () => _showDeletionDialog(context),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
