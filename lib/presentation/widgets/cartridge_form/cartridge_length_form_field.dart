@@ -8,27 +8,22 @@ class CartridgeLengthFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<CartridgeFormBloc, CartridgeFormState>(
+    return BlocConsumer<CartridgeFormBloc, CartridgeFormState>(
       listenWhen: (p, c) =>
           (p.cartridge.cartridgeLength != c.cartridge.cartridgeLength) ||
           (p.isEditing != c.isEditing),
-      listener: (context, state) {
-        controller.value = controller.value
-            .copyWith(text: state.cartridge.cartridgeLength.value);
-      },
-      child: TextFormField(
+      listener: (context, state) => controller.value = controller.value
+          .copyWith(text: state.cartridge.cartridgeLength.value),
+      buildWhen:(p, c) =>
+      (p.cartridge.cartridgeLength != c.cartridge.cartridgeLength) ||
+          (p.isEditing != c.isEditing),
+      builder: (context, state) => TextFormField(
         controller: controller,
         keyboardType: const TextInputType.numberWithOptions(decimal: true),
         decoration: InputDecoration(
           labelText: 'Lunghezza cartuccia (C.O.L)',
-          errorText: context
-                  .read<CartridgeFormBloc>()
-                  .state
-                  .cartridge
-                  .cartridgeLength
-                  .invalid
-              ? 'Non valido'
-              : null,
+          errorText:
+              state.cartridge.cartridgeLength.invalid ? 'Non valido' : null,
         ),
         onChanged: (value) => context
             .read<CartridgeFormBloc>()

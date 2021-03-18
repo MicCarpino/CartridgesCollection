@@ -8,27 +8,21 @@ class CaseLengthFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<CartridgeFormBloc, CartridgeFormState>(
+    return BlocConsumer<CartridgeFormBloc, CartridgeFormState>(
       listenWhen: (p, c) =>
           (p.cartridge.caseLength != c.cartridge.caseLength) ||
           (p.isEditing != c.isEditing),
-      listener: (context, state) {
-        controller.value =
-            controller.value.copyWith(text: state.cartridge.caseLength.value);
-      },
-      child: TextFormField(
+      listener: (context, state) => controller.value =
+          controller.value.copyWith(text: state.cartridge.caseLength.value),
+      buildWhen: (p, c) =>
+          (p.cartridge.caseLength != c.cartridge.caseLength) ||
+          (p.isEditing != c.isEditing),
+      builder: (context, state) => TextFormField(
         controller: controller,
         keyboardType: const TextInputType.numberWithOptions(decimal: true),
         decoration: InputDecoration(
           labelText: 'Lunghezza bossolo',
-          errorText: context
-                  .read<CartridgeFormBloc>()
-                  .state
-                  .cartridge
-                  .caseLength
-                  .invalid
-              ? 'Non valido'
-              : null,
+          errorText: state.cartridge.caseLength.invalid ? 'Non valido' : null,
         ),
         onChanged: (value) => context
             .read<CartridgeFormBloc>()

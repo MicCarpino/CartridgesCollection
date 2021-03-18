@@ -7,22 +7,20 @@ class CaliberFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<CartridgeFormBloc, CartridgeFormState>(
+    return BlocConsumer<CartridgeFormBloc, CartridgeFormState>(
       listenWhen: (p, c) =>
           (p.cartridge.caseLength != c.cartridge.caseLength) ||
           (p.isEditing != c.isEditing),
-      listener: (context, state) {
-        controller.value = controller.value
-            .copyWith(text: state.cartridge.caliber.value);
-      },
-      child: TextFormField(
+      listener: (context, state) => controller.value =
+          controller.value.copyWith(text: state.cartridge.caliber.value),
+      buildWhen: (p, c) =>
+          (p.cartridge.caseLength != c.cartridge.caseLength) ||
+          (p.isEditing != c.isEditing),
+      builder: (context, state) => TextFormField(
         controller: controller,
         decoration: InputDecoration(
           labelText: 'Calibro',
-          errorText:
-              context.read<CartridgeFormBloc>().state.cartridge.caliber.invalid
-                  ? 'Non valido'
-                  : null,
+          errorText: state.cartridge.caliber.invalid ? 'Non valido' : null,
         ),
         onChanged: (value) => context
             .read<CartridgeFormBloc>()
