@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'cartridge_form.dart';
 
@@ -10,30 +12,7 @@ part of 'cartridge_form.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$CartridgeFormTearOff {
-  const _$CartridgeFormTearOff();
-
-  _CartridgeForm call(
-      {required CartridgeCategory? cartridgeCategory,
-      required CaliberForm caliber,
-      required CartridgeLengthForm cartridgeLength,
-      required CaseLengthForm caseLength,
-      required BulletDiameterForm bulletDiameter}) {
-    return _CartridgeForm(
-      cartridgeCategory: cartridgeCategory,
-      caliber: caliber,
-      cartridgeLength: cartridgeLength,
-      caseLength: caseLength,
-      bulletDiameter: bulletDiameter,
-    );
-  }
-}
-
-/// @nodoc
-const $CartridgeForm = _$CartridgeFormTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$CartridgeForm {
@@ -53,7 +32,8 @@ mixin _$CartridgeForm {
 abstract class $CartridgeFormCopyWith<$Res> {
   factory $CartridgeFormCopyWith(
           CartridgeForm value, $Res Function(CartridgeForm) then) =
-      _$CartridgeFormCopyWithImpl<$Res>;
+      _$CartridgeFormCopyWithImpl<$Res, CartridgeForm>;
+  @useResult
   $Res call(
       {CartridgeCategory? cartridgeCategory,
       CaliberForm caliber,
@@ -63,54 +43,57 @@ abstract class $CartridgeFormCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CartridgeFormCopyWithImpl<$Res>
+class _$CartridgeFormCopyWithImpl<$Res, $Val extends CartridgeForm>
     implements $CartridgeFormCopyWith<$Res> {
   _$CartridgeFormCopyWithImpl(this._value, this._then);
 
-  final CartridgeForm _value;
   // ignore: unused_field
-  final $Res Function(CartridgeForm) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? cartridgeCategory = freezed,
-    Object? caliber = freezed,
-    Object? cartridgeLength = freezed,
-    Object? caseLength = freezed,
-    Object? bulletDiameter = freezed,
+    Object? caliber = null,
+    Object? cartridgeLength = null,
+    Object? caseLength = null,
+    Object? bulletDiameter = null,
   }) {
     return _then(_value.copyWith(
-      cartridgeCategory: cartridgeCategory == freezed
+      cartridgeCategory: freezed == cartridgeCategory
           ? _value.cartridgeCategory
           : cartridgeCategory // ignore: cast_nullable_to_non_nullable
               as CartridgeCategory?,
-      caliber: caliber == freezed
+      caliber: null == caliber
           ? _value.caliber
           : caliber // ignore: cast_nullable_to_non_nullable
               as CaliberForm,
-      cartridgeLength: cartridgeLength == freezed
+      cartridgeLength: null == cartridgeLength
           ? _value.cartridgeLength
           : cartridgeLength // ignore: cast_nullable_to_non_nullable
               as CartridgeLengthForm,
-      caseLength: caseLength == freezed
+      caseLength: null == caseLength
           ? _value.caseLength
           : caseLength // ignore: cast_nullable_to_non_nullable
               as CaseLengthForm,
-      bulletDiameter: bulletDiameter == freezed
+      bulletDiameter: null == bulletDiameter
           ? _value.bulletDiameter
           : bulletDiameter // ignore: cast_nullable_to_non_nullable
               as BulletDiameterForm,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$CartridgeFormCopyWith<$Res>
+abstract class _$$_CartridgeFormCopyWith<$Res>
     implements $CartridgeFormCopyWith<$Res> {
-  factory _$CartridgeFormCopyWith(
-          _CartridgeForm value, $Res Function(_CartridgeForm) then) =
-      __$CartridgeFormCopyWithImpl<$Res>;
+  factory _$$_CartridgeFormCopyWith(
+          _$_CartridgeForm value, $Res Function(_$_CartridgeForm) then) =
+      __$$_CartridgeFormCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {CartridgeCategory? cartridgeCategory,
       CaliberForm caliber,
@@ -120,42 +103,40 @@ abstract class _$CartridgeFormCopyWith<$Res>
 }
 
 /// @nodoc
-class __$CartridgeFormCopyWithImpl<$Res>
-    extends _$CartridgeFormCopyWithImpl<$Res>
-    implements _$CartridgeFormCopyWith<$Res> {
-  __$CartridgeFormCopyWithImpl(
-      _CartridgeForm _value, $Res Function(_CartridgeForm) _then)
-      : super(_value, (v) => _then(v as _CartridgeForm));
+class __$$_CartridgeFormCopyWithImpl<$Res>
+    extends _$CartridgeFormCopyWithImpl<$Res, _$_CartridgeForm>
+    implements _$$_CartridgeFormCopyWith<$Res> {
+  __$$_CartridgeFormCopyWithImpl(
+      _$_CartridgeForm _value, $Res Function(_$_CartridgeForm) _then)
+      : super(_value, _then);
 
-  @override
-  _CartridgeForm get _value => super._value as _CartridgeForm;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? cartridgeCategory = freezed,
-    Object? caliber = freezed,
-    Object? cartridgeLength = freezed,
-    Object? caseLength = freezed,
-    Object? bulletDiameter = freezed,
+    Object? caliber = null,
+    Object? cartridgeLength = null,
+    Object? caseLength = null,
+    Object? bulletDiameter = null,
   }) {
-    return _then(_CartridgeForm(
-      cartridgeCategory: cartridgeCategory == freezed
+    return _then(_$_CartridgeForm(
+      cartridgeCategory: freezed == cartridgeCategory
           ? _value.cartridgeCategory
           : cartridgeCategory // ignore: cast_nullable_to_non_nullable
               as CartridgeCategory?,
-      caliber: caliber == freezed
+      caliber: null == caliber
           ? _value.caliber
           : caliber // ignore: cast_nullable_to_non_nullable
               as CaliberForm,
-      cartridgeLength: cartridgeLength == freezed
+      cartridgeLength: null == cartridgeLength
           ? _value.cartridgeLength
           : cartridgeLength // ignore: cast_nullable_to_non_nullable
               as CartridgeLengthForm,
-      caseLength: caseLength == freezed
+      caseLength: null == caseLength
           ? _value.caseLength
           : caseLength // ignore: cast_nullable_to_non_nullable
               as CaseLengthForm,
-      bulletDiameter: bulletDiameter == freezed
+      bulletDiameter: null == bulletDiameter
           ? _value.bulletDiameter
           : bulletDiameter // ignore: cast_nullable_to_non_nullable
               as BulletDiameterForm,
@@ -164,6 +145,7 @@ class __$CartridgeFormCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_CartridgeForm extends _CartridgeForm {
   const _$_CartridgeForm(
       {required this.cartridgeCategory,
@@ -192,61 +174,51 @@ class _$_CartridgeForm extends _CartridgeForm {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CartridgeForm &&
+        (other.runtimeType == runtimeType &&
+            other is _$_CartridgeForm &&
             (identical(other.cartridgeCategory, cartridgeCategory) ||
-                const DeepCollectionEquality()
-                    .equals(other.cartridgeCategory, cartridgeCategory)) &&
-            (identical(other.caliber, caliber) ||
-                const DeepCollectionEquality()
-                    .equals(other.caliber, caliber)) &&
+                other.cartridgeCategory == cartridgeCategory) &&
+            (identical(other.caliber, caliber) || other.caliber == caliber) &&
             (identical(other.cartridgeLength, cartridgeLength) ||
-                const DeepCollectionEquality()
-                    .equals(other.cartridgeLength, cartridgeLength)) &&
+                other.cartridgeLength == cartridgeLength) &&
             (identical(other.caseLength, caseLength) ||
-                const DeepCollectionEquality()
-                    .equals(other.caseLength, caseLength)) &&
+                other.caseLength == caseLength) &&
             (identical(other.bulletDiameter, bulletDiameter) ||
-                const DeepCollectionEquality()
-                    .equals(other.bulletDiameter, bulletDiameter)));
+                other.bulletDiameter == bulletDiameter));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(cartridgeCategory) ^
-      const DeepCollectionEquality().hash(caliber) ^
-      const DeepCollectionEquality().hash(cartridgeLength) ^
-      const DeepCollectionEquality().hash(caseLength) ^
-      const DeepCollectionEquality().hash(bulletDiameter);
+  int get hashCode => Object.hash(runtimeType, cartridgeCategory, caliber,
+      cartridgeLength, caseLength, bulletDiameter);
 
   @JsonKey(ignore: true)
   @override
-  _$CartridgeFormCopyWith<_CartridgeForm> get copyWith =>
-      __$CartridgeFormCopyWithImpl<_CartridgeForm>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_CartridgeFormCopyWith<_$_CartridgeForm> get copyWith =>
+      __$$_CartridgeFormCopyWithImpl<_$_CartridgeForm>(this, _$identity);
 }
 
 abstract class _CartridgeForm extends CartridgeForm {
   const factory _CartridgeForm(
-      {required CartridgeCategory? cartridgeCategory,
-      required CaliberForm caliber,
-      required CartridgeLengthForm cartridgeLength,
-      required CaseLengthForm caseLength,
-      required BulletDiameterForm bulletDiameter}) = _$_CartridgeForm;
+      {required final CartridgeCategory? cartridgeCategory,
+      required final CaliberForm caliber,
+      required final CartridgeLengthForm cartridgeLength,
+      required final CaseLengthForm caseLength,
+      required final BulletDiameterForm bulletDiameter}) = _$_CartridgeForm;
   const _CartridgeForm._() : super._();
 
   @override
-  CartridgeCategory? get cartridgeCategory =>
-      throw _privateConstructorUsedError;
+  CartridgeCategory? get cartridgeCategory;
   @override
-  CaliberForm get caliber => throw _privateConstructorUsedError;
+  CaliberForm get caliber;
   @override
-  CartridgeLengthForm get cartridgeLength => throw _privateConstructorUsedError;
+  CartridgeLengthForm get cartridgeLength;
   @override
-  CaseLengthForm get caseLength => throw _privateConstructorUsedError;
+  CaseLengthForm get caseLength;
   @override
-  BulletDiameterForm get bulletDiameter => throw _privateConstructorUsedError;
+  BulletDiameterForm get bulletDiameter;
   @override
   @JsonKey(ignore: true)
-  _$CartridgeFormCopyWith<_CartridgeForm> get copyWith =>
+  _$$_CartridgeFormCopyWith<_$_CartridgeForm> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -14,8 +14,7 @@ part 'cartridge_actor_state.dart';
 part 'cartridge_actor_bloc.freezed.dart';
 
 @injectable
-class CartridgeActorBloc
-    extends Bloc<CartridgeActorEvent, CartridgeActorState> {
+class CartridgeActorBloc extends Bloc<CartridgeActorEvent, CartridgeActorState> {
   CartridgeActorBloc(this._cartridgeRepository)
       : super(const CartridgeActorState.initial());
 

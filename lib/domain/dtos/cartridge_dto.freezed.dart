@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'cartridge_dto.dart';
 
@@ -10,34 +12,11 @@ part of 'cartridge_dto.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 CartridgeDto _$CartridgeDtoFromJson(Map<String, dynamic> json) {
   return _CartridgeDto.fromJson(json);
 }
-
-/// @nodoc
-class _$CartridgeDtoTearOff {
-  const _$CartridgeDtoTearOff();
-
-  _CartridgeDto call(
-      {required double cartridgeLength,
-      required double bulletDiameter,
-      required double caseLength}) {
-    return _CartridgeDto(
-      cartridgeLength: cartridgeLength,
-      bulletDiameter: bulletDiameter,
-      caseLength: caseLength,
-    );
-  }
-
-  CartridgeDto fromJson(Map<String, Object> json) {
-    return CartridgeDto.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $CartridgeDto = _$CartridgeDtoTearOff();
 
 /// @nodoc
 mixin _$CartridgeDto {
@@ -55,77 +34,81 @@ mixin _$CartridgeDto {
 abstract class $CartridgeDtoCopyWith<$Res> {
   factory $CartridgeDtoCopyWith(
           CartridgeDto value, $Res Function(CartridgeDto) then) =
-      _$CartridgeDtoCopyWithImpl<$Res>;
+      _$CartridgeDtoCopyWithImpl<$Res, CartridgeDto>;
+  @useResult
   $Res call({double cartridgeLength, double bulletDiameter, double caseLength});
 }
 
 /// @nodoc
-class _$CartridgeDtoCopyWithImpl<$Res> implements $CartridgeDtoCopyWith<$Res> {
+class _$CartridgeDtoCopyWithImpl<$Res, $Val extends CartridgeDto>
+    implements $CartridgeDtoCopyWith<$Res> {
   _$CartridgeDtoCopyWithImpl(this._value, this._then);
 
-  final CartridgeDto _value;
   // ignore: unused_field
-  final $Res Function(CartridgeDto) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? cartridgeLength = freezed,
-    Object? bulletDiameter = freezed,
-    Object? caseLength = freezed,
+    Object? cartridgeLength = null,
+    Object? bulletDiameter = null,
+    Object? caseLength = null,
   }) {
     return _then(_value.copyWith(
-      cartridgeLength: cartridgeLength == freezed
+      cartridgeLength: null == cartridgeLength
           ? _value.cartridgeLength
           : cartridgeLength // ignore: cast_nullable_to_non_nullable
               as double,
-      bulletDiameter: bulletDiameter == freezed
+      bulletDiameter: null == bulletDiameter
           ? _value.bulletDiameter
           : bulletDiameter // ignore: cast_nullable_to_non_nullable
               as double,
-      caseLength: caseLength == freezed
+      caseLength: null == caseLength
           ? _value.caseLength
           : caseLength // ignore: cast_nullable_to_non_nullable
               as double,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$CartridgeDtoCopyWith<$Res>
+abstract class _$$_CartridgeDtoCopyWith<$Res>
     implements $CartridgeDtoCopyWith<$Res> {
-  factory _$CartridgeDtoCopyWith(
-          _CartridgeDto value, $Res Function(_CartridgeDto) then) =
-      __$CartridgeDtoCopyWithImpl<$Res>;
+  factory _$$_CartridgeDtoCopyWith(
+          _$_CartridgeDto value, $Res Function(_$_CartridgeDto) then) =
+      __$$_CartridgeDtoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({double cartridgeLength, double bulletDiameter, double caseLength});
 }
 
 /// @nodoc
-class __$CartridgeDtoCopyWithImpl<$Res> extends _$CartridgeDtoCopyWithImpl<$Res>
-    implements _$CartridgeDtoCopyWith<$Res> {
-  __$CartridgeDtoCopyWithImpl(
-      _CartridgeDto _value, $Res Function(_CartridgeDto) _then)
-      : super(_value, (v) => _then(v as _CartridgeDto));
+class __$$_CartridgeDtoCopyWithImpl<$Res>
+    extends _$CartridgeDtoCopyWithImpl<$Res, _$_CartridgeDto>
+    implements _$$_CartridgeDtoCopyWith<$Res> {
+  __$$_CartridgeDtoCopyWithImpl(
+      _$_CartridgeDto _value, $Res Function(_$_CartridgeDto) _then)
+      : super(_value, _then);
 
-  @override
-  _CartridgeDto get _value => super._value as _CartridgeDto;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? cartridgeLength = freezed,
-    Object? bulletDiameter = freezed,
-    Object? caseLength = freezed,
+    Object? cartridgeLength = null,
+    Object? bulletDiameter = null,
+    Object? caseLength = null,
   }) {
-    return _then(_CartridgeDto(
-      cartridgeLength: cartridgeLength == freezed
+    return _then(_$_CartridgeDto(
+      cartridgeLength: null == cartridgeLength
           ? _value.cartridgeLength
           : cartridgeLength // ignore: cast_nullable_to_non_nullable
               as double,
-      bulletDiameter: bulletDiameter == freezed
+      bulletDiameter: null == bulletDiameter
           ? _value.bulletDiameter
           : bulletDiameter // ignore: cast_nullable_to_non_nullable
               as double,
-      caseLength: caseLength == freezed
+      caseLength: null == caseLength
           ? _value.caseLength
           : caseLength // ignore: cast_nullable_to_non_nullable
               as double,
@@ -133,9 +116,8 @@ class __$CartridgeDtoCopyWithImpl<$Res> extends _$CartridgeDtoCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_CartridgeDto extends _CartridgeDto {
   const _$_CartridgeDto(
       {required this.cartridgeLength,
@@ -144,7 +126,7 @@ class _$_CartridgeDto extends _CartridgeDto {
       : super._();
 
   factory _$_CartridgeDto.fromJson(Map<String, dynamic> json) =>
-      _$_$_CartridgeDtoFromJson(json);
+      _$$_CartridgeDtoFromJson(json);
 
   @override
   final double cartridgeLength;
@@ -161,54 +143,53 @@ class _$_CartridgeDto extends _CartridgeDto {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CartridgeDto &&
+        (other.runtimeType == runtimeType &&
+            other is _$_CartridgeDto &&
             (identical(other.cartridgeLength, cartridgeLength) ||
-                const DeepCollectionEquality()
-                    .equals(other.cartridgeLength, cartridgeLength)) &&
+                other.cartridgeLength == cartridgeLength) &&
             (identical(other.bulletDiameter, bulletDiameter) ||
-                const DeepCollectionEquality()
-                    .equals(other.bulletDiameter, bulletDiameter)) &&
+                other.bulletDiameter == bulletDiameter) &&
             (identical(other.caseLength, caseLength) ||
-                const DeepCollectionEquality()
-                    .equals(other.caseLength, caseLength)));
+                other.caseLength == caseLength));
   }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(cartridgeLength) ^
-      const DeepCollectionEquality().hash(bulletDiameter) ^
-      const DeepCollectionEquality().hash(caseLength);
 
   @JsonKey(ignore: true)
   @override
-  _$CartridgeDtoCopyWith<_CartridgeDto> get copyWith =>
-      __$CartridgeDtoCopyWithImpl<_CartridgeDto>(this, _$identity);
+  int get hashCode =>
+      Object.hash(runtimeType, cartridgeLength, bulletDiameter, caseLength);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_CartridgeDtoCopyWith<_$_CartridgeDto> get copyWith =>
+      __$$_CartridgeDtoCopyWithImpl<_$_CartridgeDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_CartridgeDtoToJson(this);
+    return _$$_CartridgeDtoToJson(
+      this,
+    );
   }
 }
 
 abstract class _CartridgeDto extends CartridgeDto {
   const factory _CartridgeDto(
-      {required double cartridgeLength,
-      required double bulletDiameter,
-      required double caseLength}) = _$_CartridgeDto;
+      {required final double cartridgeLength,
+      required final double bulletDiameter,
+      required final double caseLength}) = _$_CartridgeDto;
   const _CartridgeDto._() : super._();
 
   factory _CartridgeDto.fromJson(Map<String, dynamic> json) =
       _$_CartridgeDto.fromJson;
 
   @override
-  double get cartridgeLength => throw _privateConstructorUsedError;
+  double get cartridgeLength;
   @override
-  double get bulletDiameter => throw _privateConstructorUsedError;
+  double get bulletDiameter;
   @override
-  double get caseLength => throw _privateConstructorUsedError;
+  double get caseLength;
   @override
   @JsonKey(ignore: true)
-  _$CartridgeDtoCopyWith<_CartridgeDto> get copyWith =>
+  _$$_CartridgeDtoCopyWith<_$_CartridgeDto> get copyWith =>
       throw _privateConstructorUsedError;
 }

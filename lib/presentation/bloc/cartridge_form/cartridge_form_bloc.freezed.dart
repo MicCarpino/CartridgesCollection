@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'cartridge_form_bloc.dart';
 
@@ -10,56 +12,7 @@ part of 'cartridge_form_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$CartridgeFormEventTearOff {
-  const _$CartridgeFormEventTearOff();
-
-  _Initialized initialized(
-      Either<Cartridge, CartridgeCategory> cartridgeOrCategory) {
-    return _Initialized(
-      cartridgeOrCategory,
-    );
-  }
-
-  _NameChanged caliberChanged(String newCaliber) {
-    return _NameChanged(
-      newCaliber,
-    );
-  }
-
-  _CaseLengthChanged caseLengthChanged(String newCaseLength) {
-    return _CaseLengthChanged(
-      newCaseLength,
-    );
-  }
-
-  _CaliberChanged cartridgeLengthChanged(String newCartridgeLength) {
-    return _CaliberChanged(
-      newCartridgeLength,
-    );
-  }
-
-  _CategoryChanged categoryChanged(CartridgeCategory newCategory) {
-    return _CategoryChanged(
-      newCategory,
-    );
-  }
-
-  _BulletDiameterChanged bulletDiameterChanged(String newBulletDiameter) {
-    return _BulletDiameterChanged(
-      newBulletDiameter,
-    );
-  }
-
-  _Saved saved() {
-    return const _Saved();
-  }
-}
-
-/// @nodoc
-const $CartridgeFormEvent = _$CartridgeFormEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$CartridgeFormEvent {
@@ -74,6 +27,18 @@ mixin _$CartridgeFormEvent {
     required TResult Function(CartridgeCategory newCategory) categoryChanged,
     required TResult Function(String newBulletDiameter) bulletDiameterChanged,
     required TResult Function() saved,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Either<Cartridge, CartridgeCategory> cartridgeOrCategory)?
+        initialized,
+    TResult? Function(String newCaliber)? caliberChanged,
+    TResult? Function(String newCaseLength)? caseLengthChanged,
+    TResult? Function(String newCartridgeLength)? cartridgeLengthChanged,
+    TResult? Function(CartridgeCategory newCategory)? categoryChanged,
+    TResult? Function(String newBulletDiameter)? bulletDiameterChanged,
+    TResult? Function()? saved,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -102,6 +67,17 @@ mixin _$CartridgeFormEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_NameChanged value)? caliberChanged,
+    TResult? Function(_CaseLengthChanged value)? caseLengthChanged,
+    TResult? Function(_CaliberChanged value)? cartridgeLengthChanged,
+    TResult? Function(_CategoryChanged value)? categoryChanged,
+    TResult? Function(_BulletDiameterChanged value)? bulletDiameterChanged,
+    TResult? Function(_Saved value)? saved,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
     TResult Function(_NameChanged value)? caliberChanged,
@@ -119,44 +95,44 @@ mixin _$CartridgeFormEvent {
 abstract class $CartridgeFormEventCopyWith<$Res> {
   factory $CartridgeFormEventCopyWith(
           CartridgeFormEvent value, $Res Function(CartridgeFormEvent) then) =
-      _$CartridgeFormEventCopyWithImpl<$Res>;
+      _$CartridgeFormEventCopyWithImpl<$Res, CartridgeFormEvent>;
 }
 
 /// @nodoc
-class _$CartridgeFormEventCopyWithImpl<$Res>
+class _$CartridgeFormEventCopyWithImpl<$Res, $Val extends CartridgeFormEvent>
     implements $CartridgeFormEventCopyWith<$Res> {
   _$CartridgeFormEventCopyWithImpl(this._value, this._then);
 
-  final CartridgeFormEvent _value;
   // ignore: unused_field
-  final $Res Function(CartridgeFormEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(
-          _Initialized value, $Res Function(_Initialized) then) =
-      __$InitializedCopyWithImpl<$Res>;
+abstract class _$$_InitializedCopyWith<$Res> {
+  factory _$$_InitializedCopyWith(
+          _$_Initialized value, $Res Function(_$_Initialized) then) =
+      __$$_InitializedCopyWithImpl<$Res>;
+  @useResult
   $Res call({Either<Cartridge, CartridgeCategory> cartridgeOrCategory});
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res>
-    extends _$CartridgeFormEventCopyWithImpl<$Res>
-    implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(
-      _Initialized _value, $Res Function(_Initialized) _then)
-      : super(_value, (v) => _then(v as _Initialized));
+class __$$_InitializedCopyWithImpl<$Res>
+    extends _$CartridgeFormEventCopyWithImpl<$Res, _$_Initialized>
+    implements _$$_InitializedCopyWith<$Res> {
+  __$$_InitializedCopyWithImpl(
+      _$_Initialized _value, $Res Function(_$_Initialized) _then)
+      : super(_value, _then);
 
-  @override
-  _Initialized get _value => super._value as _Initialized;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? cartridgeOrCategory = freezed,
+    Object? cartridgeOrCategory = null,
   }) {
-    return _then(_Initialized(
-      cartridgeOrCategory == freezed
+    return _then(_$_Initialized(
+      null == cartridgeOrCategory
           ? _value.cartridgeOrCategory
           : cartridgeOrCategory // ignore: cast_nullable_to_non_nullable
               as Either<Cartridge, CartridgeCategory>,
@@ -165,6 +141,7 @@ class __$InitializedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Initialized implements _Initialized {
   const _$_Initialized(this.cartridgeOrCategory);
 
@@ -179,21 +156,20 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Initialized &&
+        (other.runtimeType == runtimeType &&
+            other is _$_Initialized &&
             (identical(other.cartridgeOrCategory, cartridgeOrCategory) ||
-                const DeepCollectionEquality()
-                    .equals(other.cartridgeOrCategory, cartridgeOrCategory)));
+                other.cartridgeOrCategory == cartridgeOrCategory));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(cartridgeOrCategory);
+  int get hashCode => Object.hash(runtimeType, cartridgeOrCategory);
 
   @JsonKey(ignore: true)
   @override
-  _$InitializedCopyWith<_Initialized> get copyWith =>
-      __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_InitializedCopyWith<_$_Initialized> get copyWith =>
+      __$$_InitializedCopyWithImpl<_$_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -209,6 +185,21 @@ class _$_Initialized implements _Initialized {
     required TResult Function() saved,
   }) {
     return initialized(cartridgeOrCategory);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Either<Cartridge, CartridgeCategory> cartridgeOrCategory)?
+        initialized,
+    TResult? Function(String newCaliber)? caliberChanged,
+    TResult? Function(String newCaseLength)? caseLengthChanged,
+    TResult? Function(String newCartridgeLength)? cartridgeLengthChanged,
+    TResult? Function(CartridgeCategory newCategory)? categoryChanged,
+    TResult? Function(String newBulletDiameter)? bulletDiameterChanged,
+    TResult? Function()? saved,
+  }) {
+    return initialized?.call(cartridgeOrCategory);
   }
 
   @override
@@ -247,6 +238,20 @@ class _$_Initialized implements _Initialized {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_NameChanged value)? caliberChanged,
+    TResult? Function(_CaseLengthChanged value)? caseLengthChanged,
+    TResult? Function(_CaliberChanged value)? cartridgeLengthChanged,
+    TResult? Function(_CategoryChanged value)? categoryChanged,
+    TResult? Function(_BulletDiameterChanged value)? bulletDiameterChanged,
+    TResult? Function(_Saved value)? saved,
+  }) {
+    return initialized?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
     TResult Function(_NameChanged value)? caliberChanged,
@@ -266,41 +271,39 @@ class _$_Initialized implements _Initialized {
 
 abstract class _Initialized implements CartridgeFormEvent {
   const factory _Initialized(
-          Either<Cartridge, CartridgeCategory> cartridgeOrCategory) =
+          final Either<Cartridge, CartridgeCategory> cartridgeOrCategory) =
       _$_Initialized;
 
-  Either<Cartridge, CartridgeCategory> get cartridgeOrCategory =>
-      throw _privateConstructorUsedError;
+  Either<Cartridge, CartridgeCategory> get cartridgeOrCategory;
   @JsonKey(ignore: true)
-  _$InitializedCopyWith<_Initialized> get copyWith =>
+  _$$_InitializedCopyWith<_$_Initialized> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$NameChangedCopyWith<$Res> {
-  factory _$NameChangedCopyWith(
-          _NameChanged value, $Res Function(_NameChanged) then) =
-      __$NameChangedCopyWithImpl<$Res>;
+abstract class _$$_NameChangedCopyWith<$Res> {
+  factory _$$_NameChangedCopyWith(
+          _$_NameChanged value, $Res Function(_$_NameChanged) then) =
+      __$$_NameChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String newCaliber});
 }
 
 /// @nodoc
-class __$NameChangedCopyWithImpl<$Res>
-    extends _$CartridgeFormEventCopyWithImpl<$Res>
-    implements _$NameChangedCopyWith<$Res> {
-  __$NameChangedCopyWithImpl(
-      _NameChanged _value, $Res Function(_NameChanged) _then)
-      : super(_value, (v) => _then(v as _NameChanged));
+class __$$_NameChangedCopyWithImpl<$Res>
+    extends _$CartridgeFormEventCopyWithImpl<$Res, _$_NameChanged>
+    implements _$$_NameChangedCopyWith<$Res> {
+  __$$_NameChangedCopyWithImpl(
+      _$_NameChanged _value, $Res Function(_$_NameChanged) _then)
+      : super(_value, _then);
 
-  @override
-  _NameChanged get _value => super._value as _NameChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? newCaliber = freezed,
+    Object? newCaliber = null,
   }) {
-    return _then(_NameChanged(
-      newCaliber == freezed
+    return _then(_$_NameChanged(
+      null == newCaliber
           ? _value.newCaliber
           : newCaliber // ignore: cast_nullable_to_non_nullable
               as String,
@@ -309,6 +312,7 @@ class __$NameChangedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_NameChanged implements _NameChanged {
   const _$_NameChanged(this.newCaliber);
 
@@ -323,20 +327,20 @@ class _$_NameChanged implements _NameChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _NameChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _$_NameChanged &&
             (identical(other.newCaliber, newCaliber) ||
-                const DeepCollectionEquality()
-                    .equals(other.newCaliber, newCaliber)));
+                other.newCaliber == newCaliber));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(newCaliber);
+  int get hashCode => Object.hash(runtimeType, newCaliber);
 
   @JsonKey(ignore: true)
   @override
-  _$NameChangedCopyWith<_NameChanged> get copyWith =>
-      __$NameChangedCopyWithImpl<_NameChanged>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_NameChangedCopyWith<_$_NameChanged> get copyWith =>
+      __$$_NameChangedCopyWithImpl<_$_NameChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -352,6 +356,21 @@ class _$_NameChanged implements _NameChanged {
     required TResult Function() saved,
   }) {
     return caliberChanged(newCaliber);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Either<Cartridge, CartridgeCategory> cartridgeOrCategory)?
+        initialized,
+    TResult? Function(String newCaliber)? caliberChanged,
+    TResult? Function(String newCaseLength)? caseLengthChanged,
+    TResult? Function(String newCartridgeLength)? cartridgeLengthChanged,
+    TResult? Function(CartridgeCategory newCategory)? categoryChanged,
+    TResult? Function(String newBulletDiameter)? bulletDiameterChanged,
+    TResult? Function()? saved,
+  }) {
+    return caliberChanged?.call(newCaliber);
   }
 
   @override
@@ -390,6 +409,20 @@ class _$_NameChanged implements _NameChanged {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_NameChanged value)? caliberChanged,
+    TResult? Function(_CaseLengthChanged value)? caseLengthChanged,
+    TResult? Function(_CaliberChanged value)? cartridgeLengthChanged,
+    TResult? Function(_CategoryChanged value)? categoryChanged,
+    TResult? Function(_BulletDiameterChanged value)? bulletDiameterChanged,
+    TResult? Function(_Saved value)? saved,
+  }) {
+    return caliberChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
     TResult Function(_NameChanged value)? caliberChanged,
@@ -408,39 +441,38 @@ class _$_NameChanged implements _NameChanged {
 }
 
 abstract class _NameChanged implements CartridgeFormEvent {
-  const factory _NameChanged(String newCaliber) = _$_NameChanged;
+  const factory _NameChanged(final String newCaliber) = _$_NameChanged;
 
-  String get newCaliber => throw _privateConstructorUsedError;
+  String get newCaliber;
   @JsonKey(ignore: true)
-  _$NameChangedCopyWith<_NameChanged> get copyWith =>
+  _$$_NameChangedCopyWith<_$_NameChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$CaseLengthChangedCopyWith<$Res> {
-  factory _$CaseLengthChangedCopyWith(
-          _CaseLengthChanged value, $Res Function(_CaseLengthChanged) then) =
-      __$CaseLengthChangedCopyWithImpl<$Res>;
+abstract class _$$_CaseLengthChangedCopyWith<$Res> {
+  factory _$$_CaseLengthChangedCopyWith(_$_CaseLengthChanged value,
+          $Res Function(_$_CaseLengthChanged) then) =
+      __$$_CaseLengthChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String newCaseLength});
 }
 
 /// @nodoc
-class __$CaseLengthChangedCopyWithImpl<$Res>
-    extends _$CartridgeFormEventCopyWithImpl<$Res>
-    implements _$CaseLengthChangedCopyWith<$Res> {
-  __$CaseLengthChangedCopyWithImpl(
-      _CaseLengthChanged _value, $Res Function(_CaseLengthChanged) _then)
-      : super(_value, (v) => _then(v as _CaseLengthChanged));
+class __$$_CaseLengthChangedCopyWithImpl<$Res>
+    extends _$CartridgeFormEventCopyWithImpl<$Res, _$_CaseLengthChanged>
+    implements _$$_CaseLengthChangedCopyWith<$Res> {
+  __$$_CaseLengthChangedCopyWithImpl(
+      _$_CaseLengthChanged _value, $Res Function(_$_CaseLengthChanged) _then)
+      : super(_value, _then);
 
-  @override
-  _CaseLengthChanged get _value => super._value as _CaseLengthChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? newCaseLength = freezed,
+    Object? newCaseLength = null,
   }) {
-    return _then(_CaseLengthChanged(
-      newCaseLength == freezed
+    return _then(_$_CaseLengthChanged(
+      null == newCaseLength
           ? _value.newCaseLength
           : newCaseLength // ignore: cast_nullable_to_non_nullable
               as String,
@@ -449,6 +481,7 @@ class __$CaseLengthChangedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_CaseLengthChanged implements _CaseLengthChanged {
   const _$_CaseLengthChanged(this.newCaseLength);
 
@@ -463,20 +496,21 @@ class _$_CaseLengthChanged implements _CaseLengthChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CaseLengthChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _$_CaseLengthChanged &&
             (identical(other.newCaseLength, newCaseLength) ||
-                const DeepCollectionEquality()
-                    .equals(other.newCaseLength, newCaseLength)));
+                other.newCaseLength == newCaseLength));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(newCaseLength);
+  int get hashCode => Object.hash(runtimeType, newCaseLength);
 
   @JsonKey(ignore: true)
   @override
-  _$CaseLengthChangedCopyWith<_CaseLengthChanged> get copyWith =>
-      __$CaseLengthChangedCopyWithImpl<_CaseLengthChanged>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_CaseLengthChangedCopyWith<_$_CaseLengthChanged> get copyWith =>
+      __$$_CaseLengthChangedCopyWithImpl<_$_CaseLengthChanged>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -492,6 +526,21 @@ class _$_CaseLengthChanged implements _CaseLengthChanged {
     required TResult Function() saved,
   }) {
     return caseLengthChanged(newCaseLength);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Either<Cartridge, CartridgeCategory> cartridgeOrCategory)?
+        initialized,
+    TResult? Function(String newCaliber)? caliberChanged,
+    TResult? Function(String newCaseLength)? caseLengthChanged,
+    TResult? Function(String newCartridgeLength)? cartridgeLengthChanged,
+    TResult? Function(CartridgeCategory newCategory)? categoryChanged,
+    TResult? Function(String newBulletDiameter)? bulletDiameterChanged,
+    TResult? Function()? saved,
+  }) {
+    return caseLengthChanged?.call(newCaseLength);
   }
 
   @override
@@ -530,6 +579,20 @@ class _$_CaseLengthChanged implements _CaseLengthChanged {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_NameChanged value)? caliberChanged,
+    TResult? Function(_CaseLengthChanged value)? caseLengthChanged,
+    TResult? Function(_CaliberChanged value)? cartridgeLengthChanged,
+    TResult? Function(_CategoryChanged value)? categoryChanged,
+    TResult? Function(_BulletDiameterChanged value)? bulletDiameterChanged,
+    TResult? Function(_Saved value)? saved,
+  }) {
+    return caseLengthChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
     TResult Function(_NameChanged value)? caliberChanged,
@@ -548,39 +611,39 @@ class _$_CaseLengthChanged implements _CaseLengthChanged {
 }
 
 abstract class _CaseLengthChanged implements CartridgeFormEvent {
-  const factory _CaseLengthChanged(String newCaseLength) = _$_CaseLengthChanged;
+  const factory _CaseLengthChanged(final String newCaseLength) =
+      _$_CaseLengthChanged;
 
-  String get newCaseLength => throw _privateConstructorUsedError;
+  String get newCaseLength;
   @JsonKey(ignore: true)
-  _$CaseLengthChangedCopyWith<_CaseLengthChanged> get copyWith =>
+  _$$_CaseLengthChangedCopyWith<_$_CaseLengthChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$CaliberChangedCopyWith<$Res> {
-  factory _$CaliberChangedCopyWith(
-          _CaliberChanged value, $Res Function(_CaliberChanged) then) =
-      __$CaliberChangedCopyWithImpl<$Res>;
+abstract class _$$_CaliberChangedCopyWith<$Res> {
+  factory _$$_CaliberChangedCopyWith(
+          _$_CaliberChanged value, $Res Function(_$_CaliberChanged) then) =
+      __$$_CaliberChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String newCartridgeLength});
 }
 
 /// @nodoc
-class __$CaliberChangedCopyWithImpl<$Res>
-    extends _$CartridgeFormEventCopyWithImpl<$Res>
-    implements _$CaliberChangedCopyWith<$Res> {
-  __$CaliberChangedCopyWithImpl(
-      _CaliberChanged _value, $Res Function(_CaliberChanged) _then)
-      : super(_value, (v) => _then(v as _CaliberChanged));
+class __$$_CaliberChangedCopyWithImpl<$Res>
+    extends _$CartridgeFormEventCopyWithImpl<$Res, _$_CaliberChanged>
+    implements _$$_CaliberChangedCopyWith<$Res> {
+  __$$_CaliberChangedCopyWithImpl(
+      _$_CaliberChanged _value, $Res Function(_$_CaliberChanged) _then)
+      : super(_value, _then);
 
-  @override
-  _CaliberChanged get _value => super._value as _CaliberChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? newCartridgeLength = freezed,
+    Object? newCartridgeLength = null,
   }) {
-    return _then(_CaliberChanged(
-      newCartridgeLength == freezed
+    return _then(_$_CaliberChanged(
+      null == newCartridgeLength
           ? _value.newCartridgeLength
           : newCartridgeLength // ignore: cast_nullable_to_non_nullable
               as String,
@@ -589,6 +652,7 @@ class __$CaliberChangedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_CaliberChanged implements _CaliberChanged {
   const _$_CaliberChanged(this.newCartridgeLength);
 
@@ -603,21 +667,20 @@ class _$_CaliberChanged implements _CaliberChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CaliberChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _$_CaliberChanged &&
             (identical(other.newCartridgeLength, newCartridgeLength) ||
-                const DeepCollectionEquality()
-                    .equals(other.newCartridgeLength, newCartridgeLength)));
+                other.newCartridgeLength == newCartridgeLength));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(newCartridgeLength);
+  int get hashCode => Object.hash(runtimeType, newCartridgeLength);
 
   @JsonKey(ignore: true)
   @override
-  _$CaliberChangedCopyWith<_CaliberChanged> get copyWith =>
-      __$CaliberChangedCopyWithImpl<_CaliberChanged>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_CaliberChangedCopyWith<_$_CaliberChanged> get copyWith =>
+      __$$_CaliberChangedCopyWithImpl<_$_CaliberChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -633,6 +696,21 @@ class _$_CaliberChanged implements _CaliberChanged {
     required TResult Function() saved,
   }) {
     return cartridgeLengthChanged(newCartridgeLength);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Either<Cartridge, CartridgeCategory> cartridgeOrCategory)?
+        initialized,
+    TResult? Function(String newCaliber)? caliberChanged,
+    TResult? Function(String newCaseLength)? caseLengthChanged,
+    TResult? Function(String newCartridgeLength)? cartridgeLengthChanged,
+    TResult? Function(CartridgeCategory newCategory)? categoryChanged,
+    TResult? Function(String newBulletDiameter)? bulletDiameterChanged,
+    TResult? Function()? saved,
+  }) {
+    return cartridgeLengthChanged?.call(newCartridgeLength);
   }
 
   @override
@@ -671,6 +749,20 @@ class _$_CaliberChanged implements _CaliberChanged {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_NameChanged value)? caliberChanged,
+    TResult? Function(_CaseLengthChanged value)? caseLengthChanged,
+    TResult? Function(_CaliberChanged value)? cartridgeLengthChanged,
+    TResult? Function(_CategoryChanged value)? categoryChanged,
+    TResult? Function(_BulletDiameterChanged value)? bulletDiameterChanged,
+    TResult? Function(_Saved value)? saved,
+  }) {
+    return cartridgeLengthChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
     TResult Function(_NameChanged value)? caliberChanged,
@@ -689,39 +781,39 @@ class _$_CaliberChanged implements _CaliberChanged {
 }
 
 abstract class _CaliberChanged implements CartridgeFormEvent {
-  const factory _CaliberChanged(String newCartridgeLength) = _$_CaliberChanged;
+  const factory _CaliberChanged(final String newCartridgeLength) =
+      _$_CaliberChanged;
 
-  String get newCartridgeLength => throw _privateConstructorUsedError;
+  String get newCartridgeLength;
   @JsonKey(ignore: true)
-  _$CaliberChangedCopyWith<_CaliberChanged> get copyWith =>
+  _$$_CaliberChangedCopyWith<_$_CaliberChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$CategoryChangedCopyWith<$Res> {
-  factory _$CategoryChangedCopyWith(
-          _CategoryChanged value, $Res Function(_CategoryChanged) then) =
-      __$CategoryChangedCopyWithImpl<$Res>;
+abstract class _$$_CategoryChangedCopyWith<$Res> {
+  factory _$$_CategoryChangedCopyWith(
+          _$_CategoryChanged value, $Res Function(_$_CategoryChanged) then) =
+      __$$_CategoryChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({CartridgeCategory newCategory});
 }
 
 /// @nodoc
-class __$CategoryChangedCopyWithImpl<$Res>
-    extends _$CartridgeFormEventCopyWithImpl<$Res>
-    implements _$CategoryChangedCopyWith<$Res> {
-  __$CategoryChangedCopyWithImpl(
-      _CategoryChanged _value, $Res Function(_CategoryChanged) _then)
-      : super(_value, (v) => _then(v as _CategoryChanged));
+class __$$_CategoryChangedCopyWithImpl<$Res>
+    extends _$CartridgeFormEventCopyWithImpl<$Res, _$_CategoryChanged>
+    implements _$$_CategoryChangedCopyWith<$Res> {
+  __$$_CategoryChangedCopyWithImpl(
+      _$_CategoryChanged _value, $Res Function(_$_CategoryChanged) _then)
+      : super(_value, _then);
 
-  @override
-  _CategoryChanged get _value => super._value as _CategoryChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? newCategory = freezed,
+    Object? newCategory = null,
   }) {
-    return _then(_CategoryChanged(
-      newCategory == freezed
+    return _then(_$_CategoryChanged(
+      null == newCategory
           ? _value.newCategory
           : newCategory // ignore: cast_nullable_to_non_nullable
               as CartridgeCategory,
@@ -730,6 +822,7 @@ class __$CategoryChangedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_CategoryChanged implements _CategoryChanged {
   const _$_CategoryChanged(this.newCategory);
 
@@ -744,20 +837,20 @@ class _$_CategoryChanged implements _CategoryChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CategoryChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _$_CategoryChanged &&
             (identical(other.newCategory, newCategory) ||
-                const DeepCollectionEquality()
-                    .equals(other.newCategory, newCategory)));
+                other.newCategory == newCategory));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(newCategory);
+  int get hashCode => Object.hash(runtimeType, newCategory);
 
   @JsonKey(ignore: true)
   @override
-  _$CategoryChangedCopyWith<_CategoryChanged> get copyWith =>
-      __$CategoryChangedCopyWithImpl<_CategoryChanged>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_CategoryChangedCopyWith<_$_CategoryChanged> get copyWith =>
+      __$$_CategoryChangedCopyWithImpl<_$_CategoryChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -773,6 +866,21 @@ class _$_CategoryChanged implements _CategoryChanged {
     required TResult Function() saved,
   }) {
     return categoryChanged(newCategory);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Either<Cartridge, CartridgeCategory> cartridgeOrCategory)?
+        initialized,
+    TResult? Function(String newCaliber)? caliberChanged,
+    TResult? Function(String newCaseLength)? caseLengthChanged,
+    TResult? Function(String newCartridgeLength)? cartridgeLengthChanged,
+    TResult? Function(CartridgeCategory newCategory)? categoryChanged,
+    TResult? Function(String newBulletDiameter)? bulletDiameterChanged,
+    TResult? Function()? saved,
+  }) {
+    return categoryChanged?.call(newCategory);
   }
 
   @override
@@ -811,6 +919,20 @@ class _$_CategoryChanged implements _CategoryChanged {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_NameChanged value)? caliberChanged,
+    TResult? Function(_CaseLengthChanged value)? caseLengthChanged,
+    TResult? Function(_CaliberChanged value)? cartridgeLengthChanged,
+    TResult? Function(_CategoryChanged value)? categoryChanged,
+    TResult? Function(_BulletDiameterChanged value)? bulletDiameterChanged,
+    TResult? Function(_Saved value)? saved,
+  }) {
+    return categoryChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
     TResult Function(_NameChanged value)? caliberChanged,
@@ -829,40 +951,39 @@ class _$_CategoryChanged implements _CategoryChanged {
 }
 
 abstract class _CategoryChanged implements CartridgeFormEvent {
-  const factory _CategoryChanged(CartridgeCategory newCategory) =
+  const factory _CategoryChanged(final CartridgeCategory newCategory) =
       _$_CategoryChanged;
 
-  CartridgeCategory get newCategory => throw _privateConstructorUsedError;
+  CartridgeCategory get newCategory;
   @JsonKey(ignore: true)
-  _$CategoryChangedCopyWith<_CategoryChanged> get copyWith =>
+  _$$_CategoryChangedCopyWith<_$_CategoryChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$BulletDiameterChangedCopyWith<$Res> {
-  factory _$BulletDiameterChangedCopyWith(_BulletDiameterChanged value,
-          $Res Function(_BulletDiameterChanged) then) =
-      __$BulletDiameterChangedCopyWithImpl<$Res>;
+abstract class _$$_BulletDiameterChangedCopyWith<$Res> {
+  factory _$$_BulletDiameterChangedCopyWith(_$_BulletDiameterChanged value,
+          $Res Function(_$_BulletDiameterChanged) then) =
+      __$$_BulletDiameterChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String newBulletDiameter});
 }
 
 /// @nodoc
-class __$BulletDiameterChangedCopyWithImpl<$Res>
-    extends _$CartridgeFormEventCopyWithImpl<$Res>
-    implements _$BulletDiameterChangedCopyWith<$Res> {
-  __$BulletDiameterChangedCopyWithImpl(_BulletDiameterChanged _value,
-      $Res Function(_BulletDiameterChanged) _then)
-      : super(_value, (v) => _then(v as _BulletDiameterChanged));
+class __$$_BulletDiameterChangedCopyWithImpl<$Res>
+    extends _$CartridgeFormEventCopyWithImpl<$Res, _$_BulletDiameterChanged>
+    implements _$$_BulletDiameterChangedCopyWith<$Res> {
+  __$$_BulletDiameterChangedCopyWithImpl(_$_BulletDiameterChanged _value,
+      $Res Function(_$_BulletDiameterChanged) _then)
+      : super(_value, _then);
 
-  @override
-  _BulletDiameterChanged get _value => super._value as _BulletDiameterChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? newBulletDiameter = freezed,
+    Object? newBulletDiameter = null,
   }) {
-    return _then(_BulletDiameterChanged(
-      newBulletDiameter == freezed
+    return _then(_$_BulletDiameterChanged(
+      null == newBulletDiameter
           ? _value.newBulletDiameter
           : newBulletDiameter // ignore: cast_nullable_to_non_nullable
               as String,
@@ -871,6 +992,7 @@ class __$BulletDiameterChangedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_BulletDiameterChanged implements _BulletDiameterChanged {
   const _$_BulletDiameterChanged(this.newBulletDiameter);
 
@@ -885,21 +1007,20 @@ class _$_BulletDiameterChanged implements _BulletDiameterChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _BulletDiameterChanged &&
+        (other.runtimeType == runtimeType &&
+            other is _$_BulletDiameterChanged &&
             (identical(other.newBulletDiameter, newBulletDiameter) ||
-                const DeepCollectionEquality()
-                    .equals(other.newBulletDiameter, newBulletDiameter)));
+                other.newBulletDiameter == newBulletDiameter));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(newBulletDiameter);
+  int get hashCode => Object.hash(runtimeType, newBulletDiameter);
 
   @JsonKey(ignore: true)
   @override
-  _$BulletDiameterChangedCopyWith<_BulletDiameterChanged> get copyWith =>
-      __$BulletDiameterChangedCopyWithImpl<_BulletDiameterChanged>(
+  @pragma('vm:prefer-inline')
+  _$$_BulletDiameterChangedCopyWith<_$_BulletDiameterChanged> get copyWith =>
+      __$$_BulletDiameterChangedCopyWithImpl<_$_BulletDiameterChanged>(
           this, _$identity);
 
   @override
@@ -916,6 +1037,21 @@ class _$_BulletDiameterChanged implements _BulletDiameterChanged {
     required TResult Function() saved,
   }) {
     return bulletDiameterChanged(newBulletDiameter);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Either<Cartridge, CartridgeCategory> cartridgeOrCategory)?
+        initialized,
+    TResult? Function(String newCaliber)? caliberChanged,
+    TResult? Function(String newCaseLength)? caseLengthChanged,
+    TResult? Function(String newCartridgeLength)? cartridgeLengthChanged,
+    TResult? Function(CartridgeCategory newCategory)? categoryChanged,
+    TResult? Function(String newBulletDiameter)? bulletDiameterChanged,
+    TResult? Function()? saved,
+  }) {
+    return bulletDiameterChanged?.call(newBulletDiameter);
   }
 
   @override
@@ -954,6 +1090,20 @@ class _$_BulletDiameterChanged implements _BulletDiameterChanged {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_NameChanged value)? caliberChanged,
+    TResult? Function(_CaseLengthChanged value)? caseLengthChanged,
+    TResult? Function(_CaliberChanged value)? cartridgeLengthChanged,
+    TResult? Function(_CategoryChanged value)? categoryChanged,
+    TResult? Function(_BulletDiameterChanged value)? bulletDiameterChanged,
+    TResult? Function(_Saved value)? saved,
+  }) {
+    return bulletDiameterChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
     TResult Function(_NameChanged value)? caliberChanged,
@@ -972,32 +1122,31 @@ class _$_BulletDiameterChanged implements _BulletDiameterChanged {
 }
 
 abstract class _BulletDiameterChanged implements CartridgeFormEvent {
-  const factory _BulletDiameterChanged(String newBulletDiameter) =
+  const factory _BulletDiameterChanged(final String newBulletDiameter) =
       _$_BulletDiameterChanged;
 
-  String get newBulletDiameter => throw _privateConstructorUsedError;
+  String get newBulletDiameter;
   @JsonKey(ignore: true)
-  _$BulletDiameterChangedCopyWith<_BulletDiameterChanged> get copyWith =>
+  _$$_BulletDiameterChangedCopyWith<_$_BulletDiameterChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$SavedCopyWith<$Res> {
-  factory _$SavedCopyWith(_Saved value, $Res Function(_Saved) then) =
-      __$SavedCopyWithImpl<$Res>;
+abstract class _$$_SavedCopyWith<$Res> {
+  factory _$$_SavedCopyWith(_$_Saved value, $Res Function(_$_Saved) then) =
+      __$$_SavedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SavedCopyWithImpl<$Res> extends _$CartridgeFormEventCopyWithImpl<$Res>
-    implements _$SavedCopyWith<$Res> {
-  __$SavedCopyWithImpl(_Saved _value, $Res Function(_Saved) _then)
-      : super(_value, (v) => _then(v as _Saved));
-
-  @override
-  _Saved get _value => super._value as _Saved;
+class __$$_SavedCopyWithImpl<$Res>
+    extends _$CartridgeFormEventCopyWithImpl<$Res, _$_Saved>
+    implements _$$_SavedCopyWith<$Res> {
+  __$$_SavedCopyWithImpl(_$_Saved _value, $Res Function(_$_Saved) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
+
 class _$_Saved implements _Saved {
   const _$_Saved();
 
@@ -1008,7 +1157,8 @@ class _$_Saved implements _Saved {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Saved);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Saved);
   }
 
   @override
@@ -1028,6 +1178,21 @@ class _$_Saved implements _Saved {
     required TResult Function() saved,
   }) {
     return saved();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(Either<Cartridge, CartridgeCategory> cartridgeOrCategory)?
+        initialized,
+    TResult? Function(String newCaliber)? caliberChanged,
+    TResult? Function(String newCaseLength)? caseLengthChanged,
+    TResult? Function(String newCartridgeLength)? cartridgeLengthChanged,
+    TResult? Function(CartridgeCategory newCategory)? categoryChanged,
+    TResult? Function(String newBulletDiameter)? bulletDiameterChanged,
+    TResult? Function()? saved,
+  }) {
+    return saved?.call();
   }
 
   @override
@@ -1066,6 +1231,20 @@ class _$_Saved implements _Saved {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_NameChanged value)? caliberChanged,
+    TResult? Function(_CaseLengthChanged value)? caseLengthChanged,
+    TResult? Function(_CaliberChanged value)? cartridgeLengthChanged,
+    TResult? Function(_CategoryChanged value)? categoryChanged,
+    TResult? Function(_BulletDiameterChanged value)? bulletDiameterChanged,
+    TResult? Function(_Saved value)? saved,
+  }) {
+    return saved?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
     TResult Function(_NameChanged value)? caliberChanged,
@@ -1088,28 +1267,6 @@ abstract class _Saved implements CartridgeFormEvent {
 }
 
 /// @nodoc
-class _$CartridgeFormStateTearOff {
-  const _$CartridgeFormStateTearOff();
-
-  _CartridgeFormState call(
-      {required CartridgeForm cartridge,
-      required bool isEditing,
-      required bool isSaving,
-      required Option<Either<CartridgeFailure, Unit>>
-          saveFailureOrSuccessOption}) {
-    return _CartridgeFormState(
-      cartridge: cartridge,
-      isEditing: isEditing,
-      isSaving: isSaving,
-      saveFailureOrSuccessOption: saveFailureOrSuccessOption,
-    );
-  }
-}
-
-/// @nodoc
-const $CartridgeFormState = _$CartridgeFormStateTearOff();
-
-/// @nodoc
 mixin _$CartridgeFormState {
   CartridgeForm get cartridge => throw _privateConstructorUsedError;
   bool get isEditing => throw _privateConstructorUsedError;
@@ -1126,7 +1283,8 @@ mixin _$CartridgeFormState {
 abstract class $CartridgeFormStateCopyWith<$Res> {
   factory $CartridgeFormStateCopyWith(
           CartridgeFormState value, $Res Function(CartridgeFormState) then) =
-      _$CartridgeFormStateCopyWithImpl<$Res>;
+      _$CartridgeFormStateCopyWithImpl<$Res, CartridgeFormState>;
+  @useResult
   $Res call(
       {CartridgeForm cartridge,
       bool isEditing,
@@ -1137,56 +1295,60 @@ abstract class $CartridgeFormStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CartridgeFormStateCopyWithImpl<$Res>
+class _$CartridgeFormStateCopyWithImpl<$Res, $Val extends CartridgeFormState>
     implements $CartridgeFormStateCopyWith<$Res> {
   _$CartridgeFormStateCopyWithImpl(this._value, this._then);
 
-  final CartridgeFormState _value;
   // ignore: unused_field
-  final $Res Function(CartridgeFormState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? cartridge = freezed,
-    Object? isEditing = freezed,
-    Object? isSaving = freezed,
-    Object? saveFailureOrSuccessOption = freezed,
+    Object? cartridge = null,
+    Object? isEditing = null,
+    Object? isSaving = null,
+    Object? saveFailureOrSuccessOption = null,
   }) {
     return _then(_value.copyWith(
-      cartridge: cartridge == freezed
+      cartridge: null == cartridge
           ? _value.cartridge
           : cartridge // ignore: cast_nullable_to_non_nullable
               as CartridgeForm,
-      isEditing: isEditing == freezed
+      isEditing: null == isEditing
           ? _value.isEditing
           : isEditing // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSaving: isSaving == freezed
+      isSaving: null == isSaving
           ? _value.isSaving
           : isSaving // ignore: cast_nullable_to_non_nullable
               as bool,
-      saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
+      saveFailureOrSuccessOption: null == saveFailureOrSuccessOption
           ? _value.saveFailureOrSuccessOption
           : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<CartridgeFailure, Unit>>,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CartridgeFormCopyWith<$Res> get cartridge {
     return $CartridgeFormCopyWith<$Res>(_value.cartridge, (value) {
-      return _then(_value.copyWith(cartridge: value));
+      return _then(_value.copyWith(cartridge: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$CartridgeFormStateCopyWith<$Res>
+abstract class _$$_CartridgeFormStateCopyWith<$Res>
     implements $CartridgeFormStateCopyWith<$Res> {
-  factory _$CartridgeFormStateCopyWith(
-          _CartridgeFormState value, $Res Function(_CartridgeFormState) then) =
-      __$CartridgeFormStateCopyWithImpl<$Res>;
+  factory _$$_CartridgeFormStateCopyWith(_$_CartridgeFormState value,
+          $Res Function(_$_CartridgeFormState) then) =
+      __$$_CartridgeFormStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {CartridgeForm cartridge,
       bool isEditing,
@@ -1198,37 +1360,35 @@ abstract class _$CartridgeFormStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$CartridgeFormStateCopyWithImpl<$Res>
-    extends _$CartridgeFormStateCopyWithImpl<$Res>
-    implements _$CartridgeFormStateCopyWith<$Res> {
-  __$CartridgeFormStateCopyWithImpl(
-      _CartridgeFormState _value, $Res Function(_CartridgeFormState) _then)
-      : super(_value, (v) => _then(v as _CartridgeFormState));
+class __$$_CartridgeFormStateCopyWithImpl<$Res>
+    extends _$CartridgeFormStateCopyWithImpl<$Res, _$_CartridgeFormState>
+    implements _$$_CartridgeFormStateCopyWith<$Res> {
+  __$$_CartridgeFormStateCopyWithImpl(
+      _$_CartridgeFormState _value, $Res Function(_$_CartridgeFormState) _then)
+      : super(_value, _then);
 
-  @override
-  _CartridgeFormState get _value => super._value as _CartridgeFormState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? cartridge = freezed,
-    Object? isEditing = freezed,
-    Object? isSaving = freezed,
-    Object? saveFailureOrSuccessOption = freezed,
+    Object? cartridge = null,
+    Object? isEditing = null,
+    Object? isSaving = null,
+    Object? saveFailureOrSuccessOption = null,
   }) {
-    return _then(_CartridgeFormState(
-      cartridge: cartridge == freezed
+    return _then(_$_CartridgeFormState(
+      cartridge: null == cartridge
           ? _value.cartridge
           : cartridge // ignore: cast_nullable_to_non_nullable
               as CartridgeForm,
-      isEditing: isEditing == freezed
+      isEditing: null == isEditing
           ? _value.isEditing
           : isEditing // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSaving: isSaving == freezed
+      isSaving: null == isSaving
           ? _value.isSaving
           : isSaving // ignore: cast_nullable_to_non_nullable
               as bool,
-      saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
+      saveFailureOrSuccessOption: null == saveFailureOrSuccessOption
           ? _value.saveFailureOrSuccessOption
           : saveFailureOrSuccessOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<CartridgeFailure, Unit>>,
@@ -1237,6 +1397,7 @@ class __$CartridgeFormStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_CartridgeFormState implements _CartridgeFormState {
   const _$_CartridgeFormState(
       {required this.cartridge,
@@ -1261,56 +1422,50 @@ class _$_CartridgeFormState implements _CartridgeFormState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CartridgeFormState &&
+        (other.runtimeType == runtimeType &&
+            other is _$_CartridgeFormState &&
             (identical(other.cartridge, cartridge) ||
-                const DeepCollectionEquality()
-                    .equals(other.cartridge, cartridge)) &&
+                other.cartridge == cartridge) &&
             (identical(other.isEditing, isEditing) ||
-                const DeepCollectionEquality()
-                    .equals(other.isEditing, isEditing)) &&
+                other.isEditing == isEditing) &&
             (identical(other.isSaving, isSaving) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSaving, isSaving)) &&
+                other.isSaving == isSaving) &&
             (identical(other.saveFailureOrSuccessOption,
                     saveFailureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.saveFailureOrSuccessOption,
-                    saveFailureOrSuccessOption)));
+                other.saveFailureOrSuccessOption ==
+                    saveFailureOrSuccessOption));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(cartridge) ^
-      const DeepCollectionEquality().hash(isEditing) ^
-      const DeepCollectionEquality().hash(isSaving) ^
-      const DeepCollectionEquality().hash(saveFailureOrSuccessOption);
+  int get hashCode => Object.hash(
+      runtimeType, cartridge, isEditing, isSaving, saveFailureOrSuccessOption);
 
   @JsonKey(ignore: true)
   @override
-  _$CartridgeFormStateCopyWith<_CartridgeFormState> get copyWith =>
-      __$CartridgeFormStateCopyWithImpl<_CartridgeFormState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_CartridgeFormStateCopyWith<_$_CartridgeFormState> get copyWith =>
+      __$$_CartridgeFormStateCopyWithImpl<_$_CartridgeFormState>(
+          this, _$identity);
 }
 
 abstract class _CartridgeFormState implements CartridgeFormState {
   const factory _CartridgeFormState(
-      {required CartridgeForm cartridge,
-      required bool isEditing,
-      required bool isSaving,
-      required Option<Either<CartridgeFailure, Unit>>
+      {required final CartridgeForm cartridge,
+      required final bool isEditing,
+      required final bool isSaving,
+      required final Option<Either<CartridgeFailure, Unit>>
           saveFailureOrSuccessOption}) = _$_CartridgeFormState;
 
   @override
-  CartridgeForm get cartridge => throw _privateConstructorUsedError;
+  CartridgeForm get cartridge;
   @override
-  bool get isEditing => throw _privateConstructorUsedError;
+  bool get isEditing;
   @override
-  bool get isSaving => throw _privateConstructorUsedError;
+  bool get isSaving;
   @override
-  Option<Either<CartridgeFailure, Unit>> get saveFailureOrSuccessOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<CartridgeFailure, Unit>> get saveFailureOrSuccessOption;
   @override
   @JsonKey(ignore: true)
-  _$CartridgeFormStateCopyWith<_CartridgeFormState> get copyWith =>
+  _$$_CartridgeFormStateCopyWith<_$_CartridgeFormState> get copyWith =>
       throw _privateConstructorUsedError;
 }

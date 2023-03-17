@@ -25,7 +25,6 @@ class CartridgeFormBloc extends Bloc<CartridgeFormEvent, CartridgeFormState> {
 
   final ICartridgeRepository cartridgeRepository;
 
-  @override
   Stream<CartridgeFormState> mapEventToState(CartridgeFormEvent event) async* {
     yield* event.map(
       initialized: (e) async* {
@@ -35,7 +34,8 @@ class CartridgeFormBloc extends Bloc<CartridgeFormEvent, CartridgeFormState> {
             isEditing: true,
           ),
           (category) => state.copyWith(
-              cartridge: CartridgeForm.initial(category: category)),
+            cartridge: CartridgeForm.initial(category: category),
+          ),
         );
       },
       caliberChanged: (e) async* {
@@ -84,7 +84,7 @@ class CartridgeFormBloc extends Bloc<CartridgeFormEvent, CartridgeFormState> {
           state.cartridge.caseLength,
           state.cartridge.bulletDiameter,
         ]);
-        if (form.isValid) {
+        if (form) {
           failureOrSuccess = state.isEditing
               ? await cartridgeRepository.update(state.cartridge.toDomain())
               : await cartridgeRepository.create(state.cartridge.toDomain());
@@ -102,7 +102,8 @@ class CartridgeFormBloc extends Bloc<CartridgeFormEvent, CartridgeFormState> {
               caseLength:
                   CaseLengthForm.dirty(state.cartridge.caseLength.value),
               cartridgeLength: CartridgeLengthForm.dirty(
-                  state.cartridge.cartridgeLength.value),
+                state.cartridge.cartridgeLength.value,
+              ),
             ),
             isSaving: false,
             saveFailureOrSuccessOption: optionOf(failureOrSuccess),

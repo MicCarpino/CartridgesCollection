@@ -10,6 +10,8 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:injectable/injectable.dart';
 import 'package:rxdart/rxdart.dart';
 
+//https://firebase.google.com/docs/database/flutter/read-and-write?hl=it
+
 @LazySingleton(as: ICartridgeRepository)
 class CartridgeRepository implements ICartridgeRepository {
   CartridgeRepository(this._firebaseDatabase);
@@ -41,7 +43,7 @@ class CartridgeRepository implements ICartridgeRepository {
       }).toList();
       return right<CartridgeFailure, List<Cartridge>>(cartridges);
     }).onErrorReturnWith(
-      (e) {
+      (e, stacktrace) {
         print('WATCH ERROR ${e.toString()}');
         return left(const CartridgeFailure.unexpected());
       },

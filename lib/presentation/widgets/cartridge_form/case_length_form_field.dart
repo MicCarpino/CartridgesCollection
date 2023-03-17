@@ -22,7 +22,7 @@ class CaseLengthFormField extends StatelessWidget {
         keyboardType: const TextInputType.numberWithOptions(decimal: true),
         decoration: InputDecoration(
           labelText: 'Lunghezza bossolo',
-          errorText: state.cartridge.caseLength.invalid ? 'Non valido' : null,
+          errorText: state.cartridge.caseLength.isNotValid ? 'Non valido' : null,
         ),
         onChanged: (value) => context
             .read<CartridgeFormBloc>()

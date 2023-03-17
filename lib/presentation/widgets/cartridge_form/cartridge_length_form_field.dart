@@ -23,7 +23,7 @@ class CartridgeLengthFormField extends StatelessWidget {
         decoration: InputDecoration(
           labelText: 'Lunghezza cartuccia (C.O.L)',
           errorText:
-              state.cartridge.cartridgeLength.invalid ? 'Non valido' : null,
+              state.cartridge.cartridgeLength.isNotValid ? 'Non valido' : null,
         ),
         onChanged: (value) => context
             .read<CartridgeFormBloc>()

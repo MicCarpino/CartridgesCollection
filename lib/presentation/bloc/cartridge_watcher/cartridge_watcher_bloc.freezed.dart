@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'cartridge_watcher_bloc.dart';
 
@@ -10,28 +12,7 @@ part of 'cartridge_watcher_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$CartridgeWatcherEventTearOff {
-  const _$CartridgeWatcherEventTearOff();
-
-  _WatchAllStarted watchAllStarted(CartridgeCategory category) {
-    return _WatchAllStarted(
-      category,
-    );
-  }
-
-  _CartridgesReceived cartridgesReceived(
-      Either<CartridgeFailure, List<Cartridge>> failureOrCartridges) {
-    return _CartridgesReceived(
-      failureOrCartridges,
-    );
-  }
-}
-
-/// @nodoc
-const $CartridgeWatcherEvent = _$CartridgeWatcherEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$CartridgeWatcherEvent {
@@ -40,6 +21,14 @@ mixin _$CartridgeWatcherEvent {
     required TResult Function(CartridgeCategory category) watchAllStarted,
     required TResult Function(
             Either<CartridgeFailure, List<Cartridge>> failureOrCartridges)
+        cartridgesReceived,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CartridgeCategory category)? watchAllStarted,
+    TResult? Function(
+            Either<CartridgeFailure, List<Cartridge>> failureOrCartridges)?
         cartridgesReceived,
   }) =>
       throw _privateConstructorUsedError;
@@ -59,6 +48,12 @@ mixin _$CartridgeWatcherEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_WatchAllStarted value)? watchAllStarted,
+    TResult? Function(_CartridgesReceived value)? cartridgesReceived,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_WatchAllStarted value)? watchAllStarted,
     TResult Function(_CartridgesReceived value)? cartridgesReceived,
@@ -71,44 +66,45 @@ mixin _$CartridgeWatcherEvent {
 abstract class $CartridgeWatcherEventCopyWith<$Res> {
   factory $CartridgeWatcherEventCopyWith(CartridgeWatcherEvent value,
           $Res Function(CartridgeWatcherEvent) then) =
-      _$CartridgeWatcherEventCopyWithImpl<$Res>;
+      _$CartridgeWatcherEventCopyWithImpl<$Res, CartridgeWatcherEvent>;
 }
 
 /// @nodoc
-class _$CartridgeWatcherEventCopyWithImpl<$Res>
+class _$CartridgeWatcherEventCopyWithImpl<$Res,
+        $Val extends CartridgeWatcherEvent>
     implements $CartridgeWatcherEventCopyWith<$Res> {
   _$CartridgeWatcherEventCopyWithImpl(this._value, this._then);
 
-  final CartridgeWatcherEvent _value;
   // ignore: unused_field
-  final $Res Function(CartridgeWatcherEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$WatchAllStartedCopyWith<$Res> {
-  factory _$WatchAllStartedCopyWith(
-          _WatchAllStarted value, $Res Function(_WatchAllStarted) then) =
-      __$WatchAllStartedCopyWithImpl<$Res>;
+abstract class _$$_WatchAllStartedCopyWith<$Res> {
+  factory _$$_WatchAllStartedCopyWith(
+          _$_WatchAllStarted value, $Res Function(_$_WatchAllStarted) then) =
+      __$$_WatchAllStartedCopyWithImpl<$Res>;
+  @useResult
   $Res call({CartridgeCategory category});
 }
 
 /// @nodoc
-class __$WatchAllStartedCopyWithImpl<$Res>
-    extends _$CartridgeWatcherEventCopyWithImpl<$Res>
-    implements _$WatchAllStartedCopyWith<$Res> {
-  __$WatchAllStartedCopyWithImpl(
-      _WatchAllStarted _value, $Res Function(_WatchAllStarted) _then)
-      : super(_value, (v) => _then(v as _WatchAllStarted));
+class __$$_WatchAllStartedCopyWithImpl<$Res>
+    extends _$CartridgeWatcherEventCopyWithImpl<$Res, _$_WatchAllStarted>
+    implements _$$_WatchAllStartedCopyWith<$Res> {
+  __$$_WatchAllStartedCopyWithImpl(
+      _$_WatchAllStarted _value, $Res Function(_$_WatchAllStarted) _then)
+      : super(_value, _then);
 
-  @override
-  _WatchAllStarted get _value => super._value as _WatchAllStarted;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? category = freezed,
+    Object? category = null,
   }) {
-    return _then(_WatchAllStarted(
-      category == freezed
+    return _then(_$_WatchAllStarted(
+      null == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as CartridgeCategory,
@@ -117,6 +113,7 @@ class __$WatchAllStartedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_WatchAllStarted implements _WatchAllStarted {
   const _$_WatchAllStarted(this.category);
 
@@ -131,20 +128,20 @@ class _$_WatchAllStarted implements _WatchAllStarted {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _WatchAllStarted &&
+        (other.runtimeType == runtimeType &&
+            other is _$_WatchAllStarted &&
             (identical(other.category, category) ||
-                const DeepCollectionEquality()
-                    .equals(other.category, category)));
+                other.category == category));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(category);
+  int get hashCode => Object.hash(runtimeType, category);
 
   @JsonKey(ignore: true)
   @override
-  _$WatchAllStartedCopyWith<_WatchAllStarted> get copyWith =>
-      __$WatchAllStartedCopyWithImpl<_WatchAllStarted>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_WatchAllStartedCopyWith<_$_WatchAllStarted> get copyWith =>
+      __$$_WatchAllStartedCopyWithImpl<_$_WatchAllStarted>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -155,6 +152,17 @@ class _$_WatchAllStarted implements _WatchAllStarted {
         cartridgesReceived,
   }) {
     return watchAllStarted(category);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CartridgeCategory category)? watchAllStarted,
+    TResult? Function(
+            Either<CartridgeFailure, List<Cartridge>> failureOrCartridges)?
+        cartridgesReceived,
+  }) {
+    return watchAllStarted?.call(category);
   }
 
   @override
@@ -183,6 +191,15 @@ class _$_WatchAllStarted implements _WatchAllStarted {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_WatchAllStarted value)? watchAllStarted,
+    TResult? Function(_CartridgesReceived value)? cartridgesReceived,
+  }) {
+    return watchAllStarted?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_WatchAllStarted value)? watchAllStarted,
     TResult Function(_CartridgesReceived value)? cartridgesReceived,
@@ -196,40 +213,39 @@ class _$_WatchAllStarted implements _WatchAllStarted {
 }
 
 abstract class _WatchAllStarted implements CartridgeWatcherEvent {
-  const factory _WatchAllStarted(CartridgeCategory category) =
+  const factory _WatchAllStarted(final CartridgeCategory category) =
       _$_WatchAllStarted;
 
-  CartridgeCategory get category => throw _privateConstructorUsedError;
+  CartridgeCategory get category;
   @JsonKey(ignore: true)
-  _$WatchAllStartedCopyWith<_WatchAllStarted> get copyWith =>
+  _$$_WatchAllStartedCopyWith<_$_WatchAllStarted> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$CartridgesReceivedCopyWith<$Res> {
-  factory _$CartridgesReceivedCopyWith(
-          _CartridgesReceived value, $Res Function(_CartridgesReceived) then) =
-      __$CartridgesReceivedCopyWithImpl<$Res>;
+abstract class _$$_CartridgesReceivedCopyWith<$Res> {
+  factory _$$_CartridgesReceivedCopyWith(_$_CartridgesReceived value,
+          $Res Function(_$_CartridgesReceived) then) =
+      __$$_CartridgesReceivedCopyWithImpl<$Res>;
+  @useResult
   $Res call({Either<CartridgeFailure, List<Cartridge>> failureOrCartridges});
 }
 
 /// @nodoc
-class __$CartridgesReceivedCopyWithImpl<$Res>
-    extends _$CartridgeWatcherEventCopyWithImpl<$Res>
-    implements _$CartridgesReceivedCopyWith<$Res> {
-  __$CartridgesReceivedCopyWithImpl(
-      _CartridgesReceived _value, $Res Function(_CartridgesReceived) _then)
-      : super(_value, (v) => _then(v as _CartridgesReceived));
+class __$$_CartridgesReceivedCopyWithImpl<$Res>
+    extends _$CartridgeWatcherEventCopyWithImpl<$Res, _$_CartridgesReceived>
+    implements _$$_CartridgesReceivedCopyWith<$Res> {
+  __$$_CartridgesReceivedCopyWithImpl(
+      _$_CartridgesReceived _value, $Res Function(_$_CartridgesReceived) _then)
+      : super(_value, _then);
 
-  @override
-  _CartridgesReceived get _value => super._value as _CartridgesReceived;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? failureOrCartridges = freezed,
+    Object? failureOrCartridges = null,
   }) {
-    return _then(_CartridgesReceived(
-      failureOrCartridges == freezed
+    return _then(_$_CartridgesReceived(
+      null == failureOrCartridges
           ? _value.failureOrCartridges
           : failureOrCartridges // ignore: cast_nullable_to_non_nullable
               as Either<CartridgeFailure, List<Cartridge>>,
@@ -238,6 +254,7 @@ class __$CartridgesReceivedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_CartridgesReceived implements _CartridgesReceived {
   const _$_CartridgesReceived(this.failureOrCartridges);
 
@@ -252,21 +269,21 @@ class _$_CartridgesReceived implements _CartridgesReceived {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _CartridgesReceived &&
+        (other.runtimeType == runtimeType &&
+            other is _$_CartridgesReceived &&
             (identical(other.failureOrCartridges, failureOrCartridges) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOrCartridges, failureOrCartridges)));
+                other.failureOrCartridges == failureOrCartridges));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(failureOrCartridges);
+  int get hashCode => Object.hash(runtimeType, failureOrCartridges);
 
   @JsonKey(ignore: true)
   @override
-  _$CartridgesReceivedCopyWith<_CartridgesReceived> get copyWith =>
-      __$CartridgesReceivedCopyWithImpl<_CartridgesReceived>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_CartridgesReceivedCopyWith<_$_CartridgesReceived> get copyWith =>
+      __$$_CartridgesReceivedCopyWithImpl<_$_CartridgesReceived>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -277,6 +294,17 @@ class _$_CartridgesReceived implements _CartridgesReceived {
         cartridgesReceived,
   }) {
     return cartridgesReceived(failureOrCartridges);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(CartridgeCategory category)? watchAllStarted,
+    TResult? Function(
+            Either<CartridgeFailure, List<Cartridge>> failureOrCartridges)?
+        cartridgesReceived,
+  }) {
+    return cartridgesReceived?.call(failureOrCartridges);
   }
 
   @override
@@ -305,6 +333,15 @@ class _$_CartridgesReceived implements _CartridgesReceived {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_WatchAllStarted value)? watchAllStarted,
+    TResult? Function(_CartridgesReceived value)? cartridgesReceived,
+  }) {
+    return cartridgesReceived?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_WatchAllStarted value)? watchAllStarted,
     TResult Function(_CartridgesReceived value)? cartridgesReceived,
@@ -319,43 +356,14 @@ class _$_CartridgesReceived implements _CartridgesReceived {
 
 abstract class _CartridgesReceived implements CartridgeWatcherEvent {
   const factory _CartridgesReceived(
-          Either<CartridgeFailure, List<Cartridge>> failureOrCartridges) =
+          final Either<CartridgeFailure, List<Cartridge>> failureOrCartridges) =
       _$_CartridgesReceived;
 
-  Either<CartridgeFailure, List<Cartridge>> get failureOrCartridges =>
-      throw _privateConstructorUsedError;
+  Either<CartridgeFailure, List<Cartridge>> get failureOrCartridges;
   @JsonKey(ignore: true)
-  _$CartridgesReceivedCopyWith<_CartridgesReceived> get copyWith =>
+  _$$_CartridgesReceivedCopyWith<_$_CartridgesReceived> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$CartridgeWatcherStateTearOff {
-  const _$CartridgeWatcherStateTearOff();
-
-  _Initial initial() {
-    return const _Initial();
-  }
-
-  _LoadInProgress loadInProgress() {
-    return const _LoadInProgress();
-  }
-
-  _LoadSuccess loadSuccess(List<Cartridge> cartridges) {
-    return _LoadSuccess(
-      cartridges,
-    );
-  }
-
-  _LoadFailure loadFailure(CartridgeFailure cartridgeFailure) {
-    return _LoadFailure(
-      cartridgeFailure,
-    );
-  }
-}
-
-/// @nodoc
-const $CartridgeWatcherState = _$CartridgeWatcherStateTearOff();
 
 /// @nodoc
 mixin _$CartridgeWatcherState {
@@ -365,6 +373,14 @@ mixin _$CartridgeWatcherState {
     required TResult Function() loadInProgress,
     required TResult Function(List<Cartridge> cartridges) loadSuccess,
     required TResult Function(CartridgeFailure cartridgeFailure) loadFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadInProgress,
+    TResult? Function(List<Cartridge> cartridges)? loadSuccess,
+    TResult? Function(CartridgeFailure cartridgeFailure)? loadFailure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -385,6 +401,14 @@ mixin _$CartridgeWatcherState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadInProgress value)? loadInProgress,
+    TResult? Function(_LoadSuccess value)? loadSuccess,
+    TResult? Function(_LoadFailure value)? loadFailure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadInProgress value)? loadInProgress,
@@ -399,37 +423,38 @@ mixin _$CartridgeWatcherState {
 abstract class $CartridgeWatcherStateCopyWith<$Res> {
   factory $CartridgeWatcherStateCopyWith(CartridgeWatcherState value,
           $Res Function(CartridgeWatcherState) then) =
-      _$CartridgeWatcherStateCopyWithImpl<$Res>;
+      _$CartridgeWatcherStateCopyWithImpl<$Res, CartridgeWatcherState>;
 }
 
 /// @nodoc
-class _$CartridgeWatcherStateCopyWithImpl<$Res>
+class _$CartridgeWatcherStateCopyWithImpl<$Res,
+        $Val extends CartridgeWatcherState>
     implements $CartridgeWatcherStateCopyWith<$Res> {
   _$CartridgeWatcherStateCopyWithImpl(this._value, this._then);
 
-  final CartridgeWatcherState _value;
   // ignore: unused_field
-  final $Res Function(CartridgeWatcherState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$_InitialCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res>
-    extends _$CartridgeWatcherStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
-
-  @override
-  _Initial get _value => super._value as _Initial;
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$CartridgeWatcherStateCopyWithImpl<$Res, _$_Initial>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
+
 class _$_Initial implements _Initial {
   const _$_Initial();
 
@@ -440,7 +465,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Initial);
   }
 
   @override
@@ -455,6 +481,17 @@ class _$_Initial implements _Initial {
     required TResult Function(CartridgeFailure cartridgeFailure) loadFailure,
   }) {
     return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadInProgress,
+    TResult? Function(List<Cartridge> cartridges)? loadSuccess,
+    TResult? Function(CartridgeFailure cartridgeFailure)? loadFailure,
+  }) {
+    return initial?.call();
   }
 
   @override
@@ -485,6 +522,17 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadInProgress value)? loadInProgress,
+    TResult? Function(_LoadSuccess value)? loadSuccess,
+    TResult? Function(_LoadFailure value)? loadFailure,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadInProgress value)? loadInProgress,
@@ -504,25 +552,23 @@ abstract class _Initial implements CartridgeWatcherState {
 }
 
 /// @nodoc
-abstract class _$LoadInProgressCopyWith<$Res> {
-  factory _$LoadInProgressCopyWith(
-          _LoadInProgress value, $Res Function(_LoadInProgress) then) =
-      __$LoadInProgressCopyWithImpl<$Res>;
+abstract class _$$_LoadInProgressCopyWith<$Res> {
+  factory _$$_LoadInProgressCopyWith(
+          _$_LoadInProgress value, $Res Function(_$_LoadInProgress) then) =
+      __$$_LoadInProgressCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadInProgressCopyWithImpl<$Res>
-    extends _$CartridgeWatcherStateCopyWithImpl<$Res>
-    implements _$LoadInProgressCopyWith<$Res> {
-  __$LoadInProgressCopyWithImpl(
-      _LoadInProgress _value, $Res Function(_LoadInProgress) _then)
-      : super(_value, (v) => _then(v as _LoadInProgress));
-
-  @override
-  _LoadInProgress get _value => super._value as _LoadInProgress;
+class __$$_LoadInProgressCopyWithImpl<$Res>
+    extends _$CartridgeWatcherStateCopyWithImpl<$Res, _$_LoadInProgress>
+    implements _$$_LoadInProgressCopyWith<$Res> {
+  __$$_LoadInProgressCopyWithImpl(
+      _$_LoadInProgress _value, $Res Function(_$_LoadInProgress) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
+
 class _$_LoadInProgress implements _LoadInProgress {
   const _$_LoadInProgress();
 
@@ -533,7 +579,8 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LoadInProgress);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_LoadInProgress);
   }
 
   @override
@@ -548,6 +595,17 @@ class _$_LoadInProgress implements _LoadInProgress {
     required TResult Function(CartridgeFailure cartridgeFailure) loadFailure,
   }) {
     return loadInProgress();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadInProgress,
+    TResult? Function(List<Cartridge> cartridges)? loadSuccess,
+    TResult? Function(CartridgeFailure cartridgeFailure)? loadFailure,
+  }) {
+    return loadInProgress?.call();
   }
 
   @override
@@ -578,6 +636,17 @@ class _$_LoadInProgress implements _LoadInProgress {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadInProgress value)? loadInProgress,
+    TResult? Function(_LoadSuccess value)? loadSuccess,
+    TResult? Function(_LoadFailure value)? loadFailure,
+  }) {
+    return loadInProgress?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadInProgress value)? loadInProgress,
@@ -597,31 +666,30 @@ abstract class _LoadInProgress implements CartridgeWatcherState {
 }
 
 /// @nodoc
-abstract class _$LoadSuccessCopyWith<$Res> {
-  factory _$LoadSuccessCopyWith(
-          _LoadSuccess value, $Res Function(_LoadSuccess) then) =
-      __$LoadSuccessCopyWithImpl<$Res>;
+abstract class _$$_LoadSuccessCopyWith<$Res> {
+  factory _$$_LoadSuccessCopyWith(
+          _$_LoadSuccess value, $Res Function(_$_LoadSuccess) then) =
+      __$$_LoadSuccessCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<Cartridge> cartridges});
 }
 
 /// @nodoc
-class __$LoadSuccessCopyWithImpl<$Res>
-    extends _$CartridgeWatcherStateCopyWithImpl<$Res>
-    implements _$LoadSuccessCopyWith<$Res> {
-  __$LoadSuccessCopyWithImpl(
-      _LoadSuccess _value, $Res Function(_LoadSuccess) _then)
-      : super(_value, (v) => _then(v as _LoadSuccess));
+class __$$_LoadSuccessCopyWithImpl<$Res>
+    extends _$CartridgeWatcherStateCopyWithImpl<$Res, _$_LoadSuccess>
+    implements _$$_LoadSuccessCopyWith<$Res> {
+  __$$_LoadSuccessCopyWithImpl(
+      _$_LoadSuccess _value, $Res Function(_$_LoadSuccess) _then)
+      : super(_value, _then);
 
-  @override
-  _LoadSuccess get _value => super._value as _LoadSuccess;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? cartridges = freezed,
+    Object? cartridges = null,
   }) {
-    return _then(_LoadSuccess(
-      cartridges == freezed
-          ? _value.cartridges
+    return _then(_$_LoadSuccess(
+      null == cartridges
+          ? _value._cartridges
           : cartridges // ignore: cast_nullable_to_non_nullable
               as List<Cartridge>,
     ));
@@ -629,11 +697,18 @@ class __$LoadSuccessCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$_LoadSuccess implements _LoadSuccess {
-  const _$_LoadSuccess(this.cartridges);
 
+class _$_LoadSuccess implements _LoadSuccess {
+  const _$_LoadSuccess(final List<Cartridge> cartridges)
+      : _cartridges = cartridges;
+
+  final List<Cartridge> _cartridges;
   @override
-  final List<Cartridge> cartridges;
+  List<Cartridge> get cartridges {
+    if (_cartridges is EqualUnmodifiableListView) return _cartridges;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_cartridges);
+  }
 
   @override
   String toString() {
@@ -643,20 +718,21 @@ class _$_LoadSuccess implements _LoadSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadSuccess &&
-            (identical(other.cartridges, cartridges) ||
-                const DeepCollectionEquality()
-                    .equals(other.cartridges, cartridges)));
+        (other.runtimeType == runtimeType &&
+            other is _$_LoadSuccess &&
+            const DeepCollectionEquality()
+                .equals(other._cartridges, _cartridges));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(cartridges);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_cartridges));
 
   @JsonKey(ignore: true)
   @override
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
-      __$LoadSuccessCopyWithImpl<_LoadSuccess>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
+      __$$_LoadSuccessCopyWithImpl<_$_LoadSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -667,6 +743,17 @@ class _$_LoadSuccess implements _LoadSuccess {
     required TResult Function(CartridgeFailure cartridgeFailure) loadFailure,
   }) {
     return loadSuccess(cartridges);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadInProgress,
+    TResult? Function(List<Cartridge> cartridges)? loadSuccess,
+    TResult? Function(CartridgeFailure cartridgeFailure)? loadFailure,
+  }) {
+    return loadSuccess?.call(cartridges);
   }
 
   @override
@@ -697,6 +784,17 @@ class _$_LoadSuccess implements _LoadSuccess {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadInProgress value)? loadInProgress,
+    TResult? Function(_LoadSuccess value)? loadSuccess,
+    TResult? Function(_LoadFailure value)? loadFailure,
+  }) {
+    return loadSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadInProgress value)? loadInProgress,
@@ -712,41 +810,40 @@ class _$_LoadSuccess implements _LoadSuccess {
 }
 
 abstract class _LoadSuccess implements CartridgeWatcherState {
-  const factory _LoadSuccess(List<Cartridge> cartridges) = _$_LoadSuccess;
+  const factory _LoadSuccess(final List<Cartridge> cartridges) = _$_LoadSuccess;
 
-  List<Cartridge> get cartridges => throw _privateConstructorUsedError;
+  List<Cartridge> get cartridges;
   @JsonKey(ignore: true)
-  _$LoadSuccessCopyWith<_LoadSuccess> get copyWith =>
+  _$$_LoadSuccessCopyWith<_$_LoadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$LoadFailureCopyWith<$Res> {
-  factory _$LoadFailureCopyWith(
-          _LoadFailure value, $Res Function(_LoadFailure) then) =
-      __$LoadFailureCopyWithImpl<$Res>;
+abstract class _$$_LoadFailureCopyWith<$Res> {
+  factory _$$_LoadFailureCopyWith(
+          _$_LoadFailure value, $Res Function(_$_LoadFailure) then) =
+      __$$_LoadFailureCopyWithImpl<$Res>;
+  @useResult
   $Res call({CartridgeFailure cartridgeFailure});
 
   $CartridgeFailureCopyWith<$Res> get cartridgeFailure;
 }
 
 /// @nodoc
-class __$LoadFailureCopyWithImpl<$Res>
-    extends _$CartridgeWatcherStateCopyWithImpl<$Res>
-    implements _$LoadFailureCopyWith<$Res> {
-  __$LoadFailureCopyWithImpl(
-      _LoadFailure _value, $Res Function(_LoadFailure) _then)
-      : super(_value, (v) => _then(v as _LoadFailure));
+class __$$_LoadFailureCopyWithImpl<$Res>
+    extends _$CartridgeWatcherStateCopyWithImpl<$Res, _$_LoadFailure>
+    implements _$$_LoadFailureCopyWith<$Res> {
+  __$$_LoadFailureCopyWithImpl(
+      _$_LoadFailure _value, $Res Function(_$_LoadFailure) _then)
+      : super(_value, _then);
 
-  @override
-  _LoadFailure get _value => super._value as _LoadFailure;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? cartridgeFailure = freezed,
+    Object? cartridgeFailure = null,
   }) {
-    return _then(_LoadFailure(
-      cartridgeFailure == freezed
+    return _then(_$_LoadFailure(
+      null == cartridgeFailure
           ? _value.cartridgeFailure
           : cartridgeFailure // ignore: cast_nullable_to_non_nullable
               as CartridgeFailure,
@@ -754,6 +851,7 @@ class __$LoadFailureCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CartridgeFailureCopyWith<$Res> get cartridgeFailure {
     return $CartridgeFailureCopyWith<$Res>(_value.cartridgeFailure, (value) {
       return _then(_value.copyWith(cartridgeFailure: value));
@@ -762,6 +860,7 @@ class __$LoadFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_LoadFailure implements _LoadFailure {
   const _$_LoadFailure(this.cartridgeFailure);
 
@@ -776,21 +875,20 @@ class _$_LoadFailure implements _LoadFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LoadFailure &&
+        (other.runtimeType == runtimeType &&
+            other is _$_LoadFailure &&
             (identical(other.cartridgeFailure, cartridgeFailure) ||
-                const DeepCollectionEquality()
-                    .equals(other.cartridgeFailure, cartridgeFailure)));
+                other.cartridgeFailure == cartridgeFailure));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(cartridgeFailure);
+  int get hashCode => Object.hash(runtimeType, cartridgeFailure);
 
   @JsonKey(ignore: true)
   @override
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
-      __$LoadFailureCopyWithImpl<_LoadFailure>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_LoadFailureCopyWith<_$_LoadFailure> get copyWith =>
+      __$$_LoadFailureCopyWithImpl<_$_LoadFailure>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -801,6 +899,17 @@ class _$_LoadFailure implements _LoadFailure {
     required TResult Function(CartridgeFailure cartridgeFailure) loadFailure,
   }) {
     return loadFailure(cartridgeFailure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadInProgress,
+    TResult? Function(List<Cartridge> cartridges)? loadSuccess,
+    TResult? Function(CartridgeFailure cartridgeFailure)? loadFailure,
+  }) {
+    return loadFailure?.call(cartridgeFailure);
   }
 
   @override
@@ -831,6 +940,17 @@ class _$_LoadFailure implements _LoadFailure {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadInProgress value)? loadInProgress,
+    TResult? Function(_LoadSuccess value)? loadSuccess,
+    TResult? Function(_LoadFailure value)? loadFailure,
+  }) {
+    return loadFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadInProgress value)? loadInProgress,
@@ -846,11 +966,11 @@ class _$_LoadFailure implements _LoadFailure {
 }
 
 abstract class _LoadFailure implements CartridgeWatcherState {
-  const factory _LoadFailure(CartridgeFailure cartridgeFailure) =
+  const factory _LoadFailure(final CartridgeFailure cartridgeFailure) =
       _$_LoadFailure;
 
-  CartridgeFailure get cartridgeFailure => throw _privateConstructorUsedError;
+  CartridgeFailure get cartridgeFailure;
   @JsonKey(ignore: true)
-  _$LoadFailureCopyWith<_LoadFailure> get copyWith =>
+  _$$_LoadFailureCopyWith<_$_LoadFailure> get copyWith =>
       throw _privateConstructorUsedError;
 }

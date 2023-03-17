@@ -20,10 +20,10 @@ class CartridgeForm with _$CartridgeForm {
 
   factory CartridgeForm.initial({CartridgeCategory? category}) => CartridgeForm(
         cartridgeCategory: category,
-        caliber: CaliberForm.pure(),
-        cartridgeLength: CartridgeLengthForm.pure(),
-        caseLength: CaseLengthForm.pure(),
-        bulletDiameter: BulletDiameterForm.pure(),
+        caliber: const CaliberForm.pure(),
+        cartridgeLength: const CartridgeLengthForm.pure(),
+        caseLength: const CaseLengthForm.pure(),
+        bulletDiameter: const BulletDiameterForm.pure(),
       );
 
   factory CartridgeForm.fromDomain(Cartridge cartridge) => CartridgeForm(
@@ -49,9 +49,9 @@ class CartridgeForm with _$CartridgeForm {
 
 
 class CaliberForm extends FormzInput<String, CartridgeValidationError> {
-  CaliberForm.pure([String? value]) : super.pure(value ?? '');
+  const CaliberForm.pure([String? value]) : super.pure(value ?? '');
 
-  CaliberForm.dirty([String value = '']) : super.dirty(value);
+  const CaliberForm.dirty([String value = '']) : super.dirty(value);
 
   @override
   CartridgeValidationError? validator(String? value) {
@@ -60,9 +60,9 @@ class CaliberForm extends FormzInput<String, CartridgeValidationError> {
 }
 
 class CartridgeLengthForm extends FormzInput<String, CartridgeValidationError> {
-  CartridgeLengthForm.pure([String? value]) : super.pure(value ?? '');
+  const CartridgeLengthForm.pure([String? value]) : super.pure(value ?? '');
 
-  CartridgeLengthForm.dirty([String value = '']) : super.dirty(value);
+  const CartridgeLengthForm.dirty([String value = '']) : super.dirty(value);
 
   @override
   CartridgeValidationError? validator(String? value) {
@@ -76,9 +76,9 @@ class CartridgeLengthForm extends FormzInput<String, CartridgeValidationError> {
 }
 
 class CaseLengthForm extends FormzInput<String, CartridgeValidationError> {
-  CaseLengthForm.pure([String? value]) : super.pure(value ?? '');
+  const CaseLengthForm.pure([String? value]) : super.pure(value ?? '');
 
-  CaseLengthForm.dirty([String value = '']) : super.dirty(value);
+  const CaseLengthForm.dirty([String value = '']) : super.dirty(value);
 
   @override
   CartridgeValidationError? validator(String? value) {
@@ -91,11 +91,10 @@ class CaseLengthForm extends FormzInput<String, CartridgeValidationError> {
   }
 }
 
-class BulletDiameterForm
-    extends FormzInput<String, CartridgeValidationError> {
-  BulletDiameterForm.pure([String? value]) : super.pure(value ?? '');
+class BulletDiameterForm extends FormzInput<String, CartridgeValidationError> {
+  const BulletDiameterForm.pure([String? value]) : super.pure(value ?? '');
 
-  BulletDiameterForm.dirty([String value = '']) : super.dirty(value);
+  const BulletDiameterForm.dirty([String value = '']) : super.dirty(value);
 
   @override
   CartridgeValidationError? validator(String? value) {

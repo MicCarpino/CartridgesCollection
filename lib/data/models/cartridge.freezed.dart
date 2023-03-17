@@ -1,5 +1,7 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'cartridge.dart';
 
@@ -10,30 +12,7 @@ part of 'cartridge.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$CartridgeTearOff {
-  const _$CartridgeTearOff();
-
-  _Cartridge call(
-      {required String caliber,
-      required CartridgeCategory? category,
-      required double cartridgeLength,
-      required double bulletDiameter,
-      required double caseLength}) {
-    return _Cartridge(
-      caliber: caliber,
-      category: category,
-      cartridgeLength: cartridgeLength,
-      bulletDiameter: bulletDiameter,
-      caseLength: caseLength,
-    );
-  }
-}
-
-/// @nodoc
-const $Cartridge = _$CartridgeTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$Cartridge {
@@ -51,7 +30,8 @@ mixin _$Cartridge {
 /// @nodoc
 abstract class $CartridgeCopyWith<$Res> {
   factory $CartridgeCopyWith(Cartridge value, $Res Function(Cartridge) then) =
-      _$CartridgeCopyWithImpl<$Res>;
+      _$CartridgeCopyWithImpl<$Res, Cartridge>;
+  @useResult
   $Res call(
       {String caliber,
       CartridgeCategory? category,
@@ -61,52 +41,56 @@ abstract class $CartridgeCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CartridgeCopyWithImpl<$Res> implements $CartridgeCopyWith<$Res> {
+class _$CartridgeCopyWithImpl<$Res, $Val extends Cartridge>
+    implements $CartridgeCopyWith<$Res> {
   _$CartridgeCopyWithImpl(this._value, this._then);
 
-  final Cartridge _value;
   // ignore: unused_field
-  final $Res Function(Cartridge) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? caliber = freezed,
+    Object? caliber = null,
     Object? category = freezed,
-    Object? cartridgeLength = freezed,
-    Object? bulletDiameter = freezed,
-    Object? caseLength = freezed,
+    Object? cartridgeLength = null,
+    Object? bulletDiameter = null,
+    Object? caseLength = null,
   }) {
     return _then(_value.copyWith(
-      caliber: caliber == freezed
+      caliber: null == caliber
           ? _value.caliber
           : caliber // ignore: cast_nullable_to_non_nullable
               as String,
-      category: category == freezed
+      category: freezed == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as CartridgeCategory?,
-      cartridgeLength: cartridgeLength == freezed
+      cartridgeLength: null == cartridgeLength
           ? _value.cartridgeLength
           : cartridgeLength // ignore: cast_nullable_to_non_nullable
               as double,
-      bulletDiameter: bulletDiameter == freezed
+      bulletDiameter: null == bulletDiameter
           ? _value.bulletDiameter
           : bulletDiameter // ignore: cast_nullable_to_non_nullable
               as double,
-      caseLength: caseLength == freezed
+      caseLength: null == caseLength
           ? _value.caseLength
           : caseLength // ignore: cast_nullable_to_non_nullable
               as double,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$CartridgeCopyWith<$Res> implements $CartridgeCopyWith<$Res> {
-  factory _$CartridgeCopyWith(
-          _Cartridge value, $Res Function(_Cartridge) then) =
-      __$CartridgeCopyWithImpl<$Res>;
+abstract class _$$_CartridgeCopyWith<$Res> implements $CartridgeCopyWith<$Res> {
+  factory _$$_CartridgeCopyWith(
+          _$_Cartridge value, $Res Function(_$_Cartridge) then) =
+      __$$_CartridgeCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String caliber,
       CartridgeCategory? category,
@@ -116,40 +100,40 @@ abstract class _$CartridgeCopyWith<$Res> implements $CartridgeCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$CartridgeCopyWithImpl<$Res> extends _$CartridgeCopyWithImpl<$Res>
-    implements _$CartridgeCopyWith<$Res> {
-  __$CartridgeCopyWithImpl(_Cartridge _value, $Res Function(_Cartridge) _then)
-      : super(_value, (v) => _then(v as _Cartridge));
+class __$$_CartridgeCopyWithImpl<$Res>
+    extends _$CartridgeCopyWithImpl<$Res, _$_Cartridge>
+    implements _$$_CartridgeCopyWith<$Res> {
+  __$$_CartridgeCopyWithImpl(
+      _$_Cartridge _value, $Res Function(_$_Cartridge) _then)
+      : super(_value, _then);
 
-  @override
-  _Cartridge get _value => super._value as _Cartridge;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? caliber = freezed,
+    Object? caliber = null,
     Object? category = freezed,
-    Object? cartridgeLength = freezed,
-    Object? bulletDiameter = freezed,
-    Object? caseLength = freezed,
+    Object? cartridgeLength = null,
+    Object? bulletDiameter = null,
+    Object? caseLength = null,
   }) {
-    return _then(_Cartridge(
-      caliber: caliber == freezed
+    return _then(_$_Cartridge(
+      caliber: null == caliber
           ? _value.caliber
           : caliber // ignore: cast_nullable_to_non_nullable
               as String,
-      category: category == freezed
+      category: freezed == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as CartridgeCategory?,
-      cartridgeLength: cartridgeLength == freezed
+      cartridgeLength: null == cartridgeLength
           ? _value.cartridgeLength
           : cartridgeLength // ignore: cast_nullable_to_non_nullable
               as double,
-      bulletDiameter: bulletDiameter == freezed
+      bulletDiameter: null == bulletDiameter
           ? _value.bulletDiameter
           : bulletDiameter // ignore: cast_nullable_to_non_nullable
               as double,
-      caseLength: caseLength == freezed
+      caseLength: null == caseLength
           ? _value.caseLength
           : caseLength // ignore: cast_nullable_to_non_nullable
               as double,
@@ -158,6 +142,7 @@ class __$CartridgeCopyWithImpl<$Res> extends _$CartridgeCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Cartridge extends _Cartridge with DiagnosticableTreeMixin {
   const _$_Cartridge(
       {required this.caliber,
@@ -198,60 +183,51 @@ class _$_Cartridge extends _Cartridge with DiagnosticableTreeMixin {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Cartridge &&
-            (identical(other.caliber, caliber) ||
-                const DeepCollectionEquality()
-                    .equals(other.caliber, caliber)) &&
+        (other.runtimeType == runtimeType &&
+            other is _$_Cartridge &&
+            (identical(other.caliber, caliber) || other.caliber == caliber) &&
             (identical(other.category, category) ||
-                const DeepCollectionEquality()
-                    .equals(other.category, category)) &&
+                other.category == category) &&
             (identical(other.cartridgeLength, cartridgeLength) ||
-                const DeepCollectionEquality()
-                    .equals(other.cartridgeLength, cartridgeLength)) &&
+                other.cartridgeLength == cartridgeLength) &&
             (identical(other.bulletDiameter, bulletDiameter) ||
-                const DeepCollectionEquality()
-                    .equals(other.bulletDiameter, bulletDiameter)) &&
+                other.bulletDiameter == bulletDiameter) &&
             (identical(other.caseLength, caseLength) ||
-                const DeepCollectionEquality()
-                    .equals(other.caseLength, caseLength)));
+                other.caseLength == caseLength));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(caliber) ^
-      const DeepCollectionEquality().hash(category) ^
-      const DeepCollectionEquality().hash(cartridgeLength) ^
-      const DeepCollectionEquality().hash(bulletDiameter) ^
-      const DeepCollectionEquality().hash(caseLength);
+  int get hashCode => Object.hash(runtimeType, caliber, category,
+      cartridgeLength, bulletDiameter, caseLength);
 
   @JsonKey(ignore: true)
   @override
-  _$CartridgeCopyWith<_Cartridge> get copyWith =>
-      __$CartridgeCopyWithImpl<_Cartridge>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_CartridgeCopyWith<_$_Cartridge> get copyWith =>
+      __$$_CartridgeCopyWithImpl<_$_Cartridge>(this, _$identity);
 }
 
 abstract class _Cartridge extends Cartridge {
   const factory _Cartridge(
-      {required String caliber,
-      required CartridgeCategory? category,
-      required double cartridgeLength,
-      required double bulletDiameter,
-      required double caseLength}) = _$_Cartridge;
+      {required final String caliber,
+      required final CartridgeCategory? category,
+      required final double cartridgeLength,
+      required final double bulletDiameter,
+      required final double caseLength}) = _$_Cartridge;
   const _Cartridge._() : super._();
 
   @override
-  String get caliber => throw _privateConstructorUsedError;
+  String get caliber;
   @override
-  CartridgeCategory? get category => throw _privateConstructorUsedError;
+  CartridgeCategory? get category;
   @override
-  double get cartridgeLength => throw _privateConstructorUsedError;
+  double get cartridgeLength;
   @override
-  double get bulletDiameter => throw _privateConstructorUsedError;
+  double get bulletDiameter;
   @override
-  double get caseLength => throw _privateConstructorUsedError;
+  double get caseLength;
   @override
   @JsonKey(ignore: true)
-  _$CartridgeCopyWith<_Cartridge> get copyWith =>
+  _$$_CartridgeCopyWith<_$_Cartridge> get copyWith =>
       throw _privateConstructorUsedError;
 }

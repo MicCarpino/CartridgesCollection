@@ -23,7 +23,7 @@ class BulletDiameterFormField extends StatelessWidget {
         decoration: InputDecoration(
             labelText: 'Diametro palla',
             errorText:
-                state.cartridge.bulletDiameter.invalid ? 'Non valido' : null),
+                state.cartridge.bulletDiameter.isNotValid ? 'Non valido' : null),
         onChanged: (value) => context
             .read<CartridgeFormBloc>()
             .add(CartridgeFormEvent.bulletDiameterChanged(value)),

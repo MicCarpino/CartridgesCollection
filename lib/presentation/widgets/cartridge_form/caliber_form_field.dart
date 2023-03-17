@@ -20,7 +20,7 @@ class CaliberFormField extends StatelessWidget {
         controller: controller,
         decoration: InputDecoration(
           labelText: 'Calibro',
-          errorText: state.cartridge.caliber.invalid ? 'Non valido' : null,
+          errorText: state.cartridge.caliber.isNotValid ? 'Non valido' : null,
         ),
         onChanged: (value) => context
             .read<CartridgeFormBloc>()
