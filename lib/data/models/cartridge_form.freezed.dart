@@ -16,6 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$CartridgeForm {
+  String? get firebaseKey => throw _privateConstructorUsedError;
   CartridgeCategory? get cartridgeCategory =>
       throw _privateConstructorUsedError;
   CaliberForm get caliber => throw _privateConstructorUsedError;
@@ -35,7 +36,8 @@ abstract class $CartridgeFormCopyWith<$Res> {
       _$CartridgeFormCopyWithImpl<$Res, CartridgeForm>;
   @useResult
   $Res call(
-      {CartridgeCategory? cartridgeCategory,
+      {String? firebaseKey,
+      CartridgeCategory? cartridgeCategory,
       CaliberForm caliber,
       CartridgeLengthForm cartridgeLength,
       CaseLengthForm caseLength,
@@ -55,6 +57,7 @@ class _$CartridgeFormCopyWithImpl<$Res, $Val extends CartridgeForm>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? firebaseKey = freezed,
     Object? cartridgeCategory = freezed,
     Object? caliber = null,
     Object? cartridgeLength = null,
@@ -62,6 +65,10 @@ class _$CartridgeFormCopyWithImpl<$Res, $Val extends CartridgeForm>
     Object? bulletDiameter = null,
   }) {
     return _then(_value.copyWith(
+      firebaseKey: freezed == firebaseKey
+          ? _value.firebaseKey
+          : firebaseKey // ignore: cast_nullable_to_non_nullable
+              as String?,
       cartridgeCategory: freezed == cartridgeCategory
           ? _value.cartridgeCategory
           : cartridgeCategory // ignore: cast_nullable_to_non_nullable
@@ -95,7 +102,8 @@ abstract class _$$_CartridgeFormCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {CartridgeCategory? cartridgeCategory,
+      {String? firebaseKey,
+      CartridgeCategory? cartridgeCategory,
       CaliberForm caliber,
       CartridgeLengthForm cartridgeLength,
       CaseLengthForm caseLength,
@@ -113,6 +121,7 @@ class __$$_CartridgeFormCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? firebaseKey = freezed,
     Object? cartridgeCategory = freezed,
     Object? caliber = null,
     Object? cartridgeLength = null,
@@ -120,6 +129,10 @@ class __$$_CartridgeFormCopyWithImpl<$Res>
     Object? bulletDiameter = null,
   }) {
     return _then(_$_CartridgeForm(
+      firebaseKey: freezed == firebaseKey
+          ? _value.firebaseKey
+          : firebaseKey // ignore: cast_nullable_to_non_nullable
+              as String?,
       cartridgeCategory: freezed == cartridgeCategory
           ? _value.cartridgeCategory
           : cartridgeCategory // ignore: cast_nullable_to_non_nullable
@@ -148,13 +161,16 @@ class __$$_CartridgeFormCopyWithImpl<$Res>
 
 class _$_CartridgeForm extends _CartridgeForm {
   const _$_CartridgeForm(
-      {required this.cartridgeCategory,
+      {required this.firebaseKey,
+      required this.cartridgeCategory,
       required this.caliber,
       required this.cartridgeLength,
       required this.caseLength,
       required this.bulletDiameter})
       : super._();
 
+  @override
+  final String? firebaseKey;
   @override
   final CartridgeCategory? cartridgeCategory;
   @override
@@ -168,7 +184,7 @@ class _$_CartridgeForm extends _CartridgeForm {
 
   @override
   String toString() {
-    return 'CartridgeForm(cartridgeCategory: $cartridgeCategory, caliber: $caliber, cartridgeLength: $cartridgeLength, caseLength: $caseLength, bulletDiameter: $bulletDiameter)';
+    return 'CartridgeForm(firebaseKey: $firebaseKey, cartridgeCategory: $cartridgeCategory, caliber: $caliber, cartridgeLength: $cartridgeLength, caseLength: $caseLength, bulletDiameter: $bulletDiameter)';
   }
 
   @override
@@ -176,6 +192,8 @@ class _$_CartridgeForm extends _CartridgeForm {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_CartridgeForm &&
+            (identical(other.firebaseKey, firebaseKey) ||
+                other.firebaseKey == firebaseKey) &&
             (identical(other.cartridgeCategory, cartridgeCategory) ||
                 other.cartridgeCategory == cartridgeCategory) &&
             (identical(other.caliber, caliber) || other.caliber == caliber) &&
@@ -188,8 +206,8 @@ class _$_CartridgeForm extends _CartridgeForm {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, cartridgeCategory, caliber,
-      cartridgeLength, caseLength, bulletDiameter);
+  int get hashCode => Object.hash(runtimeType, firebaseKey, cartridgeCategory,
+      caliber, cartridgeLength, caseLength, bulletDiameter);
 
   @JsonKey(ignore: true)
   @override
@@ -200,13 +218,16 @@ class _$_CartridgeForm extends _CartridgeForm {
 
 abstract class _CartridgeForm extends CartridgeForm {
   const factory _CartridgeForm(
-      {required final CartridgeCategory? cartridgeCategory,
+      {required final String? firebaseKey,
+      required final CartridgeCategory? cartridgeCategory,
       required final CaliberForm caliber,
       required final CartridgeLengthForm cartridgeLength,
       required final CaseLengthForm caseLength,
       required final BulletDiameterForm bulletDiameter}) = _$_CartridgeForm;
   const _CartridgeForm._() : super._();
 
+  @override
+  String? get firebaseKey;
   @override
   CartridgeCategory? get cartridgeCategory;
   @override

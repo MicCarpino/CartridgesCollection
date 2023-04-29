@@ -19,38 +19,36 @@ part 'cartridge_watcher_bloc.freezed.dart';
 @injectable
 class CartridgeWatcherBloc
     extends Bloc<CartridgeWatcherEvent, CartridgeWatcherState> {
-  CartridgeWatcherBloc(this._cartridgeRepository)
-      : super(const CartridgeWatcherState.initial());
-
   final ICartridgeRepository _cartridgeRepository;
 
   StreamSubscription<Either<CartridgeFailure, List<Cartridge>>>?
       _cartridgeStreamSubscription;
 
-  @override
-  Stream<CartridgeWatcherState> mapEventToState(
-    CartridgeWatcherEvent event,
-  ) async* {
-    print('WATCHER EVENT: ${event.toString()}');
-    yield* event.map(
-      watchAllStarted: (e) async* {
-        yield const CartridgeWatcherState.loadInProgress();
-        await _cartridgeStreamSubscription?.cancel();
-        _cartridgeStreamSubscription = _cartridgeRepository
-            .watchAll(e.category)
-            .listen(
-              (failureOrCartridges) => add(
-                CartridgeWatcherEvent.cartridgesReceived(failureOrCartridges),
-              ),
-            );
-      },
-      cartridgesReceived: (e) async* {
-        yield e.failureOrCartridges.fold(
-          (failure) => CartridgeWatcherState.loadFailure(failure),
-          (cartridges) => CartridgeWatcherState.loadSuccess(cartridges),
-        );
-      },
-    );
+  CartridgeWatcherBloc(this._cartridgeRepository)
+      : super(const CartridgeWatcherState.initial()) {
+    on<CartridgeWatcherEvent>((event, emit) {
+      event.map(
+        watchAllStarted: (e) async {
+          emit(const CartridgeWatcherState.loadInProgress());
+          await _cartridgeStreamSubscription?.cancel();
+          _cartridgeStreamSubscription = _cartridgeRepository
+              .watchAll(e.category)
+              .listen(
+                (failureOrCartridges) => add(
+                  CartridgeWatcherEvent.cartridgesReceived(failureOrCartridges),
+                ),
+              );
+        },
+        cartridgesReceived: (e) {
+          emit(
+            e.failureOrCartridges.fold(
+              (failure) => CartridgeWatcherState.loadFailure(failure),
+              (cartridges) => CartridgeWatcherState.loadSuccess(cartridges),
+            ),
+          );
+        },
+      );
+    });
   }
 
   @override

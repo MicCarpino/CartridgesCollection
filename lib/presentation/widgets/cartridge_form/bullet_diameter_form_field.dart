@@ -3,7 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class BulletDiameterFormField extends StatelessWidget {
+class BulletDiameterFormField extends StatefulWidget {
+  @override
+  State<BulletDiameterFormField> createState() => _BulletDiameterFormFieldState();
+}
+
+class _BulletDiameterFormFieldState extends State<BulletDiameterFormField> {
   final controller = TextEditingController();
 
   @override
@@ -19,11 +24,14 @@ class BulletDiameterFormField extends StatelessWidget {
           (p.isEditing != c.isEditing),
       builder: (context, state) => TextFormField(
         controller: controller,
+        inputFormatters: [FilteringTextInputFormatter.deny(RegExp("[, ]"))],
         keyboardType: const TextInputType.numberWithOptions(decimal: true),
         decoration: InputDecoration(
-            labelText: 'Diametro palla',
-            errorText:
-                state.cartridge.bulletDiameter.isNotValid ? 'Non valido' : null),
+          labelText: 'Diametro palla',
+          errorText: state.cartridge.bulletDiameter.displayError != null
+              ? 'Non valido'
+              : null,
+        ),
         onChanged: (value) => context
             .read<CartridgeFormBloc>()
             .add(CartridgeFormEvent.bulletDiameterChanged(value)),

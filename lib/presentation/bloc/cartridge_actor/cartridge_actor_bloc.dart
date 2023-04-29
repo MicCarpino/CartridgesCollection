@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:firebase_app/data/models/cartridge.dart';
 import 'package:firebase_app/domain/failures/cartridge_failure.dart';
@@ -15,20 +13,20 @@ part 'cartridge_actor_bloc.freezed.dart';
 
 @injectable
 class CartridgeActorBloc extends Bloc<CartridgeActorEvent, CartridgeActorState> {
-  CartridgeActorBloc(this._cartridgeRepository)
-      : super(const CartridgeActorState.initial());
-
   final ICartridgeRepository _cartridgeRepository;
 
-  @override
-  Stream<CartridgeActorState> mapEventToState(
-    CartridgeActorEvent event,
-  ) async* {
-    yield const CartridgeActorState.actionInProgress();
-    final failureOrSuccess = await _cartridgeRepository.delete(event.cartridge);
-    yield failureOrSuccess.fold(
-      (failure) => CartridgeActorState.deleteFailure(failure),
-      (r) => const CartridgeActorState.deleteSuccess(),
-    );
+  CartridgeActorBloc(this._cartridgeRepository) : super(const CartridgeActorState.initial()) {
+
+    on<CartridgeActorEvent>((event, emit) async {
+      emit(const CartridgeActorState.actionInProgress());
+      final failureOrSuccess =
+          await _cartridgeRepository.delete(event.cartridge);
+      emit(
+        failureOrSuccess.fold(
+          (failure) => CartridgeActorState.deleteFailure(failure),
+          (r) => const CartridgeActorState.deleteSuccess(),
+        ),
+      );
+    });
   }
 }

@@ -16,11 +16,12 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$Cartridge {
+  String get firebaseKey => throw _privateConstructorUsedError;
   String get caliber => throw _privateConstructorUsedError;
   CartridgeCategory? get category => throw _privateConstructorUsedError;
-  double get cartridgeLength => throw _privateConstructorUsedError;
-  double get bulletDiameter => throw _privateConstructorUsedError;
-  double get caseLength => throw _privateConstructorUsedError;
+  double? get cartridgeLength => throw _privateConstructorUsedError;
+  double? get bulletDiameter => throw _privateConstructorUsedError;
+  double? get caseLength => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CartridgeCopyWith<Cartridge> get copyWith =>
@@ -33,11 +34,12 @@ abstract class $CartridgeCopyWith<$Res> {
       _$CartridgeCopyWithImpl<$Res, Cartridge>;
   @useResult
   $Res call(
-      {String caliber,
+      {String firebaseKey,
+      String caliber,
       CartridgeCategory? category,
-      double cartridgeLength,
-      double bulletDiameter,
-      double caseLength});
+      double? cartridgeLength,
+      double? bulletDiameter,
+      double? caseLength});
 }
 
 /// @nodoc
@@ -53,13 +55,18 @@ class _$CartridgeCopyWithImpl<$Res, $Val extends Cartridge>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? firebaseKey = null,
     Object? caliber = null,
     Object? category = freezed,
-    Object? cartridgeLength = null,
-    Object? bulletDiameter = null,
-    Object? caseLength = null,
+    Object? cartridgeLength = freezed,
+    Object? bulletDiameter = freezed,
+    Object? caseLength = freezed,
   }) {
     return _then(_value.copyWith(
+      firebaseKey: null == firebaseKey
+          ? _value.firebaseKey
+          : firebaseKey // ignore: cast_nullable_to_non_nullable
+              as String,
       caliber: null == caliber
           ? _value.caliber
           : caliber // ignore: cast_nullable_to_non_nullable
@@ -68,18 +75,18 @@ class _$CartridgeCopyWithImpl<$Res, $Val extends Cartridge>
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as CartridgeCategory?,
-      cartridgeLength: null == cartridgeLength
+      cartridgeLength: freezed == cartridgeLength
           ? _value.cartridgeLength
           : cartridgeLength // ignore: cast_nullable_to_non_nullable
-              as double,
-      bulletDiameter: null == bulletDiameter
+              as double?,
+      bulletDiameter: freezed == bulletDiameter
           ? _value.bulletDiameter
           : bulletDiameter // ignore: cast_nullable_to_non_nullable
-              as double,
-      caseLength: null == caseLength
+              as double?,
+      caseLength: freezed == caseLength
           ? _value.caseLength
           : caseLength // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
     ) as $Val);
   }
 }
@@ -92,11 +99,12 @@ abstract class _$$_CartridgeCopyWith<$Res> implements $CartridgeCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String caliber,
+      {String firebaseKey,
+      String caliber,
       CartridgeCategory? category,
-      double cartridgeLength,
-      double bulletDiameter,
-      double caseLength});
+      double? cartridgeLength,
+      double? bulletDiameter,
+      double? caseLength});
 }
 
 /// @nodoc
@@ -110,13 +118,18 @@ class __$$_CartridgeCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? firebaseKey = null,
     Object? caliber = null,
     Object? category = freezed,
-    Object? cartridgeLength = null,
-    Object? bulletDiameter = null,
-    Object? caseLength = null,
+    Object? cartridgeLength = freezed,
+    Object? bulletDiameter = freezed,
+    Object? caseLength = freezed,
   }) {
     return _then(_$_Cartridge(
+      firebaseKey: null == firebaseKey
+          ? _value.firebaseKey
+          : firebaseKey // ignore: cast_nullable_to_non_nullable
+              as String,
       caliber: null == caliber
           ? _value.caliber
           : caliber // ignore: cast_nullable_to_non_nullable
@@ -125,18 +138,18 @@ class __$$_CartridgeCopyWithImpl<$Res>
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as CartridgeCategory?,
-      cartridgeLength: null == cartridgeLength
+      cartridgeLength: freezed == cartridgeLength
           ? _value.cartridgeLength
           : cartridgeLength // ignore: cast_nullable_to_non_nullable
-              as double,
-      bulletDiameter: null == bulletDiameter
+              as double?,
+      bulletDiameter: freezed == bulletDiameter
           ? _value.bulletDiameter
           : bulletDiameter // ignore: cast_nullable_to_non_nullable
-              as double,
-      caseLength: null == caseLength
+              as double?,
+      caseLength: freezed == caseLength
           ? _value.caseLength
           : caseLength // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
     ));
   }
 }
@@ -145,7 +158,8 @@ class __$$_CartridgeCopyWithImpl<$Res>
 
 class _$_Cartridge extends _Cartridge with DiagnosticableTreeMixin {
   const _$_Cartridge(
-      {required this.caliber,
+      {required this.firebaseKey,
+      required this.caliber,
       required this.category,
       required this.cartridgeLength,
       required this.bulletDiameter,
@@ -153,19 +167,21 @@ class _$_Cartridge extends _Cartridge with DiagnosticableTreeMixin {
       : super._();
 
   @override
+  final String firebaseKey;
+  @override
   final String caliber;
   @override
   final CartridgeCategory? category;
   @override
-  final double cartridgeLength;
+  final double? cartridgeLength;
   @override
-  final double bulletDiameter;
+  final double? bulletDiameter;
   @override
-  final double caseLength;
+  final double? caseLength;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Cartridge(caliber: $caliber, category: $category, cartridgeLength: $cartridgeLength, bulletDiameter: $bulletDiameter, caseLength: $caseLength)';
+    return 'Cartridge(firebaseKey: $firebaseKey, caliber: $caliber, category: $category, cartridgeLength: $cartridgeLength, bulletDiameter: $bulletDiameter, caseLength: $caseLength)';
   }
 
   @override
@@ -173,6 +189,7 @@ class _$_Cartridge extends _Cartridge with DiagnosticableTreeMixin {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'Cartridge'))
+      ..add(DiagnosticsProperty('firebaseKey', firebaseKey))
       ..add(DiagnosticsProperty('caliber', caliber))
       ..add(DiagnosticsProperty('category', category))
       ..add(DiagnosticsProperty('cartridgeLength', cartridgeLength))
@@ -185,6 +202,8 @@ class _$_Cartridge extends _Cartridge with DiagnosticableTreeMixin {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Cartridge &&
+            (identical(other.firebaseKey, firebaseKey) ||
+                other.firebaseKey == firebaseKey) &&
             (identical(other.caliber, caliber) || other.caliber == caliber) &&
             (identical(other.category, category) ||
                 other.category == category) &&
@@ -197,7 +216,7 @@ class _$_Cartridge extends _Cartridge with DiagnosticableTreeMixin {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, caliber, category,
+  int get hashCode => Object.hash(runtimeType, firebaseKey, caliber, category,
       cartridgeLength, bulletDiameter, caseLength);
 
   @JsonKey(ignore: true)
@@ -209,23 +228,26 @@ class _$_Cartridge extends _Cartridge with DiagnosticableTreeMixin {
 
 abstract class _Cartridge extends Cartridge {
   const factory _Cartridge(
-      {required final String caliber,
+      {required final String firebaseKey,
+      required final String caliber,
       required final CartridgeCategory? category,
-      required final double cartridgeLength,
-      required final double bulletDiameter,
-      required final double caseLength}) = _$_Cartridge;
+      required final double? cartridgeLength,
+      required final double? bulletDiameter,
+      required final double? caseLength}) = _$_Cartridge;
   const _Cartridge._() : super._();
 
+  @override
+  String get firebaseKey;
   @override
   String get caliber;
   @override
   CartridgeCategory? get category;
   @override
-  double get cartridgeLength;
+  double? get cartridgeLength;
   @override
-  double get bulletDiameter;
+  double? get bulletDiameter;
   @override
-  double get caseLength;
+  double? get caseLength;
   @override
   @JsonKey(ignore: true)
   _$$_CartridgeCopyWith<_$_Cartridge> get copyWith =>

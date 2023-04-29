@@ -3,7 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class CaseLengthFormField extends StatelessWidget {
+class CaseLengthFormField extends StatefulWidget {
+  @override
+  State<CaseLengthFormField> createState() => _CaseLengthFormFieldState();
+}
+
+class _CaseLengthFormFieldState extends State<CaseLengthFormField> {
   final controller = TextEditingController();
 
   @override
@@ -19,10 +24,13 @@ class CaseLengthFormField extends StatelessWidget {
           (p.isEditing != c.isEditing),
       builder: (context, state) => TextFormField(
         controller: controller,
+        inputFormatters: [FilteringTextInputFormatter.deny(RegExp("[, ]"))],
         keyboardType: const TextInputType.numberWithOptions(decimal: true),
         decoration: InputDecoration(
           labelText: 'Lunghezza bossolo',
-          errorText: state.cartridge.caseLength.isNotValid ? 'Non valido' : null,
+          errorText: state.cartridge.caseLength.displayError != null
+              ? 'Non valido'
+              : null,
         ),
         onChanged: (value) => context
             .read<CartridgeFormBloc>()

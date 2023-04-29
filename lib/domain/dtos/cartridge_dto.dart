@@ -12,21 +12,26 @@ class CartridgeDto with _$CartridgeDto {
   const CartridgeDto._();
 
   const factory CartridgeDto({
-    required double cartridgeLength,
-    required double bulletDiameter,
-    required double caseLength,
+    required String firebaseKey,
+    required String caliber,
+    double? cartridgeLength,
+    double? bulletDiameter,
+    double? caseLength,
   }) = _CartridgeDto;
 
   factory CartridgeDto.fromDomain(Cartridge cartridge) {
     return CartridgeDto(
+      firebaseKey: cartridge.firebaseKey,
+      caliber: cartridge.caliber,
       cartridgeLength: cartridge.cartridgeLength,
       bulletDiameter: cartridge.bulletDiameter,
       caseLength: cartridge.caseLength,
     );
   }
 
-  Cartridge toDomain(String caliber, CartridgeCategory category) {
+  Cartridge toDomain(CartridgeCategory category) {
     return Cartridge(
+      firebaseKey: firebaseKey,
       caliber: caliber,
       category: category,
       cartridgeLength: cartridgeLength,

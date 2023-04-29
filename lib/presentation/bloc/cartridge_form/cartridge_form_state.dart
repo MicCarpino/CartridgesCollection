@@ -5,6 +5,7 @@ class CartridgeFormState with _$CartridgeFormState {
   const factory CartridgeFormState({
     required CartridgeForm cartridge,
     required bool isEditing,
+    CartridgeCategory? originalCategory,
     required bool isSaving,
     required Option<Either<CartridgeFailure, Unit>> saveFailureOrSuccessOption,
   }) = _CartridgeFormState;

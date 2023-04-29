@@ -4,16 +4,14 @@ import 'package:firebase_app/core/enums.dart';
 import 'package:firebase_app/data/models/cartridge.dart';
 import 'package:firebase_app/injection.dart';
 import 'package:firebase_app/presentation/bloc/cartridge_form/cartridge_form_bloc.dart';
-import 'package:firebase_app/presentation/widgets/cartridge_form/cartridge_form_scaffold.dart';
 import 'package:firebase_app/presentation/routes/router.gr.dart';
+import 'package:firebase_app/presentation/widgets/cartridge_form/cartridge_form_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CartridgeFormPage extends StatelessWidget {
-  const CartridgeFormPage({
-    Key? key,
-    required this.cartridgeOrCategory,
-  }) : super(key: key);
+  const CartridgeFormPage({Key? key, required this.cartridgeOrCategory})
+      : super(key: key);
   final Either<Cartridge, CartridgeCategory> cartridgeOrCategory;
 
   @override

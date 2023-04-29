@@ -45,3 +45,6 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 /android/app/google-services.json
+/upload-keystore.jks
+/firebase-tools-instant-win.exe
+/ios/Runner/GoogleService-Info.plist

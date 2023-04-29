@@ -1,21 +1,18 @@
-// @dart=2.9
-
+import 'package:firebase_app/core/app_theme.dart';
+import 'package:firebase_app/firebase_options.dart';
+import 'package:firebase_app/injection.dart';
+import 'package:firebase_app/presentation/routes/router.gr.dart';
+import 'package:firebase_app_check/firebase_app_check.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:injectable/injectable.dart';
-import 'core/constants.dart';
-import 'injection.dart';
-import 'presentation/routes/router.gr.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   configureDependencies();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await FirebaseAppCheck.instance.activate();
   runApp(MyApp());
 }
 

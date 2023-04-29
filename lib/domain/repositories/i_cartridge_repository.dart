@@ -9,7 +9,10 @@ abstract class ICartridgeRepository {
 
   Future<Either<CartridgeFailure, Unit>> create(Cartridge cartridge);
 
-  Future<Either<CartridgeFailure, Unit>> update(Cartridge cartridge);
+  Future<Either<CartridgeFailure, Unit>> update(
+    Cartridge cartridge, [
+    CartridgeCategory? originalCategory,
+  ]);
 
   Future<Either<CartridgeFailure, Unit>> delete(Cartridge cartridge);
 }
